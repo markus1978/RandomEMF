@@ -1,4 +1,15 @@
 *.class
+*.swp
+target/
+bin/
+*.out
+out.*
+out-*.*
+log.*
+*.DS_Store
+!db/hbase-0.90.3/bin/
+de.hub.emffrag.testmodels/models/
+apidocs/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="de.hub.randomemf.sdk"
+	label="RandomEMF SDK Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="de.hub.randomemf"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="de.hub.randomemf.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>
