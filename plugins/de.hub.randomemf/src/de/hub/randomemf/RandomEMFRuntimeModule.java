@@ -6,6 +6,10 @@ package de.hub.randomemf;
 import org.eclipse.xtext.scoping.IGlobalScopeProvider;
 import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider;
+import org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider;
+
+import de.hub.randomemf.scoping.RcoreBatchScopeProvider;
+import de.hub.randomemf.scoping.RcoreScopeProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the
@@ -19,6 +23,11 @@ public class RandomEMFRuntimeModule extends de.hub.randomemf.AbstractRandomEMFRu
 	
 	@Override
 	public Class<? extends IScopeProvider> bindIScopeProvider() {
-		return MyScopeProvider.class;
+		return RcoreScopeProvider.class;
+	}
+	
+	@Override
+	public Class<? extends XbaseBatchScopeProvider> bindXbaseBatchScopeProvider() {
+		return RcoreBatchScopeProvider.class;
 	}
 }

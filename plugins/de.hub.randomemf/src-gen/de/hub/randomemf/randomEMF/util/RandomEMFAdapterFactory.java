@@ -90,16 +90,6 @@ public class RandomEMFAdapterFactory extends AdapterFactoryImpl
         return createFeatureRuleAdapter();
       }
       @Override
-      public Adapter caseAddRule(AddRule object)
-      {
-        return createAddRuleAdapter();
-      }
-      @Override
-      public Adapter caseSetRule(SetRule object)
-      {
-        return createSetRuleAdapter();
-      }
-      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -162,36 +152,6 @@ public class RandomEMFAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFeatureRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hub.randomemf.randomEMF.AddRule <em>Add Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hub.randomemf.randomEMF.AddRule
-   * @generated
-   */
-  public Adapter createAddRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hub.randomemf.randomEMF.SetRule <em>Set Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hub.randomemf.randomEMF.SetRule
-   * @generated
-   */
-  public Adapter createSetRuleAdapter()
   {
     return null;
   }

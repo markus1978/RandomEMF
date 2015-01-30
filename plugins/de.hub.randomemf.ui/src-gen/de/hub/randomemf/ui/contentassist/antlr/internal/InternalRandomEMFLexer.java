@@ -12,89 +12,89 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalRandomEMFLexer extends Lexer {
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int RULE_ID=4;
-    public static final int T__67=67;
-    public static final int T__29=29;
-    public static final int T__64=64;
-    public static final int T__28=28;
-    public static final int T__65=65;
-    public static final int T__27=27;
-    public static final int T__62=62;
-    public static final int T__26=26;
-    public static final int T__63=63;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int T__61=61;
-    public static final int EOF=-1;
-    public static final int T__60=60;
+    public static final int RULE_HEX=5;
+    public static final int T__50=50;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__55=55;
     public static final int T__56=56;
-    public static final int T__19=19;
+    public static final int T__13=13;
     public static final int T__57=57;
-    public static final int RULE_HEX=5;
+    public static final int T__14=14;
     public static final int T__58=58;
-    public static final int T__16=16;
     public static final int T__51=51;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int T__59=59;
-    public static final int RULE_INT=6;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=4;
     public static final int RULE_DECIMAL=7;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__80=80;
-    public static final int T__47=47;
-    public static final int T__81=81;
-    public static final int T__44=44;
-    public static final int T__82=82;
-    public static final int T__45=45;
-    public static final int T__83=83;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__85=85;
-    public static final int T__84=84;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__66=66;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_STRING=8;
-    public static final int T__33=33;
-    public static final int T__71=71;
-    public static final int T__34=34;
-    public static final int T__72=72;
-    public static final int T__35=35;
-    public static final int T__36=36;
+    public static final int T__23=23;
+    public static final int T__67=67;
+    public static final int T__24=24;
+    public static final int T__68=68;
+    public static final int T__25=25;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__20=20;
+    public static final int T__64=64;
+    public static final int T__21=21;
+    public static final int T__65=65;
     public static final int T__70=70;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int T__76=76;
-    public static final int RULE_WS=11;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
+    public static final int T__33=33;
     public static final int T__77=77;
+    public static final int T__34=34;
+    public static final int T__78=78;
+    public static final int T__35=35;
+    public static final int T__79=79;
+    public static final int T__36=36;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__74=74;
+    public static final int T__31=31;
+    public static final int T__75=75;
+    public static final int T__32=32;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__84=84;
+    public static final int T__41=41;
+    public static final int T__85=85;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -176,10 +176,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:14:7: ( '+=' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:14:9: '+='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:14:7: ( ':=' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:14:9: ':='
             {
-            match("+="); 
+            match(":="); 
 
 
             }
@@ -197,10 +197,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:15:7: ( '-=' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:15:9: '-='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:15:7: ( '+=' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:15:9: '+='
             {
-            match("-="); 
+            match("+="); 
 
 
             }
@@ -218,10 +218,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:16:7: ( '==' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:16:9: '=='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:16:7: ( '-=' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:16:9: '-='
             {
-            match("=="); 
+            match("-="); 
 
 
             }
@@ -239,10 +239,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17:7: ( '!=' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17:9: '!='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17:7: ( '==' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17:9: '=='
             {
-            match("!="); 
+            match("=="); 
 
 
             }
@@ -260,10 +260,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18:7: ( '===' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18:9: '==='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18:7: ( '!=' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18:9: '!='
             {
-            match("==="); 
+            match("!="); 
 
 
             }
@@ -281,10 +281,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:19:7: ( '!==' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:19:9: '!=='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:19:7: ( '===' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:19:9: '==='
             {
-            match("!=="); 
+            match("==="); 
 
 
             }
@@ -302,10 +302,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:20:7: ( '>=' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:20:9: '>='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:20:7: ( '!==' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:20:9: '!=='
             {
-            match(">="); 
+            match("!=="); 
 
 
             }
@@ -323,10 +323,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:21:7: ( '<=' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:21:9: '<='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:21:7: ( '>=' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:21:9: '>='
             {
-            match("<="); 
+            match(">="); 
 
 
             }
@@ -344,10 +344,11 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:22:7: ( '>' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:22:9: '>'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:22:7: ( '<=' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:22:9: '<='
             {
-            match('>'); 
+            match("<="); 
+
 
             }
 
@@ -364,10 +365,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:23:7: ( '<' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:23:9: '<'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:23:7: ( '>' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:23:9: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -384,11 +385,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:24:7: ( '->' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:24:9: '->'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:24:7: ( '<' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:24:9: '<'
             {
-            match("->"); 
-
+            match('<'); 
 
             }
 
@@ -405,10 +405,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:25:7: ( '..<' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:25:9: '..<'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:25:7: ( '->' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:25:9: '->'
             {
-            match("..<"); 
+            match("->"); 
 
 
             }
@@ -426,10 +426,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:26:7: ( '..' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:26:9: '..'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:26:7: ( '..<' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:26:9: '..<'
             {
-            match(".."); 
+            match("..<"); 
 
 
             }
@@ -447,10 +447,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:27:7: ( '=>' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:27:9: '=>'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:27:7: ( '..' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:27:9: '..'
             {
-            match("=>"); 
+            match(".."); 
 
 
             }
@@ -468,10 +468,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:28:7: ( '<>' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:28:9: '<>'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:28:7: ( '=>' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:28:9: '=>'
             {
-            match("<>"); 
+            match("=>"); 
 
 
             }
@@ -489,10 +489,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:29:7: ( '?:' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:29:9: '?:'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:29:7: ( '<>' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:29:9: '<>'
             {
-            match("?:"); 
+            match("<>"); 
 
 
             }
@@ -510,10 +510,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:30:7: ( '<=>' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:30:9: '<=>'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:30:7: ( '?:' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:30:9: '?:'
             {
-            match("<=>"); 
+            match("?:"); 
 
 
             }
@@ -531,10 +531,11 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:31:7: ( '+' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:31:9: '+'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:31:7: ( '<=>' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:31:9: '<=>'
             {
-            match('+'); 
+            match("<=>"); 
+
 
             }
 
@@ -551,10 +552,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:32:7: ( '-' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:32:9: '-'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:32:7: ( '+' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:32:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -571,10 +572,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:33:7: ( '*' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:33:9: '*'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:33:7: ( '-' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:33:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -591,11 +592,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:34:7: ( '**' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:34:9: '**'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:34:7: ( '*' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:34:9: '*'
             {
-            match("**"); 
-
+            match('*'); 
 
             }
 
@@ -612,10 +612,11 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:35:7: ( '/' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:35:9: '/'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:35:7: ( '**' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:35:9: '**'
             {
-            match('/'); 
+            match("**"); 
+
 
             }
 
@@ -632,10 +633,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:36:7: ( '%' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:36:9: '%'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:36:7: ( '/' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:36:9: '/'
             {
-            match('%'); 
+            match('/'); 
 
             }
 
@@ -652,10 +653,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:37:7: ( '!' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:37:9: '!'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:37:7: ( '%' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:37:9: '%'
             {
-            match('!'); 
+            match('%'); 
 
             }
 
@@ -672,10 +673,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:38:7: ( '.' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:38:9: '.'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:38:7: ( '!' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:38:9: '!'
             {
-            match('.'); 
+            match('!'); 
 
             }
 
@@ -692,11 +693,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:39:7: ( 'val' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:39:9: 'val'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:39:7: ( '.' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:39:9: '.'
             {
-            match("val"); 
-
+            match('.'); 
 
             }
 
@@ -713,10 +713,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:40:7: ( 'extends' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:40:9: 'extends'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:40:7: ( 'val' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:40:9: 'val'
             {
-            match("extends"); 
+            match("val"); 
 
 
             }
@@ -734,10 +734,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:41:7: ( 'static' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:41:9: 'static'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:41:7: ( 'extends' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:41:9: 'extends'
             {
-            match("static"); 
+            match("extends"); 
 
 
             }
@@ -755,10 +755,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:42:7: ( 'import' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:42:9: 'import'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:42:7: ( 'static' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:42:9: 'static'
             {
-            match("import"); 
+            match("static"); 
 
 
             }
@@ -776,10 +776,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:43:7: ( 'extension' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:43:9: 'extension'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:43:7: ( 'import' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:43:9: 'import'
             {
-            match("extension"); 
+            match("import"); 
 
 
             }
@@ -797,10 +797,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:44:7: ( 'super' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:44:9: 'super'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:44:7: ( 'extension' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:44:9: 'extension'
             {
-            match("super"); 
+            match("extension"); 
 
 
             }
@@ -818,10 +818,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:45:7: ( 'false' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:45:9: 'false'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:45:7: ( 'super' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:45:9: 'super'
             {
-            match("false"); 
+            match("super"); 
 
 
             }
@@ -839,10 +839,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:46:7: ( 'generator' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:46:9: 'generator'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:46:7: ( 'false' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:46:9: 'false'
             {
-            match("generator"); 
+            match("false"); 
 
 
             }
@@ -860,10 +860,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:47:7: ( 'for' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:47:9: 'for'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:47:7: ( 'generator' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:47:9: 'generator'
             {
-            match("for"); 
+            match("generator"); 
 
 
             }
@@ -881,10 +881,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:48:7: ( 'in' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:48:9: 'in'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:48:7: ( 'for' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:48:9: 'for'
             {
-            match("in"); 
+            match("for"); 
 
 
             }
@@ -902,10 +902,11 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:49:7: ( '{' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:49:9: '{'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:49:7: ( 'in' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:49:9: 'in'
             {
-            match('{'); 
+            match("in"); 
+
 
             }
 
@@ -922,10 +923,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:50:7: ( '}' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:50:9: '}'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:50:7: ( '{' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:50:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -942,10 +943,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:51:7: ( ':' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:51:9: ':'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:51:7: ( '}' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:51:9: '}'
             {
-            match(':'); 
+            match('}'); 
 
             }
 
@@ -962,10 +963,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:52:7: ( ';' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:52:9: ';'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:52:7: ( ':' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:52:9: ':'
             {
-            match(';'); 
+            match(':'); 
 
             }
 
@@ -982,10 +983,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:53:7: ( '(' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:53:9: '('
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:53:7: ( ';' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:53:9: ';'
             {
-            match('('); 
+            match(';'); 
 
             }
 
@@ -1002,10 +1003,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:54:7: ( ')' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:54:9: ')'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:54:7: ( '(' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:54:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -1022,10 +1023,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:55:7: ( ',' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:55:9: ','
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:55:7: ( ')' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:55:9: ')'
             {
-            match(','); 
+            match(')'); 
 
             }
 
@@ -1042,10 +1043,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:56:7: ( '#' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:56:9: '#'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:56:7: ( ',' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:56:9: ','
             {
-            match('#'); 
+            match(','); 
 
             }
 
@@ -1062,11 +1063,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:57:7: ( ':=' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:57:9: ':='
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:57:7: ( '#' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:57:9: '#'
             {
-            match(":="); 
-
+            match('#'); 
 
             }
 
@@ -1624,10 +1624,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:12: ( '0x' | '0X' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1655,7 +1655,7 @@ public class InternalRandomEMFLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:13: '0x'
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:13: '0x'
                     {
                     match("0x"); 
 
@@ -1663,7 +1663,7 @@ public class InternalRandomEMFLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:18: '0X'
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:18: '0X'
                     {
                     match("0X"); 
 
@@ -1673,7 +1673,7 @@ public class InternalRandomEMFLexer extends Lexer {
 
             }
 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1711,7 +1711,7 @@ public class InternalRandomEMFLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1720,10 +1720,10 @@ public class InternalRandomEMFLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1741,7 +1741,7 @@ public class InternalRandomEMFLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1765,7 +1765,7 @@ public class InternalRandomEMFLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18074:84: ( 'l' | 'L' )
+                            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17943:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1804,11 +1804,11 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18076:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18076:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17945:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17945:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18076:21: ( '0' .. '9' | '_' )*
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17945:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1857,11 +1857,11 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1870,7 +1870,7 @@ public class InternalRandomEMFLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1881,7 +1881,7 @@ public class InternalRandomEMFLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:36: ( '+' | '-' )?
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -1914,7 +1914,7 @@ public class InternalRandomEMFLexer extends Lexer {
 
             }
 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -1926,7 +1926,7 @@ public class InternalRandomEMFLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -1950,7 +1950,7 @@ public class InternalRandomEMFLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18078:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17947:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -1983,10 +1983,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18080:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18080:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17949:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17949:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18080:11: ( '^' )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17949:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1995,7 +1995,7 @@ public class InternalRandomEMFLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18080:11: '^'
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17949:11: '^'
                     {
                     match('^'); 
 
@@ -2013,7 +2013,7 @@ public class InternalRandomEMFLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18080:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17949:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2062,10 +2062,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2083,10 +2083,10 @@ public class InternalRandomEMFLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2102,7 +2102,7 @@ public class InternalRandomEMFLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2118,7 +2118,7 @@ public class InternalRandomEMFLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2143,10 +2143,10 @@ public class InternalRandomEMFLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2162,7 +2162,7 @@ public class InternalRandomEMFLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2178,7 +2178,7 @@ public class InternalRandomEMFLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18082:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17951:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2221,12 +2221,12 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18084:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18084:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17953:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17953:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18084:24: ( options {greedy=false; } : . )*
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17953:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2251,7 +2251,7 @@ public class InternalRandomEMFLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18084:52: .
+            	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17953:52: .
             	    {
             	    matchAny(); 
 
@@ -2281,12 +2281,12 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2299,7 +2299,7 @@ public class InternalRandomEMFLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2319,7 +2319,7 @@ public class InternalRandomEMFLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:40: ( ( '\\r' )? '\\n' )?
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2328,9 +2328,9 @@ public class InternalRandomEMFLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:41: ( '\\r' )? '\\n'
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:41: ( '\\r' )?
+                    // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2339,7 +2339,7 @@ public class InternalRandomEMFLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18086:41: '\\r'
+                            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17955:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2371,10 +2371,10 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18088:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18088:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17957:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17957:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18088:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17957:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2428,8 +2428,8 @@ public class InternalRandomEMFLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18090:16: ( . )
-            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:18090:18: .
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17959:16: ( . )
+            // ../de.hub.randomemf.ui/src-gen/de/hub/randomemf/ui/contentassist/antlr/internal/InternalRandomEMF.g:17959:18: .
             {
             matchAny(); 
 
@@ -3030,102 +3030,99 @@ public class InternalRandomEMFLexer extends Lexer {
 
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
-        "\1\uffff\1\57\1\61\1\63\1\65\1\70\1\72\1\74\1\77\1\101\1\104\1\106"+
-        "\1\111\1\uffff\6\114\2\uffff\1\135\5\uffff\1\114\2\uffff\6\114\2"+
-        "\161\1\54\1\uffff\2\54\2\uffff\1\167\13\uffff\1\171\3\uffff\1\173"+
-        "\2\uffff\1\175\12\uffff\1\114\1\uffff\6\114\1\u0087\1\u0088\4\114"+
-        "\12\uffff\1\u008d\2\uffff\1\114\1\u008f\10\114\2\uffff\1\161\13"+
-        "\uffff\1\u009a\1\u009b\7\114\2\uffff\1\114\1\u00a4\2\114\1\uffff"+
-        "\1\114\1\uffff\3\114\1\u00ab\3\114\1\u00af\2\114\2\uffff\1\114\1"+
-        "\u00b3\6\114\1\uffff\3\114\1\u00bd\2\114\1\uffff\1\u00c0\2\114\1"+
-        "\uffff\1\u00c3\2\114\1\uffff\1\114\1\u00c8\3\114\1\u00cc\3\114\1"+
-        "\uffff\1\u00d0\1\u00d1\1\uffff\1\114\1\u00d3\1\uffff\3\114\1\u00d7"+
-        "\1\uffff\1\u00d8\1\u00d9\1\114\1\uffff\3\114\2\uffff\1\u00de\1\uffff"+
-        "\1\u00df\1\u00e0\1\114\3\uffff\1\114\1\u00e3\1\114\1\u00e5\3\uffff"+
-        "\2\114\1\uffff\1\114\1\uffff\1\u00e9\1\114\1\u00eb\1\uffff\1\u00ec"+
-        "\2\uffff";
+        "\1\uffff\1\57\1\61\1\63\1\66\1\70\1\73\1\75\1\77\1\102\1\104\1\107"+
+        "\1\111\1\114\1\uffff\6\117\7\uffff\1\117\2\uffff\6\117\2\162\1\54"+
+        "\1\uffff\2\54\2\uffff\1\167\16\uffff\1\171\3\uffff\1\173\2\uffff"+
+        "\1\175\12\uffff\1\117\1\uffff\6\117\1\u0087\1\u0088\4\117\7\uffff"+
+        "\1\u008d\2\uffff\1\117\1\u008f\10\117\1\uffff\1\162\14\uffff\1\u009a"+
+        "\1\u009b\7\117\2\uffff\1\117\1\u00a4\2\117\1\uffff\1\117\1\uffff"+
+        "\3\117\1\u00ab\3\117\1\u00af\2\117\2\uffff\1\117\1\u00b3\6\117\1"+
+        "\uffff\3\117\1\u00bd\2\117\1\uffff\1\u00c0\2\117\1\uffff\1\u00c3"+
+        "\2\117\1\uffff\1\117\1\u00c8\3\117\1\u00cc\3\117\1\uffff\1\u00d0"+
+        "\1\u00d1\1\uffff\1\117\1\u00d3\1\uffff\3\117\1\u00d7\1\uffff\1\u00d8"+
+        "\1\u00d9\1\117\1\uffff\3\117\2\uffff\1\u00de\1\uffff\1\u00df\1\u00e0"+
+        "\1\117\3\uffff\1\117\1\u00e3\1\117\1\u00e5\3\uffff\2\117\1\uffff"+
+        "\1\117\1\uffff\1\u00e9\1\117\1\u00eb\1\uffff\1\u00ec\2\uffff";
     static final String DFA19_eofS =
         "\u00ed\uffff";
     static final String DFA19_minS =
-        "\1\0\1\75\1\174\1\46\5\75\2\56\2\52\1\uffff\1\141\1\154\1\164\1"+
-        "\146\1\141\1\145\2\uffff\1\72\5\uffff\1\163\2\uffff\1\145\1\141"+
-        "\1\150\1\145\1\150\1\145\2\60\1\44\1\uffff\2\0\2\uffff\1\75\13\uffff"+
-        "\1\75\3\uffff\1\76\2\uffff\1\74\12\uffff\1\154\1\uffff\1\164\1\163"+
-        "\1\141\1\160\1\151\1\160\2\44\1\154\1\162\2\156\12\uffff\1\44\2"+
-        "\uffff\1\146\1\44\1\163\1\151\1\167\1\154\1\160\1\162\1\165\1\164"+
-        "\2\uffff\1\60\13\uffff\2\44\2\145\1\164\1\145\1\164\1\157\1\164"+
-        "\2\uffff\1\163\1\44\1\141\1\145\1\uffff\1\141\1\uffff\1\145\1\143"+
-        "\1\154\1\44\1\154\1\145\1\157\1\44\1\145\1\165\2\uffff\1\156\1\44"+
-        "\1\151\1\162\1\143\1\162\1\141\1\145\1\uffff\1\154\1\162\1\165\1"+
-        "\44\1\150\1\145\1\uffff\1\44\1\157\1\167\1\uffff\1\44\1\162\1\144"+
-        "\1\uffff\1\143\1\44\1\150\1\164\1\156\1\44\1\154\1\141\1\154\1\uffff"+
-        "\2\44\1\uffff\1\146\1\44\1\uffff\1\156\1\163\1\151\1\44\1\uffff"+
-        "\2\44\1\143\1\uffff\1\171\2\164\2\uffff\1\44\1\uffff\2\44\1\157"+
-        "\3\uffff\1\145\1\44\1\157\1\44\3\uffff\1\156\1\157\1\uffff\1\162"+
-        "\1\uffff\1\44\1\146\1\44\1\uffff\1\44\2\uffff";
+        "\1\0\1\75\1\174\1\46\1\72\5\75\2\56\2\52\1\uffff\1\141\1\154\1\164"+
+        "\1\146\1\141\1\145\7\uffff\1\163\2\uffff\1\145\1\141\1\150\1\145"+
+        "\1\150\1\145\2\60\1\44\1\uffff\2\0\2\uffff\1\75\16\uffff\1\75\3"+
+        "\uffff\1\76\2\uffff\1\74\12\uffff\1\154\1\uffff\1\164\1\163\1\141"+
+        "\1\160\1\151\1\160\2\44\1\154\1\162\2\156\7\uffff\1\44\2\uffff\1"+
+        "\146\1\44\1\163\1\151\1\167\1\154\1\160\1\162\1\165\1\164\1\uffff"+
+        "\1\60\14\uffff\2\44\2\145\1\164\1\145\1\164\1\157\1\164\2\uffff"+
+        "\1\163\1\44\1\141\1\145\1\uffff\1\141\1\uffff\1\145\1\143\1\154"+
+        "\1\44\1\154\1\145\1\157\1\44\1\145\1\165\2\uffff\1\156\1\44\1\151"+
+        "\1\162\1\143\1\162\1\141\1\145\1\uffff\1\154\1\162\1\165\1\44\1"+
+        "\150\1\145\1\uffff\1\44\1\157\1\167\1\uffff\1\44\1\162\1\144\1\uffff"+
+        "\1\143\1\44\1\150\1\164\1\156\1\44\1\154\1\141\1\154\1\uffff\2\44"+
+        "\1\uffff\1\146\1\44\1\uffff\1\156\1\163\1\151\1\44\1\uffff\2\44"+
+        "\1\143\1\uffff\1\171\2\164\2\uffff\1\44\1\uffff\2\44\1\157\3\uffff"+
+        "\1\145\1\44\1\157\1\44\3\uffff\1\156\1\157\1\uffff\1\162\1\uffff"+
+        "\1\44\1\146\1\44\1\uffff\1\44\2\uffff";
     static final String DFA19_maxS =
-        "\1\uffff\1\76\1\174\1\46\1\75\1\76\2\75\1\76\1\56\1\72\1\52\1\57"+
-        "\1\uffff\1\141\1\170\1\167\1\156\1\157\1\145\2\uffff\1\75\5\uffff"+
-        "\1\163\2\uffff\1\157\1\141\1\150\1\165\1\171\1\145\1\170\1\154\1"+
-        "\172\1\uffff\2\uffff\2\uffff\1\75\13\uffff\1\75\3\uffff\1\76\2\uffff"+
-        "\1\74\12\uffff\1\162\1\uffff\1\164\1\163\1\141\1\160\1\151\1\160"+
-        "\2\172\1\154\1\162\2\156\12\uffff\1\172\2\uffff\1\146\1\172\1\164"+
-        "\1\151\1\167\1\154\1\160\1\162\1\171\1\164\2\uffff\1\154\13\uffff"+
-        "\2\172\2\145\1\164\1\145\1\164\1\157\1\164\2\uffff\1\163\1\172\1"+
-        "\141\1\145\1\uffff\1\141\1\uffff\1\145\1\143\1\154\1\172\1\154\1"+
-        "\145\1\157\1\172\1\145\1\165\2\uffff\1\156\1\172\1\151\1\162\1\143"+
-        "\1\162\1\141\1\145\1\uffff\1\154\1\162\1\165\1\172\1\150\1\145\1"+
-        "\uffff\1\172\1\157\1\167\1\uffff\1\172\1\162\1\163\1\uffff\1\143"+
-        "\1\172\1\150\1\164\1\156\1\172\1\154\1\141\1\154\1\uffff\2\172\1"+
-        "\uffff\1\146\1\172\1\uffff\1\156\1\163\1\151\1\172\1\uffff\2\172"+
-        "\1\143\1\uffff\1\171\2\164\2\uffff\1\172\1\uffff\2\172\1\157\3\uffff"+
-        "\1\145\1\172\1\157\1\172\3\uffff\1\156\1\157\1\uffff\1\162\1\uffff"+
-        "\1\172\1\146\1\172\1\uffff\1\172\2\uffff";
+        "\1\uffff\1\76\1\174\1\46\2\75\1\76\2\75\1\76\1\56\1\72\1\52\1\57"+
+        "\1\uffff\1\141\1\170\1\167\1\156\1\157\1\145\7\uffff\1\163\2\uffff"+
+        "\1\157\1\141\1\150\1\165\1\171\1\145\1\170\1\154\1\172\1\uffff\2"+
+        "\uffff\2\uffff\1\75\16\uffff\1\75\3\uffff\1\76\2\uffff\1\74\12\uffff"+
+        "\1\162\1\uffff\1\164\1\163\1\141\1\160\1\151\1\160\2\172\1\154\1"+
+        "\162\2\156\7\uffff\1\172\2\uffff\1\146\1\172\1\164\1\151\1\167\1"+
+        "\154\1\160\1\162\1\171\1\164\1\uffff\1\154\14\uffff\2\172\2\145"+
+        "\1\164\1\145\1\164\1\157\1\164\2\uffff\1\163\1\172\1\141\1\145\1"+
+        "\uffff\1\141\1\uffff\1\145\1\143\1\154\1\172\1\154\1\145\1\157\1"+
+        "\172\1\145\1\165\2\uffff\1\156\1\172\1\151\1\162\1\143\1\162\1\141"+
+        "\1\145\1\uffff\1\154\1\162\1\165\1\172\1\150\1\145\1\uffff\1\172"+
+        "\1\157\1\167\1\uffff\1\172\1\162\1\163\1\uffff\1\143\1\172\1\150"+
+        "\1\164\1\156\1\172\1\154\1\141\1\154\1\uffff\2\172\1\uffff\1\146"+
+        "\1\172\1\uffff\1\156\1\163\1\151\1\172\1\uffff\2\172\1\143\1\uffff"+
+        "\1\171\2\164\2\uffff\1\172\1\uffff\2\172\1\157\3\uffff\1\145\1\172"+
+        "\1\157\1\172\3\uffff\1\156\1\157\1\uffff\1\162\1\uffff\1\172\1\146"+
+        "\1\172\1\uffff\1\172\2\uffff";
     static final String DFA19_acceptS =
-        "\15\uffff\1\32\6\uffff\1\47\1\50\1\uffff\1\52\1\53\1\54\1\55\1\56"+
-        "\1\uffff\1\62\1\63\11\uffff\1\115\2\uffff\1\121\1\122\1\uffff\1"+
-        "\21\1\1\1\2\1\107\1\3\1\104\1\4\1\25\1\5\1\16\1\26\1\uffff\1\33"+
-        "\1\12\1\14\1\uffff\1\22\1\15\1\uffff\1\34\1\23\1\106\1\103\1\30"+
-        "\1\27\1\117\1\120\1\31\1\32\1\uffff\1\115\14\uffff\1\47\1\50\1\57"+
-        "\1\105\1\51\1\52\1\53\1\54\1\55\1\56\1\uffff\1\62\1\63\12\uffff"+
-        "\1\112\1\113\1\uffff\1\114\1\116\1\121\1\10\1\6\1\11\1\7\1\24\1"+
-        "\13\1\17\1\20\11\uffff\1\46\1\64\4\uffff\1\61\1\uffff\1\72\12\uffff"+
-        "\1\35\1\110\10\uffff\1\45\6\uffff\1\73\3\uffff\1\100\3\uffff\1\65"+
-        "\11\uffff\1\70\2\uffff\1\74\2\uffff\1\111\4\uffff\1\42\3\uffff\1"+
-        "\43\3\uffff\1\102\1\71\1\uffff\1\76\3\uffff\1\37\1\66\1\40\4\uffff"+
-        "\1\75\1\77\1\36\2\uffff\1\101\1\uffff\1\67\3\uffff\1\41\1\uffff"+
-        "\1\44\1\60";
+        "\16\uffff\1\33\6\uffff\1\50\1\51\1\53\1\54\1\55\1\56\1\57\1\uffff"+
+        "\1\62\1\63\11\uffff\1\115\2\uffff\1\121\1\122\1\uffff\1\22\1\1\1"+
+        "\2\1\107\1\3\1\104\1\4\1\105\1\52\1\5\1\26\1\6\1\17\1\27\1\uffff"+
+        "\1\34\1\13\1\15\1\uffff\1\23\1\16\1\uffff\1\35\1\24\1\106\1\103"+
+        "\1\31\1\30\1\117\1\120\1\32\1\33\1\uffff\1\115\14\uffff\1\50\1\51"+
+        "\1\53\1\54\1\55\1\56\1\57\1\uffff\1\62\1\63\12\uffff\1\112\1\uffff"+
+        "\1\113\1\114\1\116\1\121\1\11\1\7\1\12\1\10\1\25\1\14\1\20\1\21"+
+        "\11\uffff\1\47\1\64\4\uffff\1\61\1\uffff\1\72\12\uffff\1\36\1\110"+
+        "\10\uffff\1\46\6\uffff\1\73\3\uffff\1\100\3\uffff\1\65\11\uffff"+
+        "\1\70\2\uffff\1\74\2\uffff\1\111\4\uffff\1\43\3\uffff\1\44\3\uffff"+
+        "\1\102\1\71\1\uffff\1\76\3\uffff\1\40\1\66\1\41\4\uffff\1\75\1\77"+
+        "\1\37\2\uffff\1\101\1\uffff\1\67\3\uffff\1\42\1\uffff\1\45\1\60";
     static final String DFA19_specialS =
         "\1\1\50\uffff\1\2\1\0\u00c2\uffff}>";
     static final String[] DFA19_transitionS = {
-            "\11\54\2\53\2\54\1\53\22\54\1\53\1\6\1\51\1\33\1\50\1\15\1\3"+
-            "\1\52\1\30\1\31\1\13\1\4\1\32\1\5\1\11\1\14\1\45\11\46\1\26"+
-            "\1\27\1\10\1\1\1\7\1\12\1\54\32\50\1\35\1\54\1\36\1\47\1\50"+
-            "\1\54\1\34\1\50\1\40\1\37\1\17\1\22\1\23\1\50\1\21\4\50\1\42"+
-            "\3\50\1\44\1\20\1\43\1\50\1\16\1\41\3\50\1\24\1\2\1\25\uff82"+
-            "\54",
+            "\11\54\2\53\2\54\1\53\22\54\1\53\1\7\1\51\1\33\1\50\1\16\1\3"+
+            "\1\52\1\30\1\31\1\14\1\5\1\32\1\6\1\12\1\15\1\45\11\46\1\4\1"+
+            "\27\1\11\1\1\1\10\1\13\1\54\32\50\1\35\1\54\1\36\1\47\1\50\1"+
+            "\54\1\34\1\50\1\40\1\37\1\20\1\23\1\24\1\50\1\22\4\50\1\42\3"+
+            "\50\1\44\1\21\1\43\1\50\1\17\1\41\3\50\1\25\1\2\1\26\uff82\54",
             "\1\55\1\56",
             "\1\60",
             "\1\62",
-            "\1\64",
-            "\1\66\1\67",
-            "\1\71",
-            "\1\73",
-            "\1\75\1\76",
-            "\1\100",
-            "\1\103\13\uffff\1\102",
-            "\1\105",
-            "\1\107\4\uffff\1\110",
+            "\1\65\2\uffff\1\64",
+            "\1\67",
+            "\1\71\1\72",
+            "\1\74",
+            "\1\76",
+            "\1\100\1\101",
+            "\1\103",
+            "\1\106\13\uffff\1\105",
+            "\1\110",
+            "\1\112\4\uffff\1\113",
             "",
-            "\1\113",
-            "\1\116\13\uffff\1\115",
-            "\1\117\1\120\1\uffff\1\121",
-            "\1\124\6\uffff\1\122\1\123",
-            "\1\125\7\uffff\1\127\5\uffff\1\126",
-            "\1\130",
+            "\1\116",
+            "\1\121\13\uffff\1\120",
+            "\1\122\1\123\1\uffff\1\124",
+            "\1\127\6\uffff\1\125\1\126",
+            "\1\130\7\uffff\1\132\5\uffff\1\131",
+            "\1\133",
             "",
             "",
-            "\1\134\2\uffff\1\133",
             "",
             "",
             "",
@@ -3140,18 +3137,21 @@ public class InternalRandomEMFLexer extends Lexer {
             "\1\152\17\uffff\1\153",
             "\1\155\11\uffff\1\156\6\uffff\1\154",
             "\1\157",
-            "\12\162\10\uffff\1\163\1\uffff\3\163\5\uffff\1\163\13\uffff"+
-            "\1\160\6\uffff\1\162\2\uffff\1\163\1\uffff\3\163\5\uffff\1\163"+
+            "\12\161\10\uffff\1\163\1\uffff\3\163\5\uffff\1\163\13\uffff"+
+            "\1\160\6\uffff\1\161\2\uffff\1\163\1\uffff\3\163\5\uffff\1\163"+
             "\13\uffff\1\160",
-            "\12\162\10\uffff\1\163\1\uffff\3\163\5\uffff\1\163\22\uffff"+
-            "\1\162\2\uffff\1\163\1\uffff\3\163\5\uffff\1\163",
-            "\1\114\34\uffff\32\114\4\uffff\1\114\1\uffff\32\114",
+            "\12\161\10\uffff\1\163\1\uffff\3\163\5\uffff\1\163\22\uffff"+
+            "\1\161\2\uffff\1\163\1\uffff\3\163\5\uffff\1\163",
+            "\1\117\34\uffff\32\117\4\uffff\1\117\1\uffff\32\117",
             "",
             "\0\164",
             "\0\164",
             "",
             "",
             "\1\166",
+            "",
+            "",
+            "",
             "",
             "",
             "",
@@ -3189,10 +3189,10 @@ public class InternalRandomEMFLexer extends Lexer {
             "\1\u0083",
             "\1\u0084",
             "\1\u0085",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\22\114\1\u0086\7\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\22\117\1\u0086\7\117",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u0089",
             "\1\u008a",
             "\1\u008b",
@@ -3204,16 +3204,13 @@ public class InternalRandomEMFLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
             "",
             "\1\u008e",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u0090\1\u0091",
             "\1\u0092",
             "\1\u0093",
@@ -3223,10 +3220,8 @@ public class InternalRandomEMFLexer extends Lexer {
             "\1\u0098\3\uffff\1\u0097",
             "\1\u0099",
             "",
-            "",
-            "\12\162\10\uffff\1\163\1\uffff\3\163\5\uffff\1\163\22\uffff"+
-            "\1\162\2\uffff\1\163\1\uffff\3\163\5\uffff\1\163",
-            "",
+            "\12\161\10\uffff\1\163\1\uffff\3\163\5\uffff\1\163\22\uffff"+
+            "\1\161\2\uffff\1\163\1\uffff\3\163\5\uffff\1\163",
             "",
             "",
             "",
@@ -3237,10 +3232,12 @@ public class InternalRandomEMFLexer extends Lexer {
             "",
             "",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "",
+            "",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u009c",
             "\1\u009d",
             "\1\u009e",
@@ -3251,8 +3248,8 @@ public class InternalRandomEMFLexer extends Lexer {
             "",
             "",
             "\1\u00a3",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00a5",
             "\1\u00a6",
             "",
@@ -3261,20 +3258,20 @@ public class InternalRandomEMFLexer extends Lexer {
             "\1\u00a8",
             "\1\u00a9",
             "\1\u00aa",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00ac",
             "\1\u00ad",
             "\1\u00ae",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00b0",
             "\1\u00b1",
             "",
             "",
             "\1\u00b2",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00b4",
             "\1\u00b5",
             "\1\u00b6",
@@ -3285,52 +3282,52 @@ public class InternalRandomEMFLexer extends Lexer {
             "\1\u00ba",
             "\1\u00bb",
             "\1\u00bc",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00be",
             "\1\u00bf",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00c1",
             "\1\u00c2",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00c4",
             "\1\u00c5\16\uffff\1\u00c6",
             "",
             "\1\u00c7",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00c9",
             "\1\u00ca",
             "\1\u00cb",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00cd",
             "\1\u00ce",
             "\1\u00cf",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
             "\1\u00d2",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
             "\1\u00d4",
             "\1\u00d5",
             "\1\u00d6",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00da",
             "",
             "\1\u00db",
@@ -3338,23 +3335,23 @@ public class InternalRandomEMFLexer extends Lexer {
             "\1\u00dd",
             "",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00e1",
             "",
             "",
             "",
             "\1\u00e2",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00e4",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
             "",
             "",
@@ -3363,14 +3360,14 @@ public class InternalRandomEMFLexer extends Lexer {
             "",
             "\1\u00e8",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "\1\u00ea",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
-            "\1\114\13\uffff\12\114\7\uffff\32\114\4\uffff\1\114\1\uffff"+
-            "\32\114",
+            "\1\117\13\uffff\12\117\7\uffff\32\117\4\uffff\1\117\1\uffff"+
+            "\32\117",
             "",
             ""
     };
@@ -3431,43 +3428,43 @@ public class InternalRandomEMFLexer extends Lexer {
 
                         else if ( (LA19_0=='&') ) {s = 3;}
 
-                        else if ( (LA19_0=='+') ) {s = 4;}
+                        else if ( (LA19_0==':') ) {s = 4;}
 
-                        else if ( (LA19_0=='-') ) {s = 5;}
+                        else if ( (LA19_0=='+') ) {s = 5;}
 
-                        else if ( (LA19_0=='!') ) {s = 6;}
+                        else if ( (LA19_0=='-') ) {s = 6;}
 
-                        else if ( (LA19_0=='>') ) {s = 7;}
+                        else if ( (LA19_0=='!') ) {s = 7;}
 
-                        else if ( (LA19_0=='<') ) {s = 8;}
+                        else if ( (LA19_0=='>') ) {s = 8;}
 
-                        else if ( (LA19_0=='.') ) {s = 9;}
+                        else if ( (LA19_0=='<') ) {s = 9;}
 
-                        else if ( (LA19_0=='?') ) {s = 10;}
+                        else if ( (LA19_0=='.') ) {s = 10;}
 
-                        else if ( (LA19_0=='*') ) {s = 11;}
+                        else if ( (LA19_0=='?') ) {s = 11;}
 
-                        else if ( (LA19_0=='/') ) {s = 12;}
+                        else if ( (LA19_0=='*') ) {s = 12;}
 
-                        else if ( (LA19_0=='%') ) {s = 13;}
+                        else if ( (LA19_0=='/') ) {s = 13;}
 
-                        else if ( (LA19_0=='v') ) {s = 14;}
+                        else if ( (LA19_0=='%') ) {s = 14;}
 
-                        else if ( (LA19_0=='e') ) {s = 15;}
+                        else if ( (LA19_0=='v') ) {s = 15;}
 
-                        else if ( (LA19_0=='s') ) {s = 16;}
+                        else if ( (LA19_0=='e') ) {s = 16;}
 
-                        else if ( (LA19_0=='i') ) {s = 17;}
+                        else if ( (LA19_0=='s') ) {s = 17;}
 
-                        else if ( (LA19_0=='f') ) {s = 18;}
+                        else if ( (LA19_0=='i') ) {s = 18;}
 
-                        else if ( (LA19_0=='g') ) {s = 19;}
+                        else if ( (LA19_0=='f') ) {s = 19;}
 
-                        else if ( (LA19_0=='{') ) {s = 20;}
+                        else if ( (LA19_0=='g') ) {s = 20;}
 
-                        else if ( (LA19_0=='}') ) {s = 21;}
+                        else if ( (LA19_0=='{') ) {s = 21;}
 
-                        else if ( (LA19_0==':') ) {s = 22;}
+                        else if ( (LA19_0=='}') ) {s = 22;}
 
                         else if ( (LA19_0==';') ) {s = 23;}
 

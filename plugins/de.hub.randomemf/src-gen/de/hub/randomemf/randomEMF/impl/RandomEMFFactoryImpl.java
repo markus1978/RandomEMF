@@ -67,8 +67,6 @@ public class RandomEMFFactoryImpl extends EFactoryImpl implements RandomEMFFacto
       case RandomEMFPackage.GENERATOR: return createGenerator();
       case RandomEMFPackage.CLASS_RULE: return createClassRule();
       case RandomEMFPackage.FEATURE_RULE: return createFeatureRule();
-      case RandomEMFPackage.ADD_RULE: return createAddRule();
-      case RandomEMFPackage.SET_RULE: return createSetRule();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -105,28 +103,6 @@ public class RandomEMFFactoryImpl extends EFactoryImpl implements RandomEMFFacto
   {
     FeatureRuleImpl featureRule = new FeatureRuleImpl();
     return featureRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AddRule createAddRule()
-  {
-    AddRuleImpl addRule = new AddRuleImpl();
-    return addRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SetRule createSetRule()
-  {
-    SetRuleImpl setRule = new SetRuleImpl();
-    return setRule;
   }
 
   /**

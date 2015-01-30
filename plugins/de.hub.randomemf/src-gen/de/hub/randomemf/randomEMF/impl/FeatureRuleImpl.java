@@ -9,7 +9,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -25,7 +25,9 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#getEFeature <em>EFeature</em>}</li>
+ *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#isIsAddRule <em>Is Add Rule</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#getMultiplicityExpr <em>Multiplicity Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,7 +43,27 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
    * @generated
    * @ordered
    */
-  protected EReference eFeature;
+  protected EStructuralFeature eFeature;
+
+  /**
+   * The default value of the '{@link #isIsAddRule() <em>Is Add Rule</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAddRule()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ADD_RULE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAddRule() <em>Is Add Rule</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAddRule()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAddRule = IS_ADD_RULE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
@@ -52,6 +74,16 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
    * @ordered
    */
   protected XExpression expr;
+
+  /**
+   * The cached value of the '{@link #getMultiplicityExpr() <em>Multiplicity Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMultiplicityExpr()
+   * @generated
+   * @ordered
+   */
+  protected XExpression multiplicityExpr;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,12 +111,12 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEFeature()
+  public EStructuralFeature getEFeature()
   {
     if (eFeature != null && eFeature.eIsProxy())
     {
       InternalEObject oldEFeature = (InternalEObject)eFeature;
-      eFeature = (EReference)eResolveProxy(oldEFeature);
+      eFeature = (EStructuralFeature)eResolveProxy(oldEFeature);
       if (eFeature != oldEFeature)
       {
         if (eNotificationRequired())
@@ -99,7 +131,7 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference basicGetEFeature()
+  public EStructuralFeature basicGetEFeature()
   {
     return eFeature;
   }
@@ -109,12 +141,35 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEFeature(EReference newEFeature)
+  public void setEFeature(EStructuralFeature newEFeature)
   {
-    EReference oldEFeature = eFeature;
+    EStructuralFeature oldEFeature = eFeature;
     eFeature = newEFeature;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.FEATURE_RULE__EFEATURE, oldEFeature, eFeature));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isIsAddRule()
+  {
+    return isAddRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIsAddRule(boolean newIsAddRule)
+  {
+    boolean oldIsAddRule = isAddRule;
+    isAddRule = newIsAddRule;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE, oldIsAddRule, isAddRule));
   }
 
   /**
@@ -170,6 +225,54 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
    * <!-- end-user-doc -->
    * @generated
    */
+  public XExpression getMultiplicityExpr()
+  {
+    return multiplicityExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMultiplicityExpr(XExpression newMultiplicityExpr, NotificationChain msgs)
+  {
+    XExpression oldMultiplicityExpr = multiplicityExpr;
+    multiplicityExpr = newMultiplicityExpr;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR, oldMultiplicityExpr, newMultiplicityExpr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMultiplicityExpr(XExpression newMultiplicityExpr)
+  {
+    if (newMultiplicityExpr != multiplicityExpr)
+    {
+      NotificationChain msgs = null;
+      if (multiplicityExpr != null)
+        msgs = ((InternalEObject)multiplicityExpr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR, null, msgs);
+      if (newMultiplicityExpr != null)
+        msgs = ((InternalEObject)newMultiplicityExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR, null, msgs);
+      msgs = basicSetMultiplicityExpr(newMultiplicityExpr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR, newMultiplicityExpr, newMultiplicityExpr));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -177,6 +280,8 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
     {
       case RandomEMFPackage.FEATURE_RULE__EXPR:
         return basicSetExpr(null, msgs);
+      case RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR:
+        return basicSetMultiplicityExpr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -194,8 +299,12 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
         if (resolve) return getEFeature();
         return basicGetEFeature();
+      case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
+        return isIsAddRule();
       case RandomEMFPackage.FEATURE_RULE__EXPR:
         return getExpr();
+      case RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR:
+        return getMultiplicityExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -211,10 +320,16 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
     switch (featureID)
     {
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
-        setEFeature((EReference)newValue);
+        setEFeature((EStructuralFeature)newValue);
+        return;
+      case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
+        setIsAddRule((Boolean)newValue);
         return;
       case RandomEMFPackage.FEATURE_RULE__EXPR:
         setExpr((XExpression)newValue);
+        return;
+      case RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR:
+        setMultiplicityExpr((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,10 +346,16 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
     switch (featureID)
     {
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
-        setEFeature((EReference)null);
+        setEFeature((EStructuralFeature)null);
+        return;
+      case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
+        setIsAddRule(IS_ADD_RULE_EDEFAULT);
         return;
       case RandomEMFPackage.FEATURE_RULE__EXPR:
         setExpr((XExpression)null);
+        return;
+      case RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR:
+        setMultiplicityExpr((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -252,10 +373,31 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
     {
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
         return eFeature != null;
+      case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
+        return isAddRule != IS_ADD_RULE_EDEFAULT;
       case RandomEMFPackage.FEATURE_RULE__EXPR:
         return expr != null;
+      case RandomEMFPackage.FEATURE_RULE__MULTIPLICITY_EXPR:
+        return multiplicityExpr != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (isAddRule: ");
+    result.append(isAddRule);
+    result.append(')');
+    return result.toString();
   }
 
 } //FeatureRuleImpl

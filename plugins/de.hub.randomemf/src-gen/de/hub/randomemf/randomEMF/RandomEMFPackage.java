@@ -195,41 +195,13 @@ public interface RandomEMFPackage extends EPackage
   int FEATURE_RULE__EFEATURE = 0;
 
   /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * The feature id for the '<em><b>Is Add Rule</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__EXPR = 1;
-
-  /**
-   * The number of structural features of the '<em>Feature Rule</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_RULE_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.AddRuleImpl <em>Add Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hub.randomemf.randomEMF.impl.AddRuleImpl
-   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getAddRule()
-   * @generated
-   */
-  int ADD_RULE = 3;
-
-  /**
-   * The feature id for the '<em><b>EFeature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_RULE__EFEATURE = FEATURE_RULE__EFEATURE;
+  int FEATURE_RULE__IS_ADD_RULE = 1;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -238,7 +210,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADD_RULE__EXPR = FEATURE_RULE__EXPR;
+  int FEATURE_RULE__EXPR = 2;
 
   /**
    * The feature id for the '<em><b>Multiplicity Expr</b></em>' containment reference.
@@ -247,53 +219,16 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADD_RULE__MULTIPLICITY_EXPR = FEATURE_RULE_FEATURE_COUNT + 0;
+  int FEATURE_RULE__MULTIPLICITY_EXPR = 3;
 
   /**
-   * The number of structural features of the '<em>Add Rule</em>' class.
+   * The number of structural features of the '<em>Feature Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADD_RULE_FEATURE_COUNT = FEATURE_RULE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.SetRuleImpl <em>Set Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hub.randomemf.randomEMF.impl.SetRuleImpl
-   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getSetRule()
-   * @generated
-   */
-  int SET_RULE = 4;
-
-  /**
-   * The feature id for the '<em><b>EFeature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_RULE__EFEATURE = FEATURE_RULE__EFEATURE;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_RULE__EXPR = FEATURE_RULE__EXPR;
-
-  /**
-   * The number of structural features of the '<em>Set Rule</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_RULE_FEATURE_COUNT = FEATURE_RULE_FEATURE_COUNT + 0;
+  int FEATURE_RULE_FEATURE_COUNT = 4;
 
 
   /**
@@ -437,6 +372,17 @@ public interface RandomEMFPackage extends EPackage
   EReference getFeatureRule_EFeature();
 
   /**
+   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.FeatureRule#isIsAddRule <em>Is Add Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Add Rule</em>'.
+   * @see de.hub.randomemf.randomEMF.FeatureRule#isIsAddRule()
+   * @see #getFeatureRule()
+   * @generated
+   */
+  EAttribute getFeatureRule_IsAddRule();
+
+  /**
    * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.FeatureRule#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -448,35 +394,15 @@ public interface RandomEMFPackage extends EPackage
   EReference getFeatureRule_Expr();
 
   /**
-   * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.AddRule <em>Add Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Add Rule</em>'.
-   * @see de.hub.randomemf.randomEMF.AddRule
-   * @generated
-   */
-  EClass getAddRule();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.AddRule#getMultiplicityExpr <em>Multiplicity Expr</em>}'.
+   * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.FeatureRule#getMultiplicityExpr <em>Multiplicity Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Multiplicity Expr</em>'.
-   * @see de.hub.randomemf.randomEMF.AddRule#getMultiplicityExpr()
-   * @see #getAddRule()
+   * @see de.hub.randomemf.randomEMF.FeatureRule#getMultiplicityExpr()
+   * @see #getFeatureRule()
    * @generated
    */
-  EReference getAddRule_MultiplicityExpr();
-
-  /**
-   * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.SetRule <em>Set Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Set Rule</em>'.
-   * @see de.hub.randomemf.randomEMF.SetRule
-   * @generated
-   */
-  EClass getSetRule();
+  EReference getFeatureRule_MultiplicityExpr();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -612,6 +538,14 @@ public interface RandomEMFPackage extends EPackage
     EReference FEATURE_RULE__EFEATURE = eINSTANCE.getFeatureRule_EFeature();
 
     /**
+     * The meta object literal for the '<em><b>Is Add Rule</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEATURE_RULE__IS_ADD_RULE = eINSTANCE.getFeatureRule_IsAddRule();
+
+    /**
      * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -620,32 +554,12 @@ public interface RandomEMFPackage extends EPackage
     EReference FEATURE_RULE__EXPR = eINSTANCE.getFeatureRule_Expr();
 
     /**
-     * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.AddRuleImpl <em>Add Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hub.randomemf.randomEMF.impl.AddRuleImpl
-     * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getAddRule()
-     * @generated
-     */
-    EClass ADD_RULE = eINSTANCE.getAddRule();
-
-    /**
      * The meta object literal for the '<em><b>Multiplicity Expr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ADD_RULE__MULTIPLICITY_EXPR = eINSTANCE.getAddRule_MultiplicityExpr();
-
-    /**
-     * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.SetRuleImpl <em>Set Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hub.randomemf.randomEMF.impl.SetRuleImpl
-     * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getSetRule()
-     * @generated
-     */
-    EClass SET_RULE = eINSTANCE.getSetRule();
+    EReference FEATURE_RULE__MULTIPLICITY_EXPR = eINSTANCE.getFeatureRule_MultiplicityExpr();
 
   }
 

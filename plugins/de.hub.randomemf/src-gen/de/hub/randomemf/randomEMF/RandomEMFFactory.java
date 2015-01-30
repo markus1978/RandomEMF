@@ -50,24 +50,6 @@ public interface RandomEMFFactory extends EFactory
   FeatureRule createFeatureRule();
 
   /**
-   * Returns a new object of class '<em>Add Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Add Rule</em>'.
-   * @generated
-   */
-  AddRule createAddRule();
-
-  /**
-   * Returns a new object of class '<em>Set Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Set Rule</em>'.
-   * @generated
-   */
-  SetRule createSetRule();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

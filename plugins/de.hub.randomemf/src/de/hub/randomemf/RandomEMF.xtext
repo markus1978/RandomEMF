@@ -6,7 +6,7 @@ generate randomEMF "http://www.hub.de/randomemf/RandomEMF"
 Generator:
 	(importSection = XImportSection)?
  	'generator' name+=ValidID 'for' ecorePackage=[Ecore::EPackage|ID] 'in' importURI=STRING '{'
- 		(rules += ClassRule)?
+ 		(rules += ClassRule)*
  	'}'
 ;
 
@@ -17,15 +17,6 @@ ClassRule:
 ;
 
 FeatureRule:
-	AddRule | SetRule
-;
-
-AddRule:
-	eFeature=[Ecore::EReference|ID] '+='
-	expr=XExpression '#' multiplicityExpr=XExpression
-;
-
-SetRule:
-	eFeature=[Ecore::EReference|ID] ':='
-	expr=XExpression
+	eFeature=[Ecore::EStructuralFeature|ID] (isAddRule ?= '+=' | ':=')
+	expr=XExpression ('#' multiplicityExpr=XExpression)?
 ;

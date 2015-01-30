@@ -93,22 +93,6 @@ public class RandomEMFSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RandomEMFPackage.ADD_RULE:
-      {
-        AddRule addRule = (AddRule)theEObject;
-        T result = caseAddRule(addRule);
-        if (result == null) result = caseFeatureRule(addRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RandomEMFPackage.SET_RULE:
-      {
-        SetRule setRule = (SetRule)theEObject;
-        T result = caseSetRule(setRule);
-        if (result == null) result = caseFeatureRule(setRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
   }
@@ -157,38 +141,6 @@ public class RandomEMFSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFeatureRule(FeatureRule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Add Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Add Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAddRule(AddRule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Set Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Set Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSetRule(SetRule object)
   {
     return null;
   }

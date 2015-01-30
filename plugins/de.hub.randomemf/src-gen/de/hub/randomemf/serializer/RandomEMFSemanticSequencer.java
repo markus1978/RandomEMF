@@ -2,11 +2,10 @@ package de.hub.randomemf.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import de.hub.randomemf.randomEMF.AddRule;
 import de.hub.randomemf.randomEMF.ClassRule;
+import de.hub.randomemf.randomEMF.FeatureRule;
 import de.hub.randomemf.randomEMF.Generator;
 import de.hub.randomemf.randomEMF.RandomEMFPackage;
-import de.hub.randomemf.randomEMF.SetRule;
 import de.hub.randomemf.services.RandomEMFGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
@@ -18,14 +17,11 @@ import org.eclipse.xtext.common.types.JvmUpperBound;
 import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
 import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.eclipse.xtext.xbase.XAssignment;
 import org.eclipse.xtext.xbase.XBinaryOperation;
 import org.eclipse.xtext.xbase.XBlockExpression;
@@ -69,29 +65,21 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == RandomEMFPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case RandomEMFPackage.ADD_RULE:
-				if(context == grammarAccess.getAddRuleRule() ||
-				   context == grammarAccess.getFeatureRuleRule()) {
-					sequence_AddRule(context, (AddRule) semanticObject); 
-					return; 
-				}
-				else break;
 			case RandomEMFPackage.CLASS_RULE:
 				if(context == grammarAccess.getClassRuleRule()) {
 					sequence_ClassRule(context, (ClassRule) semanticObject); 
 					return; 
 				}
 				else break;
-			case RandomEMFPackage.GENERATOR:
-				if(context == grammarAccess.getGeneratorRule()) {
-					sequence_Generator(context, (Generator) semanticObject); 
+			case RandomEMFPackage.FEATURE_RULE:
+				if(context == grammarAccess.getFeatureRuleRule()) {
+					sequence_FeatureRule(context, (FeatureRule) semanticObject); 
 					return; 
 				}
 				else break;
-			case RandomEMFPackage.SET_RULE:
-				if(context == grammarAccess.getFeatureRuleRule() ||
-				   context == grammarAccess.getSetRuleRule()) {
-					sequence_SetRule(context, (SetRule) semanticObject); 
+			case RandomEMFPackage.GENERATOR:
+				if(context == grammarAccess.getGeneratorRule()) {
+					sequence_Generator(context, (Generator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1039,28 +1027,6 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (eFeature=[EReference|ID] expr=XExpression multiplicityExpr=XExpression)
-	 */
-	protected void sequence_AddRule(EObject context, AddRule semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EFEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EFEATURE));
-			if(transientValues.isValueTransient(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EXPR));
-			if(transientValues.isValueTransient(semanticObject, RandomEMFPackage.Literals.ADD_RULE__MULTIPLICITY_EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RandomEMFPackage.Literals.ADD_RULE__MULTIPLICITY_EXPR));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAddRuleAccess().getEFeatureEReferenceIDTerminalRuleCall_0_0_1(), semanticObject.getEFeature());
-		feeder.accept(grammarAccess.getAddRuleAccess().getExprXExpressionParserRuleCall_2_0(), semanticObject.getExpr());
-		feeder.accept(grammarAccess.getAddRuleAccess().getMultiplicityExprXExpressionParserRuleCall_4_0(), semanticObject.getMultiplicityExpr());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (name=ValidID (params+=JvmFormalParameter params+=JvmFormalParameter*)? eClass=[EClass|ID] rules+=FeatureRule*)
 	 */
 	protected void sequence_ClassRule(EObject context, ClassRule semanticObject) {
@@ -1070,28 +1036,18 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (importSection=XImportSection? name+=ValidID ecorePackage=[EPackage|ID] importURI=STRING rules+=ClassRule?)
+	 *     (eFeature=[EStructuralFeature|ID] isAddRule?='+='? expr=XExpression multiplicityExpr=XExpression?)
 	 */
-	protected void sequence_Generator(EObject context, Generator semanticObject) {
+	protected void sequence_FeatureRule(EObject context, FeatureRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (eFeature=[EReference|ID] expr=XExpression)
+	 *     (importSection=XImportSection? name+=ValidID ecorePackage=[EPackage|ID] importURI=STRING rules+=ClassRule*)
 	 */
-	protected void sequence_SetRule(EObject context, SetRule semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EFEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EFEATURE));
-			if(transientValues.isValueTransient(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RandomEMFPackage.Literals.FEATURE_RULE__EXPR));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSetRuleAccess().getEFeatureEReferenceIDTerminalRuleCall_0_0_1(), semanticObject.getEFeature());
-		feeder.accept(grammarAccess.getSetRuleAccess().getExprXExpressionParserRuleCall_2_0(), semanticObject.getExpr());
-		feeder.finish();
+	protected void sequence_Generator(EObject context, Generator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }
