@@ -1,0 +1,22 @@
+grammar de.hub.randomemf.RandomEMF with org.eclipse.xtext.xbase.Xbase
+
+import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+generate randomEMF "http://www.hub.de/randomemf/RandomEMF"
+
+Generator:
+	importSection=XImportSection?
+ 	'generator' name+=ValidID 'for' ecorePackage=[Ecore::EPackage|ID] 'in' importURI=STRING '{'
+ 		(rules += ClassRule)*
+ 	'}'
+;
+
+ClassRule:
+	name=ValidID ('(' params+=JvmFormalParameter (',' params+=JvmFormalParameter)* ')')? ':' eClass=[Ecore::EClass|ID] '->'
+		(rules+=FeatureRule)*
+	';'
+;
+
+FeatureRule:
+	eFeature=[Ecore::EStructuralFeature|ID] (isAddRule ?= '+=' | ':=')
+	expr=XExpression ('#' multiplicityExpr=XExpression)?
+;
