@@ -166,39 +166,49 @@ public class RandomEMFJvmModelInferrer extends AbstractModelInferrer {
                             _builder.append(");\t\t");
                             _builder.newLineIfNotEmpty();
                           } else {
+                            _builder.append("{\t\t\t\t\t\t\t\t");
+                            _builder.newLine();
+                            _builder.append("\t");
                             _builder.append("org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)result.eGet(result.eClass().getEStructuralFeature(");
                             EStructuralFeature _eFeature_1 = featureRule.getEFeature();
                             int _featureID_1 = _eFeature_1.getFeatureID();
-                            _builder.append(_featureID_1, "");
+                            _builder.append(_featureID_1, "\t");
                             _builder.append("));");
                             _builder.newLineIfNotEmpty();
                             {
                               XExpression _multiplicityExpr = featureRule.getMultiplicityExpr();
                               boolean _equals = Objects.equal(_multiplicityExpr, null);
                               if (_equals) {
+                                _builder.append("\t");
                                 _builder.append("values.add(");
                                 String _callSyntheticFeaturRuleExpr_1 = RandomEMFJvmModelInferrer.this.callSyntheticFeaturRuleExpr(featureRule, "expr", (index).intValue());
-                                _builder.append(_callSyntheticFeaturRuleExpr_1, "");
+                                _builder.append(_callSyntheticFeaturRuleExpr_1, "\t");
                                 _builder.append(");");
                                 _builder.newLineIfNotEmpty();
                               } else {
+                                _builder.append("\t");
                                 _builder.append("int iterations = ");
                                 String _callSyntheticFeaturRuleExpr_2 = RandomEMFJvmModelInferrer.this.callSyntheticFeaturRuleExpr(featureRule, "multiExpr", (index).intValue());
-                                _builder.append(_callSyntheticFeaturRuleExpr_2, "");
+                                _builder.append(_callSyntheticFeaturRuleExpr_2, "\t");
                                 _builder.append(";");
                                 _builder.newLineIfNotEmpty();
+                                _builder.append("\t");
                                 _builder.append("for (int i = 0; i < iterations; i++) {");
                                 _builder.newLine();
                                 _builder.append("\t");
+                                _builder.append("\t");
                                 _builder.append("values.add(");
                                 String _callSyntheticFeaturRuleExpr_3 = RandomEMFJvmModelInferrer.this.callSyntheticFeaturRuleExpr(featureRule, "expr", (index).intValue());
-                                _builder.append(_callSyntheticFeaturRuleExpr_3, "\t");
+                                _builder.append(_callSyntheticFeaturRuleExpr_3, "\t\t");
                                 _builder.append(");");
                                 _builder.newLineIfNotEmpty();
+                                _builder.append("\t");
                                 _builder.append("}");
                                 _builder.newLine();
                               }
                             }
+                            _builder.append("}");
+                            _builder.newLine();
                           }
                         }
                       }

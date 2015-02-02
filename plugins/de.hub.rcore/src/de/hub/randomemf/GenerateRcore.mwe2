@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/de/hub/rcore/Rcore.xtext"
+var grammarURI = "classpath:/de/hub/randomemf/Rcore.xtext"
 var fileExtensions = "rcore"
 var projectName = "de.hub.rcore"
 var runtimeProject = "../${projectName}"

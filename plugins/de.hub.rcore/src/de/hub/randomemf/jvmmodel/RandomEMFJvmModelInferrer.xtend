@@ -53,16 +53,18 @@ class RandomEMFJvmModelInferrer extends AbstractModelInferrer {
 								«val featureRule = classRule.rules.get(index)»
 								«IF (!featureRule.isAddRule)»
 									result.eSet(result.eClass().getEStructuralFeature(«featureRule.EFeature.featureID»), «featureRule.callSyntheticFeaturRuleExpr('expr', index)»);		
-								«ELSE»									
-									org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)result.eGet(result.eClass().getEStructuralFeature(«featureRule.EFeature.featureID»));
-									«IF featureRule.multiplicityExpr == null»											
-										values.add(«featureRule.callSyntheticFeaturRuleExpr('expr', index)»);
-									«ELSE»	
-										int iterations = «featureRule.callSyntheticFeaturRuleExpr('multiExpr', index)»;
-										for (int i = 0; i < iterations; i++) {
+								«ELSE»	
+									{								
+										org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)result.eGet(result.eClass().getEStructuralFeature(«featureRule.EFeature.featureID»));
+										«IF featureRule.multiplicityExpr == null»											
 											values.add(«featureRule.callSyntheticFeaturRuleExpr('expr', index)»);
-										}
-									«ENDIF»
+										«ELSE»	
+											int iterations = «featureRule.callSyntheticFeaturRuleExpr('multiExpr', index)»;
+											for (int i = 0; i < iterations; i++) {
+												values.add(«featureRule.callSyntheticFeaturRuleExpr('expr', index)»);
+											}
+										«ENDIF»
+									}
 								«ENDIF»								
 							«ENDFOR»
 							return result;
