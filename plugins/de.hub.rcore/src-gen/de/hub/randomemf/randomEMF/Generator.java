@@ -17,6 +17,7 @@ import org.eclipse.xtext.xtype.XImportSection;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.hub.randomemf.randomEMF.Generator#getPackage <em>Package</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.Generator#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.Generator#getName <em>Name</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.Generator#getEcorePackage <em>Ecore Package</em>}</li>
@@ -31,6 +32,32 @@ import org.eclipse.xtext.xtype.XImportSection;
  */
 public interface Generator extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Package</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Package</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Package</em>' attribute.
+   * @see #setPackage(String)
+   * @see de.hub.randomemf.randomEMF.RandomEMFPackage#getGenerator_Package()
+   * @model
+   * @generated
+   */
+  String getPackage();
+
+  /**
+   * Sets the value of the '{@link de.hub.randomemf.randomEMF.Generator#getPackage <em>Package</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Package</em>' attribute.
+   * @see #getPackage()
+   * @generated
+   */
+  void setPackage(String value);
+
   /**
    * Returns the value of the '<em><b>Import Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -58,20 +85,30 @@ public interface Generator extends EObject
   void setImportSection(XImportSection value);
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute list.
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
    * @see de.hub.randomemf.randomEMF.RandomEMFPackage#getGenerator_Name()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getName();
+  String getName();
+
+  /**
+   * Sets the value of the '{@link de.hub.randomemf.randomEMF.Generator#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Ecore Package</b></em>' reference.

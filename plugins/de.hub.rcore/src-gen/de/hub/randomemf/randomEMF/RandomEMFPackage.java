@@ -67,22 +67,31 @@ public interface RandomEMFPackage extends EPackage
   int GENERATOR = 0;
 
   /**
+   * The feature id for the '<em><b>Package</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERATOR__PACKAGE = 0;
+
+  /**
    * The feature id for the '<em><b>Import Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERATOR__IMPORT_SECTION = 0;
+  int GENERATOR__IMPORT_SECTION = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERATOR__NAME = 1;
+  int GENERATOR__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Ecore Package</b></em>' reference.
@@ -91,7 +100,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERATOR__ECORE_PACKAGE = 2;
+  int GENERATOR__ECORE_PACKAGE = 3;
 
   /**
    * The feature id for the '<em><b>Import URI</b></em>' attribute.
@@ -100,7 +109,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERATOR__IMPORT_URI = 3;
+  int GENERATOR__IMPORT_URI = 4;
 
   /**
    * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -109,7 +118,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERATOR__RULES = 4;
+  int GENERATOR__RULES = 5;
 
   /**
    * The number of structural features of the '<em>Generator</em>' class.
@@ -118,7 +127,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERATOR_FEATURE_COUNT = 5;
+  int GENERATOR_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.ClassRuleImpl <em>Class Rule</em>}' class.
@@ -195,13 +204,22 @@ public interface RandomEMFPackage extends EPackage
   int FEATURE_RULE__EFEATURE = 0;
 
   /**
+   * The feature id for the '<em><b>Concrete Value Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_RULE__CONCRETE_VALUE_TYPE = 1;
+
+  /**
    * The feature id for the '<em><b>Is Add Rule</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__IS_ADD_RULE = 1;
+  int FEATURE_RULE__IS_ADD_RULE = 2;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -210,7 +228,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__EXPR = 2;
+  int FEATURE_RULE__EXPR = 3;
 
   /**
    * The feature id for the '<em><b>Multiplicity Expr</b></em>' containment reference.
@@ -219,7 +237,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__MULTIPLICITY_EXPR = 3;
+  int FEATURE_RULE__MULTIPLICITY_EXPR = 4;
 
   /**
    * The number of structural features of the '<em>Feature Rule</em>' class.
@@ -228,7 +246,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_RULE_FEATURE_COUNT = 4;
+  int FEATURE_RULE_FEATURE_COUNT = 5;
 
 
   /**
@@ -242,6 +260,17 @@ public interface RandomEMFPackage extends EPackage
   EClass getGenerator();
 
   /**
+   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.Generator#getPackage <em>Package</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Package</em>'.
+   * @see de.hub.randomemf.randomEMF.Generator#getPackage()
+   * @see #getGenerator()
+   * @generated
+   */
+  EAttribute getGenerator_Package();
+
+  /**
    * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.Generator#getImportSection <em>Import Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -253,10 +282,10 @@ public interface RandomEMFPackage extends EPackage
   EReference getGenerator_ImportSection();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.hub.randomemf.randomEMF.Generator#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.Generator#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Name</em>'.
+   * @return the meta object for the attribute '<em>Name</em>'.
    * @see de.hub.randomemf.randomEMF.Generator#getName()
    * @see #getGenerator()
    * @generated
@@ -372,6 +401,17 @@ public interface RandomEMFPackage extends EPackage
   EReference getFeatureRule_EFeature();
 
   /**
+   * Returns the meta object for the reference '{@link de.hub.randomemf.randomEMF.FeatureRule#getConcreteValueType <em>Concrete Value Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Concrete Value Type</em>'.
+   * @see de.hub.randomemf.randomEMF.FeatureRule#getConcreteValueType()
+   * @see #getFeatureRule()
+   * @generated
+   */
+  EReference getFeatureRule_ConcreteValueType();
+
+  /**
    * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.FeatureRule#isIsAddRule <em>Is Add Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -438,6 +478,14 @@ public interface RandomEMFPackage extends EPackage
     EClass GENERATOR = eINSTANCE.getGenerator();
 
     /**
+     * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERATOR__PACKAGE = eINSTANCE.getGenerator_Package();
+
+    /**
      * The meta object literal for the '<em><b>Import Section</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -446,7 +494,7 @@ public interface RandomEMFPackage extends EPackage
     EReference GENERATOR__IMPORT_SECTION = eINSTANCE.getGenerator_ImportSection();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -536,6 +584,14 @@ public interface RandomEMFPackage extends EPackage
      * @generated
      */
     EReference FEATURE_RULE__EFEATURE = eINSTANCE.getFeatureRule_EFeature();
+
+    /**
+     * The meta object literal for the '<em><b>Concrete Value Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FEATURE_RULE__CONCRETE_VALUE_TYPE = eINSTANCE.getFeatureRule_ConcreteValueType();
 
     /**
      * The meta object literal for the '<em><b>Is Add Rule</b></em>' attribute feature.

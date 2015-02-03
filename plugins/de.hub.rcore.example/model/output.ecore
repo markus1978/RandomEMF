@@ -1,61 +1,29 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vufMsydrPDk">
-  <eClassifiers xsi:type="ecore:EClass" name="hVTgXGrH" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ndXtYKwl" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ezGVhYs" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="j" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vkq" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ihnJXwnk"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WDs"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TeOVYQNAwwJNWg"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bKSCPdzuYb"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TFWrpoHcKmw"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MyfKj"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="erDNC"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="JGvWmxTMwDeGnQwp"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bwCsiR" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ByokyY"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scrShYQYaSD" nsURI="http://qxDVgEob" nsPrefix="J">
+  <eClassifiers xsi:type="ecore:EClass" name="xvHXdRr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VSMbxzKCXwhSgFqrC" ordered="false" upperBound="-1" eType="//HVOwDYkMdHvynG"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BASoFcxsCI" upperBound="-1" eType="//ak"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="njevJtUoy" ordered="false" upperBound="-1" eType="//ak" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keJwdNxMQ" ordered="false" eType="//ak"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="JZZCZDdtPb" ordered="false" upperBound="-1" eType="//ak" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="bjZUVm" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="MsYnKbd" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="GRzizYbkdnpu" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nWYCfNGNqQqPQEY" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RRBYJMWnBeRYtma" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="HiFFoOcDwLd" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vcRZlHKONYrcI" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="QDVlSERU"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="HWDozXFT"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOjiqB"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ak">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kykuZBWLRVLW" ordered="false" upperBound="-1" eType="//ak"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="XObnJr" eType="//xvHXdRr"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gQaACsS" ordered="false" eType="//xvHXdRr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CXmvqzTe">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zBIcb">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MHQpVCYtERyk">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ECharacterObject"/>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JzsvasiBnSTAYhFzoMG">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="kbvSTQgG"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="aVPZ" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qaEUGuObrnboxWd" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tDYsuFqbkzsAft" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pMDTOvcbfWmVeTbD" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="MOArUw" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="X" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="d"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rpzZZD"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TzxpNrFmcQT"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isyRY"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EPRjYI">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ddbTHgW" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="THjkQDaTwRAJR" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="DKyJNYooLxuVja" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vepkSEO" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="JJpXTwlBRwtBpLve" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="OWHCYDqUvy" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lIPiYmAqcprWhyTui"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="FotrjTxeGHJwCe" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="kMlDgc" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cbPz" ordered="false" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="OJFBBtDvm" ordered="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="zzVCuXBSHKaxC"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arXFOQUBgrIP" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cbvhXfpZlC"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ZkqJqhZalUef"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wGHViZfNefgTvT"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HVOwDYkMdHvynG">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vdjNPHX">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

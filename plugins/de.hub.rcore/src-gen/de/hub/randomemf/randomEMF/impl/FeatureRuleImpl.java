@@ -25,6 +25,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#getEFeature <em>EFeature</em>}</li>
+ *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#getConcreteValueType <em>Concrete Value Type</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#isIsAddRule <em>Is Add Rule</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#getExpr <em>Expr</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl#getMultiplicityExpr <em>Multiplicity Expr</em>}</li>
@@ -44,6 +45,16 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
    * @ordered
    */
   protected EStructuralFeature eFeature;
+
+  /**
+   * The cached value of the '{@link #getConcreteValueType() <em>Concrete Value Type</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConcreteValueType()
+   * @generated
+   * @ordered
+   */
+  protected EClass concreteValueType;
 
   /**
    * The default value of the '{@link #isIsAddRule() <em>Is Add Rule</em>}' attribute.
@@ -147,6 +158,49 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
     eFeature = newEFeature;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.FEATURE_RULE__EFEATURE, oldEFeature, eFeature));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConcreteValueType()
+  {
+    if (concreteValueType != null && concreteValueType.eIsProxy())
+    {
+      InternalEObject oldConcreteValueType = (InternalEObject)concreteValueType;
+      concreteValueType = (EClass)eResolveProxy(oldConcreteValueType);
+      if (concreteValueType != oldConcreteValueType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RandomEMFPackage.FEATURE_RULE__CONCRETE_VALUE_TYPE, oldConcreteValueType, concreteValueType));
+      }
+    }
+    return concreteValueType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass basicGetConcreteValueType()
+  {
+    return concreteValueType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setConcreteValueType(EClass newConcreteValueType)
+  {
+    EClass oldConcreteValueType = concreteValueType;
+    concreteValueType = newConcreteValueType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.FEATURE_RULE__CONCRETE_VALUE_TYPE, oldConcreteValueType, concreteValueType));
   }
 
   /**
@@ -299,6 +353,9 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
         if (resolve) return getEFeature();
         return basicGetEFeature();
+      case RandomEMFPackage.FEATURE_RULE__CONCRETE_VALUE_TYPE:
+        if (resolve) return getConcreteValueType();
+        return basicGetConcreteValueType();
       case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
         return isIsAddRule();
       case RandomEMFPackage.FEATURE_RULE__EXPR:
@@ -321,6 +378,9 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
     {
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
         setEFeature((EStructuralFeature)newValue);
+        return;
+      case RandomEMFPackage.FEATURE_RULE__CONCRETE_VALUE_TYPE:
+        setConcreteValueType((EClass)newValue);
         return;
       case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
         setIsAddRule((Boolean)newValue);
@@ -348,6 +408,9 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
         setEFeature((EStructuralFeature)null);
         return;
+      case RandomEMFPackage.FEATURE_RULE__CONCRETE_VALUE_TYPE:
+        setConcreteValueType((EClass)null);
+        return;
       case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
         setIsAddRule(IS_ADD_RULE_EDEFAULT);
         return;
@@ -373,6 +436,8 @@ public class FeatureRuleImpl extends MinimalEObjectImpl.Container implements Fea
     {
       case RandomEMFPackage.FEATURE_RULE__EFEATURE:
         return eFeature != null;
+      case RandomEMFPackage.FEATURE_RULE__CONCRETE_VALUE_TYPE:
+        return concreteValueType != null;
       case RandomEMFPackage.FEATURE_RULE__IS_ADD_RULE:
         return isAddRule != IS_ADD_RULE_EDEFAULT;
       case RandomEMFPackage.FEATURE_RULE__EXPR:

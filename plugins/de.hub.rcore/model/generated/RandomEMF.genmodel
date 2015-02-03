@@ -8,6 +8,7 @@
   <genPackages prefix="RandomEMF" basePackage="de.hub.randomemf" disposableProviderFactory="true"
       fileExtensions="rcore" ecorePackage="RandomEMF.ecore#/">
     <genClasses ecoreClass="RandomEMF.ecore#//Generator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//Generator/package"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//Generator/importSection"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//Generator/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//Generator/ecorePackage"/>
@@ -22,6 +23,7 @@
     </genClasses>
     <genClasses ecoreClass="RandomEMF.ecore#//FeatureRule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/eFeature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/concreteValueType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//FeatureRule/isAddRule"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/multiplicityExpr"/>

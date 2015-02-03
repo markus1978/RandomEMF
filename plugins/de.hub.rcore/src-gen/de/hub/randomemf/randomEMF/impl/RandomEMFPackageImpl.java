@@ -134,9 +134,19 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getGenerator_Package()
+  {
+    return (EAttribute)generatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getGenerator_ImportSection()
   {
-    return (EReference)generatorEClass.getEStructuralFeatures().get(0);
+    return (EReference)generatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -146,7 +156,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    */
   public EAttribute getGenerator_Name()
   {
-    return (EAttribute)generatorEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)generatorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -156,7 +166,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    */
   public EReference getGenerator_EcorePackage()
   {
-    return (EReference)generatorEClass.getEStructuralFeatures().get(2);
+    return (EReference)generatorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -166,7 +176,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    */
   public EAttribute getGenerator_ImportURI()
   {
-    return (EAttribute)generatorEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)generatorEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -176,7 +186,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    */
   public EReference getGenerator_Rules()
   {
-    return (EReference)generatorEClass.getEStructuralFeatures().get(4);
+    return (EReference)generatorEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -254,9 +264,19 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getFeatureRule_ConcreteValueType()
+  {
+    return (EReference)featureRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getFeatureRule_IsAddRule()
   {
-    return (EAttribute)featureRuleEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)featureRuleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -266,7 +286,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    */
   public EReference getFeatureRule_Expr()
   {
-    return (EReference)featureRuleEClass.getEStructuralFeatures().get(2);
+    return (EReference)featureRuleEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -276,7 +296,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    */
   public EReference getFeatureRule_MultiplicityExpr()
   {
-    return (EReference)featureRuleEClass.getEStructuralFeatures().get(3);
+    return (EReference)featureRuleEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -310,6 +330,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
 
     // Create classes and their features
     generatorEClass = createEClass(GENERATOR);
+    createEAttribute(generatorEClass, GENERATOR__PACKAGE);
     createEReference(generatorEClass, GENERATOR__IMPORT_SECTION);
     createEAttribute(generatorEClass, GENERATOR__NAME);
     createEReference(generatorEClass, GENERATOR__ECORE_PACKAGE);
@@ -324,6 +345,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
 
     featureRuleEClass = createEClass(FEATURE_RULE);
     createEReference(featureRuleEClass, FEATURE_RULE__EFEATURE);
+    createEReference(featureRuleEClass, FEATURE_RULE__CONCRETE_VALUE_TYPE);
     createEAttribute(featureRuleEClass, FEATURE_RULE__IS_ADD_RULE);
     createEReference(featureRuleEClass, FEATURE_RULE__EXPR);
     createEReference(featureRuleEClass, FEATURE_RULE__MULTIPLICITY_EXPR);
@@ -354,8 +376,8 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
     EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+    XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
@@ -367,8 +389,9 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
 
     // Initialize classes and features; add operations and parameters
     initEClass(generatorEClass, Generator.class, "Generator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGenerator_Package(), theEcorePackage.getEString(), "package", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenerator_ImportSection(), theXtypePackage.getXImportSection(), null, "importSection", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGenerator_Name(), theEcorePackage.getEString(), "name", null, 0, -1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGenerator_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenerator_EcorePackage(), theEcorePackage.getEPackage(), null, "ecorePackage", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGenerator_ImportURI(), theEcorePackage.getEString(), "importURI", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenerator_Rules(), this.getClassRule(), null, "rules", null, 0, -1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -381,6 +404,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
 
     initEClass(featureRuleEClass, FeatureRule.class, "FeatureRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFeatureRule_EFeature(), theEcorePackage.getEStructuralFeature(), null, "eFeature", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeatureRule_ConcreteValueType(), theEcorePackage.getEClass(), null, "concreteValueType", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeatureRule_IsAddRule(), theEcorePackage.getEBoolean(), "isAddRule", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFeatureRule_Expr(), theXbasePackage.getXExpression(), null, "expr", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFeatureRule_MultiplicityExpr(), theXbasePackage.getXExpression(), null, "multiplicityExpr", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

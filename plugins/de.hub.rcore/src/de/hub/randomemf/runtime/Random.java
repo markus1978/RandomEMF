@@ -1,5 +1,7 @@
 package de.hub.randomemf.runtime;
 
+import java.util.List;
+
 import org.apache.commons.lang.RandomStringUtils;
 
 import cern.jet.random.NegativeBinomial;
@@ -28,5 +30,27 @@ public class Random {
 	
 	public static String RandomID(int length) {
 		return RandomStringUtils.randomAlphabetic(length <= 0 ? 1 : length);
+	}
+	
+	public static <T> T Uniform(Iterable<T> list) {
+		int size = 0;
+		for (T t: list) {
+			size++;
+		}
+		
+		if (size == 0) {
+			return null;
+		} else {
+			int index = Uniform(0, size - 1);
+			int i = 0;
+			for (T t: list) {
+				if (i == index) {
+					return t;
+				}
+				i++;
+			} 
+		}
+		
+		return null;
 	}
 }

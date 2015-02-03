@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,6 +32,7 @@ import org.eclipse.xtext.xtype.XImportSection;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.hub.randomemf.randomEMF.impl.GeneratorImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.GeneratorImpl#getImportSection <em>Import Section</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.GeneratorImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.GeneratorImpl#getEcorePackage <em>Ecore Package</em>}</li>
@@ -46,6 +46,26 @@ import org.eclipse.xtext.xtype.XImportSection;
 public class GeneratorImpl extends MinimalEObjectImpl.Container implements Generator
 {
   /**
+   * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPackage()
+   * @generated
+   * @ordered
+   */
+  protected static final String PACKAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPackage() <em>Package</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPackage()
+   * @generated
+   * @ordered
+   */
+  protected String package_ = PACKAGE_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getImportSection() <em>Import Section</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -56,14 +76,24 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
   protected XImportSection importSection;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<String> name;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getEcorePackage() <em>Ecore Package</em>}' reference.
@@ -131,6 +161,29 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPackage()
+  {
+    return package_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPackage(String newPackage)
+  {
+    String oldPackage = package_;
+    package_ = newPackage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.GENERATOR__PACKAGE, oldPackage, package_));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XImportSection getImportSection()
   {
     return importSection;
@@ -179,13 +232,22 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getName()
+  public String getName()
   {
-    if (name == null)
-    {
-      name = new EDataTypeEList<String>(String.class, this, RandomEMFPackage.GENERATOR__NAME);
-    }
     return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.GENERATOR__NAME, oldName, name));
   }
 
   /**
@@ -296,6 +358,8 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
   {
     switch (featureID)
     {
+      case RandomEMFPackage.GENERATOR__PACKAGE:
+        return getPackage();
       case RandomEMFPackage.GENERATOR__IMPORT_SECTION:
         return getImportSection();
       case RandomEMFPackage.GENERATOR__NAME:
@@ -322,12 +386,14 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
   {
     switch (featureID)
     {
+      case RandomEMFPackage.GENERATOR__PACKAGE:
+        setPackage((String)newValue);
+        return;
       case RandomEMFPackage.GENERATOR__IMPORT_SECTION:
         setImportSection((XImportSection)newValue);
         return;
       case RandomEMFPackage.GENERATOR__NAME:
-        getName().clear();
-        getName().addAll((Collection<? extends String>)newValue);
+        setName((String)newValue);
         return;
       case RandomEMFPackage.GENERATOR__ECORE_PACKAGE:
         setEcorePackage((EPackage)newValue);
@@ -353,11 +419,14 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
   {
     switch (featureID)
     {
+      case RandomEMFPackage.GENERATOR__PACKAGE:
+        setPackage(PACKAGE_EDEFAULT);
+        return;
       case RandomEMFPackage.GENERATOR__IMPORT_SECTION:
         setImportSection((XImportSection)null);
         return;
       case RandomEMFPackage.GENERATOR__NAME:
-        getName().clear();
+        setName(NAME_EDEFAULT);
         return;
       case RandomEMFPackage.GENERATOR__ECORE_PACKAGE:
         setEcorePackage((EPackage)null);
@@ -382,10 +451,12 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
   {
     switch (featureID)
     {
+      case RandomEMFPackage.GENERATOR__PACKAGE:
+        return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
       case RandomEMFPackage.GENERATOR__IMPORT_SECTION:
         return importSection != null;
       case RandomEMFPackage.GENERATOR__NAME:
-        return name != null && !name.isEmpty();
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case RandomEMFPackage.GENERATOR__ECORE_PACKAGE:
         return ecorePackage != null;
       case RandomEMFPackage.GENERATOR__IMPORT_URI:
@@ -407,7 +478,9 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (package: ");
+    result.append(package_);
+    result.append(", name: ");
     result.append(name);
     result.append(", importURI: ");
     result.append(importURI);

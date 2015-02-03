@@ -49,6 +49,26 @@ public class RcoreScopeProvider extends XImportSectionNamespaceScopeProvider {
 					return new EContainerScope(ecoreClass, EcorePackage.eINSTANCE.getEClass_EAllStructuralFeatures(), EcorePackage.eINSTANCE.getENamedElement_Name());
 				}
 			}
+		} else if (reference == RandomEMFPackage.eINSTANCE.getFeatureRule_ConcreteValueType()) {
+			EClass ecoreClass = null;
+			if (context instanceof ClassRule) {
+				ecoreClass = ((ClassRule)context).getEClass();
+			} else if (context.eContainer() instanceof ClassRule) {
+				ecoreClass = ((ClassRule)context.eContainer()).getEClass();
+			}
+			
+			EPackage ecorePackage = null;
+			if (context instanceof Generator) {
+				ecorePackage = ((Generator)context).getEcorePackage();
+			} else if (context.eContainer() instanceof Generator) {
+				ecorePackage = ((Generator)context.eContainer()).getEcorePackage();
+			}
+			if (ecorePackage == null) {
+				ecorePackage = ecoreClass.getEPackage();
+			}
+			if (ecorePackage != null && !ecorePackage.eIsProxy()) {
+				return new EContainerScope(ecorePackage, EcorePackage.eINSTANCE.getEPackage_EClassifiers(), EcorePackage.eINSTANCE.getENamedElement_Name());
+			}	
 		}
 		
 		return null;

@@ -2,6 +2,7 @@
  */
 package de.hub.randomemf.randomEMF;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -16,6 +17,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.hub.randomemf.randomEMF.FeatureRule#getEFeature <em>EFeature</em>}</li>
+ *   <li>{@link de.hub.randomemf.randomEMF.FeatureRule#getConcreteValueType <em>Concrete Value Type</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.FeatureRule#isIsAddRule <em>Is Add Rule</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.FeatureRule#getExpr <em>Expr</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.FeatureRule#getMultiplicityExpr <em>Multiplicity Expr</em>}</li>
@@ -53,6 +55,32 @@ public interface FeatureRule extends EObject
    * @generated
    */
   void setEFeature(EStructuralFeature value);
+
+  /**
+   * Returns the value of the '<em><b>Concrete Value Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Concrete Value Type</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Concrete Value Type</em>' reference.
+   * @see #setConcreteValueType(EClass)
+   * @see de.hub.randomemf.randomEMF.RandomEMFPackage#getFeatureRule_ConcreteValueType()
+   * @model
+   * @generated
+   */
+  EClass getConcreteValueType();
+
+  /**
+   * Sets the value of the '{@link de.hub.randomemf.randomEMF.FeatureRule#getConcreteValueType <em>Concrete Value Type</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Concrete Value Type</em>' reference.
+   * @see #getConcreteValueType()
+   * @generated
+   */
+  void setConcreteValueType(EClass value);
 
   /**
    * Returns the value of the '<em><b>Is Add Rule</b></em>' attribute.
