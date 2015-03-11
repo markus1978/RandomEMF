@@ -1,0 +1,41 @@
+package de.hub.rcore.example
+
+import static de.hub.randomemf.runtime.Random.*
+
+generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/example-language.ecore" {	
+	
+	Package: ELPackage ->
+		name := ClassName(Normal(3,2))	
+		classes += Class#10
+	;
+	
+	Class: ELClass ->
+		name := ClassName(Normal(4,2))
+		fields += Field#Content()
+		methods += Constructor#(Content*0.5) as int
+		methods += Method#(Content()*1.5) as int
+	;
+	
+	Constructor: ELMethod ->
+		name := "new"	
+		parameters += Variable#(Content()*0.4) as int
+	;
+	
+	Field: ELField ->
+		name := VarName(Normal(4,2))
+		array := UniformBool(0.1)		
+		type:ELClass := Uniform(model.classes)
+	;
+	
+	Variable: ELVariable ->
+		name := VarName(Normal(2,1))
+		array := UniformBool(0.1)		
+		type:ELClass := Uniform(model.classes)
+	;  
+	
+	Method:ELMethod ->
+		name := MethodName(Normal(5,3))
+		type := if (UniformBool(0.3)) null else Uniform(model.classes)	
+		parameters += Variable#(Content()*0.6) as int
+	;
+}

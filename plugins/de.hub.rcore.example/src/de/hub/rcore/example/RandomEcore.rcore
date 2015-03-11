@@ -1,0 +1,36 @@
+package de.hub.rcore.example
+
+import static de.hub.randomemf.runtime.Random.*
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EcorePackage
+import org.eclipse.emf.ecore.EDataType
+
+generator RandomEcore for ecore in "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore" {	
+	ePackage: EPackage ->
+		name := RandomID(Normal(8,3))
+		nsPrefix := RandomID(Normal(2.5,1))
+		nsURI := "http://" + RandomID(Normal(12,5))
+		eClassifiers += eClass#NegBinomial(5,0.5)
+	;
+	
+	eClass: EClass ->
+		name := RandomID(Normal(10,3))
+		abstract := UniformBool(0.2)
+		eStructuralFeatures += eReference(UniformBool(0.3))#NegBinomial(2,0.5)
+		eStructuralFeatures += eAttribute#NegBinomial(3,0.4)
+	;
+	
+	eReference(boolean composite):EReference ->
+		name := RandomID(Normal(10,3))
+		upperBound := if (UniformBool(0.5)) -1 else 1
+		ordered := UniformBool(0.2)
+		containment := composite
+		eType:EClass := Uniform(model.EClassifiers.filter[it instanceof EClass])
+	; 
+	
+	eAttribute:EAttribute ->
+		name := RandomID(Normal(8,3))
+		upperBound := if (UniformBool(0.1)) -1 else 1
+		eType:EDataType := Uniform(EcorePackage.eINSTANCE.EClassifiers.filter[it instanceof EDataType && (it as EDataType).isSerializable])
+	;
+}

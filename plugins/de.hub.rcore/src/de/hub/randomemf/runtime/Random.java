@@ -1,7 +1,5 @@
 package de.hub.randomemf.runtime;
 
-import java.util.List;
-
 import org.apache.commons.lang.RandomStringUtils;
 
 import cern.jet.random.NegativeBinomial;
@@ -11,9 +9,14 @@ import cern.jet.random.engine.RandomEngine;
 public class Random {
 
 	private static RandomEngine rand = new DRand(0);
+	private static RandomNames names = new RandomNames(rand);
 	
 	public static int NegBinomial(int n, double p) {
 		return new NegativeBinomial(n, p, rand).nextInt();
+	}
+	
+	public static int Content() {
+		return new NegativeBinomial(4, 0.5, rand).nextInt();
 	}
 	
 	public static int Uniform(double min , double max) {
@@ -52,5 +55,17 @@ public class Random {
 		}
 		
 		return null;
+	}
+	
+	public static String ClassName(int syls) {
+		return names.className(syls < 1 ? 1 : syls);
+	}
+	
+	public static String VarName(int syls) {
+		return names.variableName(syls < 1 ? 1 : syls);
+	}
+	
+	public static String MethodName(int syls) {
+		return names.methodName(syls < 1 ? 1 : syls);
 	}
 }
