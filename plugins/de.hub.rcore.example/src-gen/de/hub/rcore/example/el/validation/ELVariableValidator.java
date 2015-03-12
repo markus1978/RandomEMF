@@ -14,5 +14,4 @@ package de.hub.rcore.example.el.validation;
 public interface ELVariableValidator {
 	boolean validate();
 
-	boolean validateArray(boolean value);
 }

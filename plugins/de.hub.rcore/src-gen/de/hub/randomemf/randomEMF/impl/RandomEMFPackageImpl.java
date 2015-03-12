@@ -2,9 +2,11 @@
  */
 package de.hub.randomemf.randomEMF.impl;
 
+import de.hub.randomemf.randomEMF.AbstractRule;
+import de.hub.randomemf.randomEMF.AlternativeRule;
 import de.hub.randomemf.randomEMF.ClassRule;
-import de.hub.randomemf.randomEMF.FeatureRule;
 import de.hub.randomemf.randomEMF.Generator;
+import de.hub.randomemf.randomEMF.InnerRule;
 import de.hub.randomemf.randomEMF.RandomEMFFactory;
 import de.hub.randomemf.randomEMF.RandomEMFPackage;
 
@@ -42,14 +44,28 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass classRuleEClass = null;
+  private EClass abstractRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass featureRuleEClass = null;
+  private EClass alternativeRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass innerRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classRuleEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -194,109 +210,129 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAbstractRule()
+  {
+    return abstractRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAbstractRule_Name()
+  {
+    return (EAttribute)abstractRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbstractRule_Params()
+  {
+    return (EReference)abstractRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbstractRule_EClass()
+  {
+    return (EReference)abstractRuleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbstractRule_Inners()
+  {
+    return (EReference)abstractRuleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlternativeRule()
+  {
+    return alternativeRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInnerRule()
+  {
+    return innerRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInnerRule_Expr()
+  {
+    return (EReference)innerRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInnerRule_Number()
+  {
+    return (EReference)innerRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInnerRule_EFeature()
+  {
+    return (EReference)innerRuleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInnerRule_ConcreteValueType()
+  {
+    return (EReference)innerRuleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInnerRule_IsAddRule()
+  {
+    return (EAttribute)innerRuleEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getClassRule()
   {
     return classRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getClassRule_Name()
-  {
-    return (EAttribute)classRuleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getClassRule_Params()
-  {
-    return (EReference)classRuleEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getClassRule_EClass()
-  {
-    return (EReference)classRuleEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getClassRule_Rules()
-  {
-    return (EReference)classRuleEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFeatureRule()
-  {
-    return featureRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFeatureRule_EFeature()
-  {
-    return (EReference)featureRuleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFeatureRule_ConcreteValueType()
-  {
-    return (EReference)featureRuleEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFeatureRule_IsAddRule()
-  {
-    return (EAttribute)featureRuleEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFeatureRule_Expr()
-  {
-    return (EReference)featureRuleEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFeatureRule_MultiplicityExpr()
-  {
-    return (EReference)featureRuleEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -337,18 +373,22 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
     createEAttribute(generatorEClass, GENERATOR__IMPORT_URI);
     createEReference(generatorEClass, GENERATOR__RULES);
 
-    classRuleEClass = createEClass(CLASS_RULE);
-    createEAttribute(classRuleEClass, CLASS_RULE__NAME);
-    createEReference(classRuleEClass, CLASS_RULE__PARAMS);
-    createEReference(classRuleEClass, CLASS_RULE__ECLASS);
-    createEReference(classRuleEClass, CLASS_RULE__RULES);
+    abstractRuleEClass = createEClass(ABSTRACT_RULE);
+    createEAttribute(abstractRuleEClass, ABSTRACT_RULE__NAME);
+    createEReference(abstractRuleEClass, ABSTRACT_RULE__PARAMS);
+    createEReference(abstractRuleEClass, ABSTRACT_RULE__ECLASS);
+    createEReference(abstractRuleEClass, ABSTRACT_RULE__INNERS);
 
-    featureRuleEClass = createEClass(FEATURE_RULE);
-    createEReference(featureRuleEClass, FEATURE_RULE__EFEATURE);
-    createEReference(featureRuleEClass, FEATURE_RULE__CONCRETE_VALUE_TYPE);
-    createEAttribute(featureRuleEClass, FEATURE_RULE__IS_ADD_RULE);
-    createEReference(featureRuleEClass, FEATURE_RULE__EXPR);
-    createEReference(featureRuleEClass, FEATURE_RULE__MULTIPLICITY_EXPR);
+    alternativeRuleEClass = createEClass(ALTERNATIVE_RULE);
+
+    innerRuleEClass = createEClass(INNER_RULE);
+    createEReference(innerRuleEClass, INNER_RULE__EXPR);
+    createEReference(innerRuleEClass, INNER_RULE__NUMBER);
+    createEReference(innerRuleEClass, INNER_RULE__EFEATURE);
+    createEReference(innerRuleEClass, INNER_RULE__CONCRETE_VALUE_TYPE);
+    createEAttribute(innerRuleEClass, INNER_RULE__IS_ADD_RULE);
+
+    classRuleEClass = createEClass(CLASS_RULE);
   }
 
   /**
@@ -386,6 +426,8 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    alternativeRuleEClass.getESuperTypes().add(this.getAbstractRule());
+    classRuleEClass.getESuperTypes().add(this.getAbstractRule());
 
     // Initialize classes and features; add operations and parameters
     initEClass(generatorEClass, Generator.class, "Generator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -394,20 +436,24 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
     initEAttribute(getGenerator_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGenerator_EcorePackage(), theEcorePackage.getEPackage(), null, "ecorePackage", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGenerator_ImportURI(), theEcorePackage.getEString(), "importURI", null, 0, 1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGenerator_Rules(), this.getClassRule(), null, "rules", null, 0, -1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenerator_Rules(), this.getAbstractRule(), null, "rules", null, 0, -1, Generator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(abstractRuleEClass, AbstractRule.class, "AbstractRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbstractRule_Name(), theEcorePackage.getEString(), "name", null, 0, 1, AbstractRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractRule_Params(), theTypesPackage.getJvmFormalParameter(), null, "params", null, 0, -1, AbstractRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractRule_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, AbstractRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractRule_Inners(), this.getInnerRule(), null, "inners", null, 0, -1, AbstractRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(alternativeRuleEClass, AlternativeRule.class, "AlternativeRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(innerRuleEClass, InnerRule.class, "InnerRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInnerRule_Expr(), theXbasePackage.getXExpression(), null, "expr", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInnerRule_Number(), theXbasePackage.getXExpression(), null, "number", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInnerRule_EFeature(), theEcorePackage.getEStructuralFeature(), null, "eFeature", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInnerRule_ConcreteValueType(), theEcorePackage.getEClass(), null, "concreteValueType", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInnerRule_IsAddRule(), theEcorePackage.getEBoolean(), "isAddRule", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classRuleEClass, ClassRule.class, "ClassRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClassRule_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ClassRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClassRule_Params(), theTypesPackage.getJvmFormalParameter(), null, "params", null, 0, -1, ClassRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClassRule_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, ClassRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClassRule_Rules(), this.getFeatureRule(), null, "rules", null, 0, -1, ClassRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(featureRuleEClass, FeatureRule.class, "FeatureRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFeatureRule_EFeature(), theEcorePackage.getEStructuralFeature(), null, "eFeature", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureRule_ConcreteValueType(), theEcorePackage.getEClass(), null, "concreteValueType", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureRule_IsAddRule(), theEcorePackage.getEBoolean(), "isAddRule", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureRule_Expr(), theXbasePackage.getXExpression(), null, "expr", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureRule_MultiplicityExpr(), theXbasePackage.getXExpression(), null, "multiplicityExpr", null, 0, 1, FeatureRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

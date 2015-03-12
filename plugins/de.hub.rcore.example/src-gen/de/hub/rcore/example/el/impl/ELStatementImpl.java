@@ -4,7 +4,9 @@ package de.hub.rcore.example.el.impl;
 
 import de.hub.rcore.example.el.ELStatement;
 import de.hub.rcore.example.el.ExampleLanguagePackage;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**

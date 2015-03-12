@@ -2,6 +2,7 @@
  */
 package de.hub.rcore.example.el;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package de.hub.rcore.example.el;
  * @model
  * @generated
  */
-public interface ELBlockStarementKind extends ELPredefined {
+public interface ELBlockStarementKind extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Syntax</b></em>' attribute.
 	 * <!-- begin-user-doc -->

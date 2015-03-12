@@ -32,6 +32,33 @@ public interface RandomEMFFactory extends EFactory
   Generator createGenerator();
 
   /**
+   * Returns a new object of class '<em>Abstract Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Rule</em>'.
+   * @generated
+   */
+  AbstractRule createAbstractRule();
+
+  /**
+   * Returns a new object of class '<em>Alternative Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alternative Rule</em>'.
+   * @generated
+   */
+  AlternativeRule createAlternativeRule();
+
+  /**
+   * Returns a new object of class '<em>Inner Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inner Rule</em>'.
+   * @generated
+   */
+  InnerRule createInnerRule();
+
+  /**
    * Returns a new object of class '<em>Class Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -39,15 +66,6 @@ public interface RandomEMFFactory extends EFactory
    * @generated
    */
   ClassRule createClassRule();
-
-  /**
-   * Returns a new object of class '<em>Feature Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature Rule</em>'.
-   * @generated
-   */
-  FeatureRule createFeatureRule();
 
   /**
    * Returns the package supported by this factory.

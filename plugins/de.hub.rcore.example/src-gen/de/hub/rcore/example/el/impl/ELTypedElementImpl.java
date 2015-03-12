@@ -5,9 +5,12 @@ package de.hub.rcore.example.el.impl;
 import de.hub.rcore.example.el.ELClass;
 import de.hub.rcore.example.el.ELTypedElement;
 import de.hub.rcore.example.el.ExampleLanguagePackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -44,6 +47,7 @@ public class ELTypedElementImpl extends ELNamedElementImpl implements ELTypedEle
 	 * @ordered
 	 */
 	protected static final boolean ARRAY_EDEFAULT = false;
+
 	/**
 	 * The cached value of the '{@link #isArray() <em>Array</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -33,8 +33,10 @@ Package el <http://de.hub.el/EL/1.0>
   Class ELExpression -> ELStatement
 
   Class ELLiteral -> ELExpression
+    Attribute value : EString
 
   Class ELOpCall -> ELCall
+    Reference kind : ELOp
 
   Class ELCall -> ELExpression
     Reference arguments : ELExpression<<0..*>>
@@ -47,18 +49,15 @@ Package el <http://de.hub.el/EL/1.0>
   Class ELBlockStatement -> ELStatement
     Reference block : ELBlock<<0..*>>
     Reference kind : ELBlockStarementKind
-    Reference expressions : ELExpression
+    Reference expressions : ELExpression<<0..*>>
 
-  Class ELOp -> ELPredefined, ELMethod
+  Class ELOp
     Attribute kind : ELOpKind
     Attribute syntax : EString
-    Attribute operators : EInt
+    Attribute operands : EInt
+    Attribute precedence : EInt
 
-  Class ELDataType -> ELPredefined, ELClass
-
-  Class ELPredefined
-
-  Class ELPredefinedPackage -> ELPredefined, ELPackage
+  Class ELDataType -> ELClass
 
   Class ELNamedElement
     Attribute name : EString
@@ -67,13 +66,15 @@ Package el <http://de.hub.el/EL/1.0>
     Reference type : ELClass
     Attribute array : EBoolean
 
-  Class ELBlockStarementKind -> ELPredefined
+  Class ELBlockStarementKind
     Attribute syntax : EString
     Attribute blocks : EInt
     Attribute expressions : EInt
 
-  Class ELModel
+  Class ELModel -> ELNamedElement
     Reference packages : ELPackage<<0..*>>
+    Reference ops : ELOp<<0..*>>
+    Reference blocks : ELBlockStarementKind<<0..*>>
 
   Enum ELOpKind
     Literal infix = 0

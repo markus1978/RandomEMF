@@ -4,6 +4,7 @@
  */
 package de.hub.rcore.example.el.validation;
 
+import de.hub.rcore.example.el.ELOp;
 
 /**
  * A sample validator interface for {@link de.hub.rcore.example.el.ELOpCall}.
@@ -14,4 +15,5 @@ package de.hub.rcore.example.el.validation;
 public interface ELOpCallValidator {
 	boolean validate();
 
+	boolean validateKind(ELOp value);
 }

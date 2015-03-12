@@ -157,24 +157,6 @@ public interface ExampleLanguageFactory extends EFactory {
 	ELDataType createELDataType();
 
 	/**
-	 * Returns a new object of class '<em>EL Predefined</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>EL Predefined</em>'.
-	 * @generated
-	 */
-	ELPredefined createELPredefined();
-
-	/**
-	 * Returns a new object of class '<em>EL Predefined Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>EL Predefined Package</em>'.
-	 * @generated
-	 */
-	ELPredefinedPackage createELPredefinedPackage();
-
-	/**
 	 * Returns a new object of class '<em>EL Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

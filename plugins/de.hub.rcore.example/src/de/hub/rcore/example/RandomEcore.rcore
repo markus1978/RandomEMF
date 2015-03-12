@@ -1,9 +1,9 @@
 package de.hub.rcore.example
 
-import static de.hub.randomemf.runtime.Random.*
-import org.eclipse.emf.ecore.EClass
-import org.eclipse.emf.ecore.EcorePackage
 import org.eclipse.emf.ecore.EDataType
+import org.eclipse.emf.ecore.EcorePackage
+
+import static de.hub.randomemf.runtime.Random.*
 
 generator RandomEcore for ecore in "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore" {	
 	ePackage: EPackage ->
@@ -25,7 +25,7 @@ generator RandomEcore for ecore in "platform:/resource/org.eclipse.emf.ecore/mod
 		upperBound := if (UniformBool(0.5)) -1 else 1
 		ordered := UniformBool(0.2)
 		containment := composite
-		eType:EClass := Uniform(model.EClassifiers.filter[it instanceof EClass])
+		eType:EClass := Uniform(model.EClassifiers.filter[it instanceof org.eclipse.emf.ecore.EClass])
 	; 
 	
 	eAttribute:EAttribute ->

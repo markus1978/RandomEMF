@@ -13,5 +13,5 @@ package de.hub.rcore.example.el;
  * @model
  * @generated
  */
-public interface ELDataType extends ELPredefined, ELClass {
+public interface ELDataType extends ELClass {
 } // ELDataType

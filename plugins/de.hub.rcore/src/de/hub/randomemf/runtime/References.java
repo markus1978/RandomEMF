@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
 
 public class References {
-	public static EObject createProxy(EObject value, String description) {
+	public static <T extends EObject> T createProxy(T value, String description) {
 		((InternalEObject)value).eSetProxyURI(URI.createURI(description));
 		return value;
 	}

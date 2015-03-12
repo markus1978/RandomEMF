@@ -65,7 +65,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELNamedElement()
 	 * @generated
 	 */
-	int EL_NAMED_ELEMENT = 17;
+	int EL_NAMED_ELEMENT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -221,7 +221,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELTypedElement()
 	 * @generated
 	 */
-	int EL_TYPED_ELEMENT = 18;
+	int EL_TYPED_ELEMENT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -564,13 +564,22 @@ public interface ExampleLanguagePackage extends EPackage {
 	int EL_LITERAL = 8;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_LITERAL__VALUE = EL_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>EL Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EL_LITERAL_FEATURE_COUNT = EL_EXPRESSION_FEATURE_COUNT + 0;
+	int EL_LITERAL_FEATURE_COUNT = EL_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>EL Literal</em>' class.
@@ -674,13 +683,22 @@ public interface ExampleLanguagePackage extends EPackage {
 	int EL_OP_CALL__THIS_ARGUMENT = EL_CALL__THIS_ARGUMENT;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_OP_CALL__KIND = EL_CALL_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>EL Op Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EL_OP_CALL_FEATURE_COUNT = EL_CALL_FEATURE_COUNT + 0;
+	int EL_OP_CALL_FEATURE_COUNT = EL_CALL_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>EL Op Call</em>' class.
@@ -757,7 +775,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	int EL_BLOCK_STATEMENT__KIND = EL_STATEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Expressions</b></em>' containment reference.
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -784,34 +802,6 @@ public interface ExampleLanguagePackage extends EPackage {
 	int EL_BLOCK_STATEMENT_OPERATION_COUNT = EL_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.hub.rcore.example.el.impl.ELPredefinedImpl <em>EL Predefined</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.hub.rcore.example.el.impl.ELPredefinedImpl
-	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELPredefined()
-	 * @generated
-	 */
-	int EL_PREDEFINED = 15;
-
-	/**
-	 * The number of structural features of the '<em>EL Predefined</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_PREDEFINED_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>EL Predefined</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_PREDEFINED_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link de.hub.rcore.example.el.impl.ELOpImpl <em>EL Op</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -822,67 +812,13 @@ public interface ExampleLanguagePackage extends EPackage {
 	int EL_OP = 13;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_OP__NAME = EL_PREDEFINED_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_OP__TYPE = EL_PREDEFINED_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Array</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_OP__ARRAY = EL_PREDEFINED_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_OP__PARAMETERS = EL_PREDEFINED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Local Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_OP__LOCAL_VARIABLES = EL_PREDEFINED_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Block</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_OP__BLOCK = EL_PREDEFINED_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EL_OP__KIND = EL_PREDEFINED_FEATURE_COUNT + 6;
+	int EL_OP__KIND = 0;
 
 	/**
 	 * The feature id for the '<em><b>Syntax</b></em>' attribute.
@@ -891,16 +827,25 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_OP__SYNTAX = EL_PREDEFINED_FEATURE_COUNT + 7;
+	int EL_OP__SYNTAX = 1;
 
 	/**
-	 * The feature id for the '<em><b>Operators</b></em>' attribute.
+	 * The feature id for the '<em><b>Operands</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EL_OP__OPERATORS = EL_PREDEFINED_FEATURE_COUNT + 8;
+	int EL_OP__OPERANDS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Precedence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_OP__PRECEDENCE = 3;
 
 	/**
 	 * The number of structural features of the '<em>EL Op</em>' class.
@@ -909,7 +854,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_OP_FEATURE_COUNT = EL_PREDEFINED_FEATURE_COUNT + 9;
+	int EL_OP_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>EL Op</em>' class.
@@ -918,7 +863,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_OP_OPERATION_COUNT = EL_PREDEFINED_OPERATION_COUNT + 0;
+	int EL_OP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.hub.rcore.example.el.impl.ELDataTypeImpl <em>EL Data Type</em>}' class.
@@ -937,7 +882,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_DATA_TYPE__NAME = EL_PREDEFINED_FEATURE_COUNT + 0;
+	int EL_DATA_TYPE__NAME = EL_CLASS__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -946,7 +891,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_DATA_TYPE__METHODS = EL_PREDEFINED_FEATURE_COUNT + 1;
+	int EL_DATA_TYPE__METHODS = EL_CLASS__METHODS;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -955,7 +900,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_DATA_TYPE__FIELDS = EL_PREDEFINED_FEATURE_COUNT + 2;
+	int EL_DATA_TYPE__FIELDS = EL_CLASS__FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Super Clases</b></em>' reference list.
@@ -964,7 +909,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_DATA_TYPE__SUPER_CLASES = EL_PREDEFINED_FEATURE_COUNT + 3;
+	int EL_DATA_TYPE__SUPER_CLASES = EL_CLASS__SUPER_CLASES;
 
 	/**
 	 * The feature id for the '<em><b>Inner Classes</b></em>' containment reference list.
@@ -973,7 +918,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_DATA_TYPE__INNER_CLASSES = EL_PREDEFINED_FEATURE_COUNT + 4;
+	int EL_DATA_TYPE__INNER_CLASSES = EL_CLASS__INNER_CLASSES;
 
 	/**
 	 * The number of structural features of the '<em>EL Data Type</em>' class.
@@ -982,7 +927,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_DATA_TYPE_FEATURE_COUNT = EL_PREDEFINED_FEATURE_COUNT + 5;
+	int EL_DATA_TYPE_FEATURE_COUNT = EL_CLASS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>EL Data Type</em>' class.
@@ -991,53 +936,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_DATA_TYPE_OPERATION_COUNT = EL_PREDEFINED_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.hub.rcore.example.el.impl.ELPredefinedPackageImpl <em>EL Predefined Package</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.hub.rcore.example.el.impl.ELPredefinedPackageImpl
-	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELPredefinedPackage()
-	 * @generated
-	 */
-	int EL_PREDEFINED_PACKAGE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_PREDEFINED_PACKAGE__NAME = EL_PREDEFINED_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Classes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_PREDEFINED_PACKAGE__CLASSES = EL_PREDEFINED_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>EL Predefined Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_PREDEFINED_PACKAGE_FEATURE_COUNT = EL_PREDEFINED_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>EL Predefined Package</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EL_PREDEFINED_PACKAGE_OPERATION_COUNT = EL_PREDEFINED_OPERATION_COUNT + 0;
+	int EL_DATA_TYPE_OPERATION_COUNT = EL_CLASS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.hub.rcore.example.el.impl.ELBlockStarementKindImpl <em>EL Block Starement Kind</em>}' class.
@@ -1047,7 +946,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELBlockStarementKind()
 	 * @generated
 	 */
-	int EL_BLOCK_STAREMENT_KIND = 19;
+	int EL_BLOCK_STAREMENT_KIND = 17;
 
 	/**
 	 * The feature id for the '<em><b>Syntax</b></em>' attribute.
@@ -1056,7 +955,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_BLOCK_STAREMENT_KIND__SYNTAX = EL_PREDEFINED_FEATURE_COUNT + 0;
+	int EL_BLOCK_STAREMENT_KIND__SYNTAX = 0;
 
 	/**
 	 * The feature id for the '<em><b>Blocks</b></em>' attribute.
@@ -1065,7 +964,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_BLOCK_STAREMENT_KIND__BLOCKS = EL_PREDEFINED_FEATURE_COUNT + 1;
+	int EL_BLOCK_STAREMENT_KIND__BLOCKS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Expressions</b></em>' attribute.
@@ -1074,7 +973,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_BLOCK_STAREMENT_KIND__EXPRESSIONS = EL_PREDEFINED_FEATURE_COUNT + 2;
+	int EL_BLOCK_STAREMENT_KIND__EXPRESSIONS = 2;
 
 	/**
 	 * The number of structural features of the '<em>EL Block Starement Kind</em>' class.
@@ -1083,7 +982,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_BLOCK_STAREMENT_KIND_FEATURE_COUNT = EL_PREDEFINED_FEATURE_COUNT + 3;
+	int EL_BLOCK_STAREMENT_KIND_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>EL Block Starement Kind</em>' class.
@@ -1092,7 +991,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_BLOCK_STAREMENT_KIND_OPERATION_COUNT = EL_PREDEFINED_OPERATION_COUNT + 0;
+	int EL_BLOCK_STAREMENT_KIND_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.hub.rcore.example.el.impl.ELModelImpl <em>EL Model</em>}' class.
@@ -1102,7 +1001,16 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELModel()
 	 * @generated
 	 */
-	int EL_MODEL = 20;
+	int EL_MODEL = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_MODEL__NAME = EL_NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Packages</b></em>' containment reference list.
@@ -1111,7 +1019,25 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_MODEL__PACKAGES = 0;
+	int EL_MODEL__PACKAGES = EL_NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Ops</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_MODEL__OPS = EL_NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_MODEL__BLOCKS = EL_NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>EL Model</em>' class.
@@ -1120,7 +1046,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_MODEL_FEATURE_COUNT = 1;
+	int EL_MODEL_FEATURE_COUNT = EL_NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>EL Model</em>' class.
@@ -1129,7 +1055,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EL_MODEL_OPERATION_COUNT = 0;
+	int EL_MODEL_OPERATION_COUNT = EL_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.hub.rcore.example.el.ELOpKind <em>EL Op Kind</em>}' enum.
@@ -1139,7 +1065,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELOpKind()
 	 * @generated
 	 */
-	int EL_OP_KIND = 21;
+	int EL_OP_KIND = 19;
 
 
 	/**
@@ -1332,6 +1258,17 @@ public interface ExampleLanguagePackage extends EPackage {
 	EClass getELLiteral();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.hub.rcore.example.el.ELLiteral#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see de.hub.rcore.example.el.ELLiteral#getValue()
+	 * @see #getELLiteral()
+	 * @generated
+	 */
+	EAttribute getELLiteral_Value();
+
+	/**
 	 * Returns the meta object for class '{@link de.hub.rcore.example.el.ELOpCall <em>EL Op Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1340,6 +1277,17 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getELOpCall();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.hub.rcore.example.el.ELOpCall#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Kind</em>'.
+	 * @see de.hub.rcore.example.el.ELOpCall#getKind()
+	 * @see #getELOpCall()
+	 * @generated
+	 */
+	EReference getELOpCall_Kind();
 
 	/**
 	 * Returns the meta object for class '{@link de.hub.rcore.example.el.ELCall <em>EL Call</em>}'.
@@ -1438,10 +1386,10 @@ public interface ExampleLanguagePackage extends EPackage {
 	EReference getELBlockStatement_Kind();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.hub.rcore.example.el.ELBlockStatement#getExpressions <em>Expressions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.hub.rcore.example.el.ELBlockStatement#getExpressions <em>Expressions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expressions</em>'.
+	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
 	 * @see de.hub.rcore.example.el.ELBlockStatement#getExpressions()
 	 * @see #getELBlockStatement()
 	 * @generated
@@ -1481,15 +1429,26 @@ public interface ExampleLanguagePackage extends EPackage {
 	EAttribute getELOp_Syntax();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.hub.rcore.example.el.ELOp#getOperators <em>Operators</em>}'.
+	 * Returns the meta object for the attribute '{@link de.hub.rcore.example.el.ELOp#getOperands <em>Operands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operators</em>'.
-	 * @see de.hub.rcore.example.el.ELOp#getOperators()
+	 * @return the meta object for the attribute '<em>Operands</em>'.
+	 * @see de.hub.rcore.example.el.ELOp#getOperands()
 	 * @see #getELOp()
 	 * @generated
 	 */
-	EAttribute getELOp_Operators();
+	EAttribute getELOp_Operands();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.hub.rcore.example.el.ELOp#getPrecedence <em>Precedence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Precedence</em>'.
+	 * @see de.hub.rcore.example.el.ELOp#getPrecedence()
+	 * @see #getELOp()
+	 * @generated
+	 */
+	EAttribute getELOp_Precedence();
 
 	/**
 	 * Returns the meta object for class '{@link de.hub.rcore.example.el.ELDataType <em>EL Data Type</em>}'.
@@ -1500,26 +1459,6 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getELDataType();
-
-	/**
-	 * Returns the meta object for class '{@link de.hub.rcore.example.el.ELPredefined <em>EL Predefined</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>EL Predefined</em>'.
-	 * @see de.hub.rcore.example.el.ELPredefined
-	 * @generated
-	 */
-	EClass getELPredefined();
-
-	/**
-	 * Returns the meta object for class '{@link de.hub.rcore.example.el.ELPredefinedPackage <em>EL Predefined Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>EL Predefined Package</em>'.
-	 * @see de.hub.rcore.example.el.ELPredefinedPackage
-	 * @generated
-	 */
-	EClass getELPredefinedPackage();
 
 	/**
 	 * Returns the meta object for class '{@link de.hub.rcore.example.el.ELNamedElement <em>EL Named Element</em>}'.
@@ -1637,6 +1576,28 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getELModel_Packages();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.hub.rcore.example.el.ELModel#getOps <em>Ops</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ops</em>'.
+	 * @see de.hub.rcore.example.el.ELModel#getOps()
+	 * @see #getELModel()
+	 * @generated
+	 */
+	EReference getELModel_Ops();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.hub.rcore.example.el.ELModel#getBlocks <em>Blocks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Blocks</em>'.
+	 * @see de.hub.rcore.example.el.ELModel#getBlocks()
+	 * @see #getELModel()
+	 * @generated
+	 */
+	EReference getELModel_Blocks();
 
 	/**
 	 * Returns the meta object for enum '{@link de.hub.rcore.example.el.ELOpKind <em>EL Op Kind</em>}'.
@@ -1834,6 +1795,14 @@ public interface ExampleLanguagePackage extends EPackage {
 		EClass EL_LITERAL = eINSTANCE.getELLiteral();
 
 		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EL_LITERAL__VALUE = eINSTANCE.getELLiteral_Value();
+
+		/**
 		 * The meta object literal for the '{@link de.hub.rcore.example.el.impl.ELOpCallImpl <em>EL Op Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1842,6 +1811,14 @@ public interface ExampleLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EL_OP_CALL = eINSTANCE.getELOpCall();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EL_OP_CALL__KIND = eINSTANCE.getELOpCall_Kind();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.rcore.example.el.impl.ELCallImpl <em>EL Call</em>}' class.
@@ -1922,7 +1899,7 @@ public interface ExampleLanguagePackage extends EPackage {
 		EReference EL_BLOCK_STATEMENT__KIND = eINSTANCE.getELBlockStatement_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1956,12 +1933,20 @@ public interface ExampleLanguagePackage extends EPackage {
 		EAttribute EL_OP__SYNTAX = eINSTANCE.getELOp_Syntax();
 
 		/**
-		 * The meta object literal for the '<em><b>Operators</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Operands</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EL_OP__OPERATORS = eINSTANCE.getELOp_Operators();
+		EAttribute EL_OP__OPERANDS = eINSTANCE.getELOp_Operands();
+
+		/**
+		 * The meta object literal for the '<em><b>Precedence</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EL_OP__PRECEDENCE = eINSTANCE.getELOp_Precedence();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.rcore.example.el.impl.ELDataTypeImpl <em>EL Data Type</em>}' class.
@@ -1972,26 +1957,6 @@ public interface ExampleLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EL_DATA_TYPE = eINSTANCE.getELDataType();
-
-		/**
-		 * The meta object literal for the '{@link de.hub.rcore.example.el.impl.ELPredefinedImpl <em>EL Predefined</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.hub.rcore.example.el.impl.ELPredefinedImpl
-		 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELPredefined()
-		 * @generated
-		 */
-		EClass EL_PREDEFINED = eINSTANCE.getELPredefined();
-
-		/**
-		 * The meta object literal for the '{@link de.hub.rcore.example.el.impl.ELPredefinedPackageImpl <em>EL Predefined Package</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.hub.rcore.example.el.impl.ELPredefinedPackageImpl
-		 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELPredefinedPackage()
-		 * @generated
-		 */
-		EClass EL_PREDEFINED_PACKAGE = eINSTANCE.getELPredefinedPackage();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.rcore.example.el.impl.ELNamedElementImpl <em>EL Named Element</em>}' class.
@@ -2088,6 +2053,22 @@ public interface ExampleLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EL_MODEL__PACKAGES = eINSTANCE.getELModel_Packages();
+
+		/**
+		 * The meta object literal for the '<em><b>Ops</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EL_MODEL__OPS = eINSTANCE.getELModel_Ops();
+
+		/**
+		 * The meta object literal for the '<em><b>Blocks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EL_MODEL__BLOCKS = eINSTANCE.getELModel_Blocks();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.rcore.example.el.ELOpKind <em>EL Op Kind</em>}' enum.

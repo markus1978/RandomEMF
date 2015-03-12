@@ -15,18 +15,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//Generator/importURI"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//Generator/rules"/>
     </genClasses>
-    <genClasses ecoreClass="RandomEMF.ecore#//ClassRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//ClassRule/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//ClassRule/params"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//ClassRule/eClass"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//ClassRule/rules"/>
+    <genClasses ecoreClass="RandomEMF.ecore#//AbstractRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//AbstractRule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//AbstractRule/params"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//AbstractRule/eClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//AbstractRule/inners"/>
     </genClasses>
-    <genClasses ecoreClass="RandomEMF.ecore#//FeatureRule">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/eFeature"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/concreteValueType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//FeatureRule/isAddRule"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/expr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//FeatureRule/multiplicityExpr"/>
+    <genClasses ecoreClass="RandomEMF.ecore#//AlternativeRule"/>
+    <genClasses ecoreClass="RandomEMF.ecore#//InnerRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//InnerRule/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//InnerRule/number"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//InnerRule/eFeature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//InnerRule/concreteValueType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//InnerRule/isAddRule"/>
     </genClasses>
+    <genClasses ecoreClass="RandomEMF.ecore#//ClassRule"/>
   </genPackages>
 </genmodel:GenModel>

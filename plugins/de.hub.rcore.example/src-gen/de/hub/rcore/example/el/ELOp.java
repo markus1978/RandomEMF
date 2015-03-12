@@ -2,6 +2,7 @@
  */
 package de.hub.rcore.example.el;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +14,8 @@ package de.hub.rcore.example.el;
  * <ul>
  *   <li>{@link de.hub.rcore.example.el.ELOp#getKind <em>Kind</em>}</li>
  *   <li>{@link de.hub.rcore.example.el.ELOp#getSyntax <em>Syntax</em>}</li>
- *   <li>{@link de.hub.rcore.example.el.ELOp#getOperators <em>Operators</em>}</li>
+ *   <li>{@link de.hub.rcore.example.el.ELOp#getOperands <em>Operands</em>}</li>
+ *   <li>{@link de.hub.rcore.example.el.ELOp#getPrecedence <em>Precedence</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +23,7 @@ package de.hub.rcore.example.el;
  * @model
  * @generated
  */
-public interface ELOp extends ELPredefined, ELMethod {
+public interface ELOp extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link de.hub.rcore.example.el.ELOpKind}.
@@ -78,29 +80,55 @@ public interface ELOp extends ELPredefined, ELMethod {
 	void setSyntax(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Operators</b></em>' attribute.
+	 * Returns the value of the '<em><b>Operands</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operators</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Operands</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operators</em>' attribute.
-	 * @see #setOperators(int)
-	 * @see de.hub.rcore.example.el.ExampleLanguagePackage#getELOp_Operators()
+	 * @return the value of the '<em>Operands</em>' attribute.
+	 * @see #setOperands(int)
+	 * @see de.hub.rcore.example.el.ExampleLanguagePackage#getELOp_Operands()
 	 * @model
 	 * @generated
 	 */
-	int getOperators();
+	int getOperands();
 
 	/**
-	 * Sets the value of the '{@link de.hub.rcore.example.el.ELOp#getOperators <em>Operators</em>}' attribute.
+	 * Sets the value of the '{@link de.hub.rcore.example.el.ELOp#getOperands <em>Operands</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operators</em>' attribute.
-	 * @see #getOperators()
+	 * @param value the new value of the '<em>Operands</em>' attribute.
+	 * @see #getOperands()
 	 * @generated
 	 */
-	void setOperators(int value);
+	void setOperands(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Precedence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Precedence</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Precedence</em>' attribute.
+	 * @see #setPrecedence(int)
+	 * @see de.hub.rcore.example.el.ExampleLanguagePackage#getELOp_Precedence()
+	 * @model
+	 * @generated
+	 */
+	int getPrecedence();
+
+	/**
+	 * Sets the value of the '{@link de.hub.rcore.example.el.ELOp#getPrecedence <em>Precedence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precedence</em>' attribute.
+	 * @see #getPrecedence()
+	 * @generated
+	 */
+	void setPrecedence(int value);
 
 } // ELOp

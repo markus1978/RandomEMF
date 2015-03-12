@@ -1,11 +1,19 @@
 package de.hub.rcore.example
 
+import de.hub.randomemf.runtime.Ocl
+
 import static de.hub.randomemf.runtime.Random.*
+import java.util.Random
 
 generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/example-language.ecore" {	
 	
+	root: ELModel ->
+		packages += ELPredefinitions.pkg(self)
+		packages += Package#3
+	;
+	
 	Package: ELPackage ->
-		name := ClassName(Normal(3,2))	
+		name := ClassName(Normal(3,2)).toLowerCase	
 		classes += Class#10
 	;
 	
@@ -24,18 +32,50 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	Field: ELField ->
 		name := VarName(Normal(4,2))
 		array := UniformBool(0.1)		
-		type:ELClass := Uniform(model.classes)
+		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
 	;
 	
 	Variable: ELVariable ->
 		name := VarName(Normal(2,1))
 		array := UniformBool(0.1)		
-		type:ELClass := Uniform(model.classes)
-	;  
+		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
+	;
 	
 	Method:ELMethod ->
 		name := MethodName(Normal(5,3))
-		type := if (UniformBool(0.3)) null else Uniform(model.classes)	
+		type := if (UniformBool(0.3)) null else Uniform(Ocl.collectAll(model.packages)[it.classes])	
 		parameters += Variable#(Content()*0.6) as int
+		block := Block
+	;
+	
+	Block:ELBlock ->
+		statements += Statement#Content()+1
+	;
+	
+	alter Statement:ELStatement ->
+		BlockStatement
+	;
+	
+	BlockStatement: ELBlockStatement ->
+		kind := Uniform(model.blocks)
+		block += Block#self.kind.blocks
+		expressions += Expression#self.kind.expressions
+	;
+	
+	alter Expression: ELExpression ->
+		Literal
+	;
+	
+	alter Literal: ELLiteral -> 
+		StringLiteral | IntLiteral | BoolLiteral
+	;
+	
+	StringLiteral: ELLiteral -> value := RandomString(Normal(10, 6));
+	IntLiteral: ELLiteral -> value := "" + Normal(10,5);
+	BoolLiteral: ELLiteral -> value := "" + UniformBool(0.5);
+	
+	OpCall: ELOpCall ->
+		kind := Uniform(model.ops)
+		arguments := Expression#self.kind.operands
 	;
 }

@@ -164,7 +164,7 @@ public interface Generator extends EObject
 
   /**
    * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
-   * The list contents are of type {@link de.hub.randomemf.randomEMF.ClassRule}.
+   * The list contents are of type {@link de.hub.randomemf.randomEMF.AbstractRule}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Rules</em>' containment reference list isn't clear,
@@ -176,6 +176,6 @@ public interface Generator extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ClassRule> getRules();
+  EList<AbstractRule> getRules();
 
 } // Generator

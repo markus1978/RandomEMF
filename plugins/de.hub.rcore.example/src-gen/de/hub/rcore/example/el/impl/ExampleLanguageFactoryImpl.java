@@ -72,8 +72,6 @@ public class ExampleLanguageFactoryImpl extends EFactoryImpl implements ExampleL
 			case ExampleLanguagePackage.EL_BLOCK_STATEMENT: return createELBlockStatement();
 			case ExampleLanguagePackage.EL_OP: return createELOp();
 			case ExampleLanguagePackage.EL_DATA_TYPE: return createELDataType();
-			case ExampleLanguagePackage.EL_PREDEFINED: return createELPredefined();
-			case ExampleLanguagePackage.EL_PREDEFINED_PACKAGE: return createELPredefinedPackage();
 			case ExampleLanguagePackage.EL_NAMED_ELEMENT: return createELNamedElement();
 			case ExampleLanguagePackage.EL_TYPED_ELEMENT: return createELTypedElement();
 			case ExampleLanguagePackage.EL_BLOCK_STAREMENT_KIND: return createELBlockStarementKind();
@@ -261,26 +259,6 @@ public class ExampleLanguageFactoryImpl extends EFactoryImpl implements ExampleL
 	public ELDataType createELDataType() {
 		ELDataTypeImpl elDataType = new ELDataTypeImpl();
 		return elDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ELPredefined createELPredefined() {
-		ELPredefinedImpl elPredefined = new ELPredefinedImpl();
-		return elPredefined;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ELPredefinedPackage createELPredefinedPackage() {
-		ELPredefinedPackageImpl elPredefinedPackage = new ELPredefinedPackageImpl();
-		return elPredefinedPackage;
 	}
 
 	/**

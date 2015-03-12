@@ -11,6 +11,14 @@ public class Random {
 	private static RandomEngine rand = new DRand(0);
 	private static RandomNames names = new RandomNames(rand);
 	
+	public static RandomEngine Rand() {
+		return rand;
+	}
+	
+	public static int RandomInt(int maxExclusive) {
+		return (int)Math.floor(rand.nextFloat()*maxExclusive);
+	}
+	
 	public static int NegBinomial(int n, double p) {
 		return new NegativeBinomial(n, p, rand).nextInt();
 	}
@@ -33,6 +41,10 @@ public class Random {
 	
 	public static String RandomID(int length) {
 		return RandomStringUtils.randomAlphabetic(length <= 0 ? 1 : length);
+	}
+	
+	public static String RandomString(int length) {
+		return "\"" + RandomStringUtils.randomAscii(length <= 0 ? 1 : length).replace('"', ' ') + "\"";
 	}
 	
 	public static <T> T Uniform(Iterable<T> list) {

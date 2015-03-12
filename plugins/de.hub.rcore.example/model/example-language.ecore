@@ -31,8 +31,12 @@
         eType="#//ELStatement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ELExpression" eSuperTypes="#//ELStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ELLiteral" eSuperTypes="#//ELExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ELOpCall" eSuperTypes="#//ELCall"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ELLiteral" eSuperTypes="#//ELExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ELOpCall" eSuperTypes="#//ELCall">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kind" eType="#//ELOp"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ELCall" eSuperTypes="#//ELExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
         eType="#//ELExpression" containment="true"/>
@@ -46,17 +50,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" upperBound="-1"
         eType="#//ELBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="kind" eType="#//ELBlockStarementKind"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" eType="#//ELExpression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
+        eType="#//ELExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ELOp" eSuperTypes="#//ELPredefined #//ELMethod">
+  <eClassifiers xsi:type="ecore:EClass" name="ELOp">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ELOpKind"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="syntax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operators" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operands" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precedence" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ELDataType" eSuperTypes="#//ELPredefined #//ELClass"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ELPredefined"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ELPredefinedPackage" eSuperTypes="#//ELPredefined #//ELPackage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ELDataType" eSuperTypes="#//ELClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="ELNamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -64,19 +67,23 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="array" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ELBlockStarementKind" eSuperTypes="#//ELPredefined">
+  <eClassifiers xsi:type="ecore:EClass" name="ELBlockStarementKind">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="syntax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expressions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ELModel" eSuperTypes="#//ELNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
+        eType="#//ELPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ops" upperBound="-1" eType="#//ELOp"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" upperBound="-1"
+        eType="#//ELBlockStarementKind" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ELOpKind">
     <eLiterals name="infix" literal="infix"/>
     <eLiterals name="suffix"/>
     <eLiterals name="prefix"/>
     <eLiterals name="syntax" literal="syntax"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ELModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
-        eType="#//ELPackage" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

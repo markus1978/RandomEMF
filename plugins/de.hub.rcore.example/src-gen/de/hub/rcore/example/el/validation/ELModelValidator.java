@@ -4,6 +4,8 @@
  */
 package de.hub.rcore.example.el.validation;
 
+import de.hub.rcore.example.el.ELBlockStarementKind;
+import de.hub.rcore.example.el.ELOp;
 import de.hub.rcore.example.el.ELPackage;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,4 +20,6 @@ public interface ELModelValidator {
 	boolean validate();
 
 	boolean validatePackages(EList<ELPackage> value);
+	boolean validateOps(EList<ELOp> value);
+	boolean validateBlocks(EList<ELBlockStarementKind> value);
 }

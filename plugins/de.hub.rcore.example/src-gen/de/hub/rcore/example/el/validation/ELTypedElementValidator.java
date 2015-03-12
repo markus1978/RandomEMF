@@ -16,6 +16,5 @@ public interface ELTypedElementValidator {
 	boolean validate();
 
 	boolean validateType(ELClass value);
-
 	boolean validateArray(boolean value);
 }

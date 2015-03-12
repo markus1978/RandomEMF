@@ -331,7 +331,7 @@ public abstract class AbstractRandomEMFRuntimeModule extends DefaultRuntimeModul
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	public Class<? extends org.eclipse.xtext.xbase.jvmmodel.IJvmModelInferrer> bindIJvmModelInferrer() {
-		return de.hub.randomemf.jvmmodel.RandomEMFJvmModelInferrer.class;
+		return de.hub.randomemf.jvmmodel.ClassBasedRandomEMFJvmModelInferrer.class;
 	}
 
 }

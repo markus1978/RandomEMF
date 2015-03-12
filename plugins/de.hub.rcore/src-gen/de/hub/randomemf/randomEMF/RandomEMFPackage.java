@@ -130,14 +130,14 @@ public interface RandomEMFPackage extends EPackage
   int GENERATOR_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.ClassRuleImpl <em>Class Rule</em>}' class.
+   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.AbstractRuleImpl <em>Abstract Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.hub.randomemf.randomEMF.impl.ClassRuleImpl
-   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getClassRule()
+   * @see de.hub.randomemf.randomEMF.impl.AbstractRuleImpl
+   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getAbstractRule()
    * @generated
    */
-  int CLASS_RULE = 1;
+  int ABSTRACT_RULE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -146,7 +146,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_RULE__NAME = 0;
+  int ABSTRACT_RULE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -155,7 +155,7 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_RULE__PARAMS = 1;
+  int ABSTRACT_RULE__PARAMS = 1;
 
   /**
    * The feature id for the '<em><b>EClass</b></em>' reference.
@@ -164,62 +164,90 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_RULE__ECLASS = 2;
+  int ABSTRACT_RULE__ECLASS = 2;
 
   /**
-   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * The feature id for the '<em><b>Inners</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_RULE__RULES = 3;
+  int ABSTRACT_RULE__INNERS = 3;
 
   /**
-   * The number of structural features of the '<em>Class Rule</em>' class.
+   * The number of structural features of the '<em>Abstract Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_RULE_FEATURE_COUNT = 4;
+  int ABSTRACT_RULE_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl <em>Feature Rule</em>}' class.
+   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.AlternativeRuleImpl <em>Alternative Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.hub.randomemf.randomEMF.impl.FeatureRuleImpl
-   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getFeatureRule()
+   * @see de.hub.randomemf.randomEMF.impl.AlternativeRuleImpl
+   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getAlternativeRule()
    * @generated
    */
-  int FEATURE_RULE = 2;
+  int ALTERNATIVE_RULE = 2;
 
   /**
-   * The feature id for the '<em><b>EFeature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_RULE__EFEATURE = 0;
-
-  /**
-   * The feature id for the '<em><b>Concrete Value Type</b></em>' reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__CONCRETE_VALUE_TYPE = 1;
+  int ALTERNATIVE_RULE__NAME = ABSTRACT_RULE__NAME;
 
   /**
-   * The feature id for the '<em><b>Is Add Rule</b></em>' attribute.
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__IS_ADD_RULE = 2;
+  int ALTERNATIVE_RULE__PARAMS = ABSTRACT_RULE__PARAMS;
+
+  /**
+   * The feature id for the '<em><b>EClass</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTERNATIVE_RULE__ECLASS = ABSTRACT_RULE__ECLASS;
+
+  /**
+   * The feature id for the '<em><b>Inners</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTERNATIVE_RULE__INNERS = ABSTRACT_RULE__INNERS;
+
+  /**
+   * The number of structural features of the '<em>Alternative Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALTERNATIVE_RULE_FEATURE_COUNT = ABSTRACT_RULE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.InnerRuleImpl <em>Inner Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hub.randomemf.randomEMF.impl.InnerRuleImpl
+   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getInnerRule()
+   * @generated
+   */
+  int INNER_RULE = 3;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -228,25 +256,107 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__EXPR = 3;
+  int INNER_RULE__EXPR = 0;
 
   /**
-   * The feature id for the '<em><b>Multiplicity Expr</b></em>' containment reference.
+   * The feature id for the '<em><b>Number</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_RULE__MULTIPLICITY_EXPR = 4;
+  int INNER_RULE__NUMBER = 1;
 
   /**
-   * The number of structural features of the '<em>Feature Rule</em>' class.
+   * The feature id for the '<em><b>EFeature</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_RULE_FEATURE_COUNT = 5;
+  int INNER_RULE__EFEATURE = 2;
+
+  /**
+   * The feature id for the '<em><b>Concrete Value Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_RULE__CONCRETE_VALUE_TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Is Add Rule</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_RULE__IS_ADD_RULE = 4;
+
+  /**
+   * The number of structural features of the '<em>Inner Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_RULE_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.ClassRuleImpl <em>Class Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hub.randomemf.randomEMF.impl.ClassRuleImpl
+   * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getClassRule()
+   * @generated
+   */
+  int CLASS_RULE = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_RULE__NAME = ABSTRACT_RULE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_RULE__PARAMS = ABSTRACT_RULE__PARAMS;
+
+  /**
+   * The feature id for the '<em><b>EClass</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_RULE__ECLASS = ABSTRACT_RULE__ECLASS;
+
+  /**
+   * The feature id for the '<em><b>Inners</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_RULE__INNERS = ABSTRACT_RULE__INNERS;
+
+  /**
+   * The number of structural features of the '<em>Class Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_RULE_FEATURE_COUNT = ABSTRACT_RULE_FEATURE_COUNT + 0;
 
 
   /**
@@ -326,6 +436,135 @@ public interface RandomEMFPackage extends EPackage
   EReference getGenerator_Rules();
 
   /**
+   * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.AbstractRule <em>Abstract Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Abstract Rule</em>'.
+   * @see de.hub.randomemf.randomEMF.AbstractRule
+   * @generated
+   */
+  EClass getAbstractRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.AbstractRule#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.hub.randomemf.randomEMF.AbstractRule#getName()
+   * @see #getAbstractRule()
+   * @generated
+   */
+  EAttribute getAbstractRule_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.hub.randomemf.randomEMF.AbstractRule#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see de.hub.randomemf.randomEMF.AbstractRule#getParams()
+   * @see #getAbstractRule()
+   * @generated
+   */
+  EReference getAbstractRule_Params();
+
+  /**
+   * Returns the meta object for the reference '{@link de.hub.randomemf.randomEMF.AbstractRule#getEClass <em>EClass</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>EClass</em>'.
+   * @see de.hub.randomemf.randomEMF.AbstractRule#getEClass()
+   * @see #getAbstractRule()
+   * @generated
+   */
+  EReference getAbstractRule_EClass();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.hub.randomemf.randomEMF.AbstractRule#getInners <em>Inners</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Inners</em>'.
+   * @see de.hub.randomemf.randomEMF.AbstractRule#getInners()
+   * @see #getAbstractRule()
+   * @generated
+   */
+  EReference getAbstractRule_Inners();
+
+  /**
+   * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.AlternativeRule <em>Alternative Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alternative Rule</em>'.
+   * @see de.hub.randomemf.randomEMF.AlternativeRule
+   * @generated
+   */
+  EClass getAlternativeRule();
+
+  /**
+   * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.InnerRule <em>Inner Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Inner Rule</em>'.
+   * @see de.hub.randomemf.randomEMF.InnerRule
+   * @generated
+   */
+  EClass getInnerRule();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.InnerRule#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see de.hub.randomemf.randomEMF.InnerRule#getExpr()
+   * @see #getInnerRule()
+   * @generated
+   */
+  EReference getInnerRule_Expr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.InnerRule#getNumber <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Number</em>'.
+   * @see de.hub.randomemf.randomEMF.InnerRule#getNumber()
+   * @see #getInnerRule()
+   * @generated
+   */
+  EReference getInnerRule_Number();
+
+  /**
+   * Returns the meta object for the reference '{@link de.hub.randomemf.randomEMF.InnerRule#getEFeature <em>EFeature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>EFeature</em>'.
+   * @see de.hub.randomemf.randomEMF.InnerRule#getEFeature()
+   * @see #getInnerRule()
+   * @generated
+   */
+  EReference getInnerRule_EFeature();
+
+  /**
+   * Returns the meta object for the reference '{@link de.hub.randomemf.randomEMF.InnerRule#getConcreteValueType <em>Concrete Value Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Concrete Value Type</em>'.
+   * @see de.hub.randomemf.randomEMF.InnerRule#getConcreteValueType()
+   * @see #getInnerRule()
+   * @generated
+   */
+  EReference getInnerRule_ConcreteValueType();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.InnerRule#isIsAddRule <em>Is Add Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Add Rule</em>'.
+   * @see de.hub.randomemf.randomEMF.InnerRule#isIsAddRule()
+   * @see #getInnerRule()
+   * @generated
+   */
+  EAttribute getInnerRule_IsAddRule();
+
+  /**
    * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.ClassRule <em>Class Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -334,115 +573,6 @@ public interface RandomEMFPackage extends EPackage
    * @generated
    */
   EClass getClassRule();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.ClassRule#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.hub.randomemf.randomEMF.ClassRule#getName()
-   * @see #getClassRule()
-   * @generated
-   */
-  EAttribute getClassRule_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hub.randomemf.randomEMF.ClassRule#getParams <em>Params</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see de.hub.randomemf.randomEMF.ClassRule#getParams()
-   * @see #getClassRule()
-   * @generated
-   */
-  EReference getClassRule_Params();
-
-  /**
-   * Returns the meta object for the reference '{@link de.hub.randomemf.randomEMF.ClassRule#getEClass <em>EClass</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>EClass</em>'.
-   * @see de.hub.randomemf.randomEMF.ClassRule#getEClass()
-   * @see #getClassRule()
-   * @generated
-   */
-  EReference getClassRule_EClass();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hub.randomemf.randomEMF.ClassRule#getRules <em>Rules</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Rules</em>'.
-   * @see de.hub.randomemf.randomEMF.ClassRule#getRules()
-   * @see #getClassRule()
-   * @generated
-   */
-  EReference getClassRule_Rules();
-
-  /**
-   * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.FeatureRule <em>Feature Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Feature Rule</em>'.
-   * @see de.hub.randomemf.randomEMF.FeatureRule
-   * @generated
-   */
-  EClass getFeatureRule();
-
-  /**
-   * Returns the meta object for the reference '{@link de.hub.randomemf.randomEMF.FeatureRule#getEFeature <em>EFeature</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>EFeature</em>'.
-   * @see de.hub.randomemf.randomEMF.FeatureRule#getEFeature()
-   * @see #getFeatureRule()
-   * @generated
-   */
-  EReference getFeatureRule_EFeature();
-
-  /**
-   * Returns the meta object for the reference '{@link de.hub.randomemf.randomEMF.FeatureRule#getConcreteValueType <em>Concrete Value Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Concrete Value Type</em>'.
-   * @see de.hub.randomemf.randomEMF.FeatureRule#getConcreteValueType()
-   * @see #getFeatureRule()
-   * @generated
-   */
-  EReference getFeatureRule_ConcreteValueType();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.FeatureRule#isIsAddRule <em>Is Add Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Add Rule</em>'.
-   * @see de.hub.randomemf.randomEMF.FeatureRule#isIsAddRule()
-   * @see #getFeatureRule()
-   * @generated
-   */
-  EAttribute getFeatureRule_IsAddRule();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.FeatureRule#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see de.hub.randomemf.randomEMF.FeatureRule#getExpr()
-   * @see #getFeatureRule()
-   * @generated
-   */
-  EReference getFeatureRule_Expr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hub.randomemf.randomEMF.FeatureRule#getMultiplicityExpr <em>Multiplicity Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Multiplicity Expr</em>'.
-   * @see de.hub.randomemf.randomEMF.FeatureRule#getMultiplicityExpr()
-   * @see #getFeatureRule()
-   * @generated
-   */
-  EReference getFeatureRule_MultiplicityExpr();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -526,6 +656,108 @@ public interface RandomEMFPackage extends EPackage
     EReference GENERATOR__RULES = eINSTANCE.getGenerator_Rules();
 
     /**
+     * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.AbstractRuleImpl <em>Abstract Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hub.randomemf.randomEMF.impl.AbstractRuleImpl
+     * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getAbstractRule()
+     * @generated
+     */
+    EClass ABSTRACT_RULE = eINSTANCE.getAbstractRule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_RULE__NAME = eINSTANCE.getAbstractRule_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_RULE__PARAMS = eINSTANCE.getAbstractRule_Params();
+
+    /**
+     * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_RULE__ECLASS = eINSTANCE.getAbstractRule_EClass();
+
+    /**
+     * The meta object literal for the '<em><b>Inners</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_RULE__INNERS = eINSTANCE.getAbstractRule_Inners();
+
+    /**
+     * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.AlternativeRuleImpl <em>Alternative Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hub.randomemf.randomEMF.impl.AlternativeRuleImpl
+     * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getAlternativeRule()
+     * @generated
+     */
+    EClass ALTERNATIVE_RULE = eINSTANCE.getAlternativeRule();
+
+    /**
+     * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.InnerRuleImpl <em>Inner Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hub.randomemf.randomEMF.impl.InnerRuleImpl
+     * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getInnerRule()
+     * @generated
+     */
+    EClass INNER_RULE = eINSTANCE.getInnerRule();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INNER_RULE__EXPR = eINSTANCE.getInnerRule_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>Number</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INNER_RULE__NUMBER = eINSTANCE.getInnerRule_Number();
+
+    /**
+     * The meta object literal for the '<em><b>EFeature</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INNER_RULE__EFEATURE = eINSTANCE.getInnerRule_EFeature();
+
+    /**
+     * The meta object literal for the '<em><b>Concrete Value Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INNER_RULE__CONCRETE_VALUE_TYPE = eINSTANCE.getInnerRule_ConcreteValueType();
+
+    /**
+     * The meta object literal for the '<em><b>Is Add Rule</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INNER_RULE__IS_ADD_RULE = eINSTANCE.getInnerRule_IsAddRule();
+
+    /**
      * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.ClassRuleImpl <em>Class Rule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -534,88 +766,6 @@ public interface RandomEMFPackage extends EPackage
      * @generated
      */
     EClass CLASS_RULE = eINSTANCE.getClassRule();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLASS_RULE__NAME = eINSTANCE.getClassRule_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_RULE__PARAMS = eINSTANCE.getClassRule_Params();
-
-    /**
-     * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_RULE__ECLASS = eINSTANCE.getClassRule_EClass();
-
-    /**
-     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_RULE__RULES = eINSTANCE.getClassRule_Rules();
-
-    /**
-     * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.FeatureRuleImpl <em>Feature Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hub.randomemf.randomEMF.impl.FeatureRuleImpl
-     * @see de.hub.randomemf.randomEMF.impl.RandomEMFPackageImpl#getFeatureRule()
-     * @generated
-     */
-    EClass FEATURE_RULE = eINSTANCE.getFeatureRule();
-
-    /**
-     * The meta object literal for the '<em><b>EFeature</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FEATURE_RULE__EFEATURE = eINSTANCE.getFeatureRule_EFeature();
-
-    /**
-     * The meta object literal for the '<em><b>Concrete Value Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FEATURE_RULE__CONCRETE_VALUE_TYPE = eINSTANCE.getFeatureRule_ConcreteValueType();
-
-    /**
-     * The meta object literal for the '<em><b>Is Add Rule</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FEATURE_RULE__IS_ADD_RULE = eINSTANCE.getFeatureRule_IsAddRule();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FEATURE_RULE__EXPR = eINSTANCE.getFeatureRule_Expr();
-
-    /**
-     * The meta object literal for the '<em><b>Multiplicity Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FEATURE_RULE__MULTIPLICITY_EXPR = eINSTANCE.getFeatureRule_MultiplicityExpr();
 
   }
 

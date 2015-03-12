@@ -14,4 +14,6 @@ package de.hub.rcore.example.el.validation;
 public interface ELLiteralValidator {
 	boolean validate();
 
+	boolean validateValue(String value);
+
 }

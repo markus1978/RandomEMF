@@ -33,3 +33,4 @@ Export-Package: de.hub.randomemf,
  de.hub.randomemf.serializer,
  de.hub.randomemf.services,
  de.hub.randomemf.validation
+Bundle-ClassPath: .

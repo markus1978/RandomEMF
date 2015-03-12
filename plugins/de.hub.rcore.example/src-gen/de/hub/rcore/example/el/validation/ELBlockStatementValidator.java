@@ -21,5 +21,7 @@ public interface ELBlockStatementValidator {
 
 	boolean validateBlock(EList<ELBlock> value);
 	boolean validateKind(ELBlockStarementKind value);
+	boolean validateExpressions(EList<ELExpression> value);
+
 	boolean validateExpressions(ELExpression value);
 }

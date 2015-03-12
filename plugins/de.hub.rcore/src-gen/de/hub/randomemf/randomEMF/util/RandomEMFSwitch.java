@@ -79,17 +79,33 @@ public class RandomEMFSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RandomEMFPackage.ABSTRACT_RULE:
+      {
+        AbstractRule abstractRule = (AbstractRule)theEObject;
+        T result = caseAbstractRule(abstractRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RandomEMFPackage.ALTERNATIVE_RULE:
+      {
+        AlternativeRule alternativeRule = (AlternativeRule)theEObject;
+        T result = caseAlternativeRule(alternativeRule);
+        if (result == null) result = caseAbstractRule(alternativeRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RandomEMFPackage.INNER_RULE:
+      {
+        InnerRule innerRule = (InnerRule)theEObject;
+        T result = caseInnerRule(innerRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RandomEMFPackage.CLASS_RULE:
       {
         ClassRule classRule = (ClassRule)theEObject;
         T result = caseClassRule(classRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RandomEMFPackage.FEATURE_RULE:
-      {
-        FeatureRule featureRule = (FeatureRule)theEObject;
-        T result = caseFeatureRule(featureRule);
+        if (result == null) result = caseAbstractRule(classRule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -114,6 +130,54 @@ public class RandomEMFSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractRule(AbstractRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alternative Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alternative Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlternativeRule(AlternativeRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Inner Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Inner Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInnerRule(InnerRule object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Class Rule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -125,22 +189,6 @@ public class RandomEMFSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClassRule(ClassRule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFeatureRule(FeatureRule object)
   {
     return null;
   }

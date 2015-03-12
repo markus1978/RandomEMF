@@ -22,9 +22,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference example-language.ecore#//ELClass/superClases"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference example-language.ecore#//ELClass/innerClasses"/>
     </genClasses>
-    <genClasses ecoreClass="example-language.ecore#//ELVariable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELVariable/array"/>
-    </genClasses>
+    <genClasses ecoreClass="example-language.ecore#//ELVariable"/>
     <genClasses ecoreClass="example-language.ecore#//ELMethod">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference example-language.ecore#//ELMethod/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference example-language.ecore#//ELMethod/localVariables"/>
@@ -37,7 +35,9 @@
     </genClasses>
     <genClasses ecoreClass="example-language.ecore#//ELExpression"/>
     <genClasses ecoreClass="example-language.ecore#//ELLiteral"/>
-    <genClasses ecoreClass="example-language.ecore#//ELOpCall"/>
+    <genClasses ecoreClass="example-language.ecore#//ELOpCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference example-language.ecore#//ELOpCall/kind"/>
+    </genClasses>
     <genClasses ecoreClass="example-language.ecore#//ELCall">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference example-language.ecore#//ELCall/arguments"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference example-language.ecore#//ELCall/callee"/>
@@ -54,21 +54,26 @@
     <genClasses ecoreClass="example-language.ecore#//ELOp">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELOp/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELOp/syntax"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELOp/operators"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELOp/operands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELOp/precedence"/>
     </genClasses>
     <genClasses ecoreClass="example-language.ecore#//ELDataType"/>
-    <genClasses ecoreClass="example-language.ecore#//ELPredefined"/>
-    <genClasses ecoreClass="example-language.ecore#//ELPredefinedPackage"/>
     <genClasses ecoreClass="example-language.ecore#//ELNamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELNamedElement/name"/>
     </genClasses>
     <genClasses ecoreClass="example-language.ecore#//ELTypedElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference example-language.ecore#//ELTypedElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELTypedElement/array"/>
     </genClasses>
     <genClasses ecoreClass="example-language.ecore#//ELBlockStarementKind">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELBlockStarementKind/syntax"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELBlockStarementKind/blocks"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute example-language.ecore#//ELBlockStarementKind/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="example-language.ecore#//ELModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference example-language.ecore#//ELModel/packages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference example-language.ecore#//ELModel/ops"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference example-language.ecore#//ELModel/blocks"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

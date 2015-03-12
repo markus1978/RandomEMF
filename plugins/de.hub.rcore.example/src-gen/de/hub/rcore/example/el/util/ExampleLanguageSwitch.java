@@ -3,30 +3,11 @@
 package de.hub.rcore.example.el.util;
 
 import de.hub.rcore.example.el.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import de.hub.rcore.example.el.ELAccess;
-import de.hub.rcore.example.el.ELBlock;
-import de.hub.rcore.example.el.ELBlockStarementKind;
-import de.hub.rcore.example.el.ELBlockStatement;
-import de.hub.rcore.example.el.ELCall;
-import de.hub.rcore.example.el.ELClass;
-import de.hub.rcore.example.el.ELDataType;
-import de.hub.rcore.example.el.ELExpression;
-import de.hub.rcore.example.el.ELField;
-import de.hub.rcore.example.el.ELLiteral;
-import de.hub.rcore.example.el.ELMethod;
-import de.hub.rcore.example.el.ELNamedElement;
-import de.hub.rcore.example.el.ELOp;
-import de.hub.rcore.example.el.ELOpCall;
-import de.hub.rcore.example.el.ELPackage;
-import de.hub.rcore.example.el.ELPredefined;
-import de.hub.rcore.example.el.ELPredefinedPackage;
-import de.hub.rcore.example.el.ELStatement;
-import de.hub.rcore.example.el.ELTypedElement;
-import de.hub.rcore.example.el.ELVariable;
-import de.hub.rcore.example.el.ExampleLanguagePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -186,34 +167,14 @@ public class ExampleLanguageSwitch<T> extends Switch<T> {
 			case ExampleLanguagePackage.EL_OP: {
 				ELOp elOp = (ELOp)theEObject;
 				T result = caseELOp(elOp);
-				if (result == null) result = caseELPredefined(elOp);
-				if (result == null) result = caseELMethod(elOp);
-				if (result == null) result = caseELTypedElement(elOp);
-				if (result == null) result = caseELNamedElement(elOp);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ExampleLanguagePackage.EL_DATA_TYPE: {
 				ELDataType elDataType = (ELDataType)theEObject;
 				T result = caseELDataType(elDataType);
-				if (result == null) result = caseELPredefined(elDataType);
 				if (result == null) result = caseELClass(elDataType);
 				if (result == null) result = caseELNamedElement(elDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExampleLanguagePackage.EL_PREDEFINED: {
-				ELPredefined elPredefined = (ELPredefined)theEObject;
-				T result = caseELPredefined(elPredefined);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExampleLanguagePackage.EL_PREDEFINED_PACKAGE: {
-				ELPredefinedPackage elPredefinedPackage = (ELPredefinedPackage)theEObject;
-				T result = caseELPredefinedPackage(elPredefinedPackage);
-				if (result == null) result = caseELPredefined(elPredefinedPackage);
-				if (result == null) result = caseELPackage(elPredefinedPackage);
-				if (result == null) result = caseELNamedElement(elPredefinedPackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -233,13 +194,13 @@ public class ExampleLanguageSwitch<T> extends Switch<T> {
 			case ExampleLanguagePackage.EL_BLOCK_STAREMENT_KIND: {
 				ELBlockStarementKind elBlockStarementKind = (ELBlockStarementKind)theEObject;
 				T result = caseELBlockStarementKind(elBlockStarementKind);
-				if (result == null) result = caseELPredefined(elBlockStarementKind);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ExampleLanguagePackage.EL_MODEL: {
 				ELModel elModel = (ELModel)theEObject;
 				T result = caseELModel(elModel);
+				if (result == null) result = caseELNamedElement(elModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -469,36 +430,6 @@ public class ExampleLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseELDataType(ELDataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EL Predefined</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EL Predefined</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseELPredefined(ELPredefined object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EL Predefined Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EL Predefined Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseELPredefinedPackage(ELPredefinedPackage object) {
 		return null;
 	}
 

@@ -26,7 +26,7 @@ public class RcoreScopeProvider extends XImportSectionNamespaceScopeProvider {
 	}
 
 	public static IScope staticGetScope(EObject context, EReference reference) {
-		if (reference == RandomEMFPackage.eINSTANCE.getClassRule_EClass()) {
+		if (reference == RandomEMFPackage.eINSTANCE.getAbstractRule_EClass()) {
 			EPackage ecorePackage = null;
 			if (context instanceof Generator) {
 				ecorePackage = ((Generator)context).getEcorePackage();
@@ -37,7 +37,7 @@ public class RcoreScopeProvider extends XImportSectionNamespaceScopeProvider {
 			if (ecorePackage != null && !ecorePackage.eIsProxy()) {
 				return new EContainerScope(ecorePackage, EcorePackage.eINSTANCE.getEPackage_EClassifiers(), EcorePackage.eINSTANCE.getENamedElement_Name());
 			}	
-		} else if (reference == RandomEMFPackage.eINSTANCE.getFeatureRule_EFeature()) {
+		} else if (reference == RandomEMFPackage.eINSTANCE.getInnerRule_EFeature()) {
 			EClass ecoreClass = null;
 			if (context instanceof ClassRule) {
 				ecoreClass = ((ClassRule)context).getEClass();
@@ -49,7 +49,7 @@ public class RcoreScopeProvider extends XImportSectionNamespaceScopeProvider {
 					return new EContainerScope(ecoreClass, EcorePackage.eINSTANCE.getEClass_EAllStructuralFeatures(), EcorePackage.eINSTANCE.getENamedElement_Name());
 				}
 			}
-		} else if (reference == RandomEMFPackage.eINSTANCE.getFeatureRule_ConcreteValueType()) {
+		} else if (reference == RandomEMFPackage.eINSTANCE.getInnerRule_ConcreteValueType()) {
 			EClass ecoreClass = null;
 			if (context instanceof ClassRule) {
 				ecoreClass = ((ClassRule)context).getEClass();

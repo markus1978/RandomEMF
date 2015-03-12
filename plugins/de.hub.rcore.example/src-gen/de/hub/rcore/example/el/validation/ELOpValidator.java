@@ -17,5 +17,6 @@ public interface ELOpValidator {
 
 	boolean validateKind(ELOpKind value);
 	boolean validateSyntax(String value);
-	boolean validateOperators(int value);
+	boolean validateOperands(int value);
+	boolean validatePrecedence(int value);
 }

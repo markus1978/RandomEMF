@@ -14,5 +14,4 @@ package de.hub.rcore.example.el;
  * @generated
  */
 public interface ELVariable extends ELTypedElement {
-
 } // ELVariable

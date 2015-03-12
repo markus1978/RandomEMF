@@ -66,29 +66,19 @@ public interface ELBlockStatement extends ELStatement {
 	void setKind(ELBlockStarementKind value);
 
 	/**
-	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
+	 * The list contents are of type {@link de.hub.rcore.example.el.ELExpression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Expressions</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expressions</em>' containment reference.
-	 * @see #setExpressions(ELExpression)
+	 * @return the value of the '<em>Expressions</em>' containment reference list.
 	 * @see de.hub.rcore.example.el.ExampleLanguagePackage#getELBlockStatement_Expressions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ELExpression getExpressions();
-
-	/**
-	 * Sets the value of the '{@link de.hub.rcore.example.el.ELBlockStatement#getExpressions <em>Expressions</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expressions</em>' containment reference.
-	 * @see #getExpressions()
-	 * @generated
-	 */
-	void setExpressions(ELExpression value);
+	EList<ELExpression> getExpressions();
 
 } // ELBlockStatement

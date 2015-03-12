@@ -80,14 +80,24 @@ public class RandomEMFAdapterFactory extends AdapterFactoryImpl
         return createGeneratorAdapter();
       }
       @Override
+      public Adapter caseAbstractRule(AbstractRule object)
+      {
+        return createAbstractRuleAdapter();
+      }
+      @Override
+      public Adapter caseAlternativeRule(AlternativeRule object)
+      {
+        return createAlternativeRuleAdapter();
+      }
+      @Override
+      public Adapter caseInnerRule(InnerRule object)
+      {
+        return createInnerRuleAdapter();
+      }
+      @Override
       public Adapter caseClassRule(ClassRule object)
       {
         return createClassRuleAdapter();
-      }
-      @Override
-      public Adapter caseFeatureRule(FeatureRule object)
-      {
-        return createFeatureRuleAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -127,6 +137,51 @@ public class RandomEMFAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.hub.randomemf.randomEMF.AbstractRule <em>Abstract Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hub.randomemf.randomEMF.AbstractRule
+   * @generated
+   */
+  public Adapter createAbstractRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hub.randomemf.randomEMF.AlternativeRule <em>Alternative Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hub.randomemf.randomEMF.AlternativeRule
+   * @generated
+   */
+  public Adapter createAlternativeRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hub.randomemf.randomEMF.InnerRule <em>Inner Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hub.randomemf.randomEMF.InnerRule
+   * @generated
+   */
+  public Adapter createInnerRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.hub.randomemf.randomEMF.ClassRule <em>Class Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -137,21 +192,6 @@ public class RandomEMFAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createClassRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hub.randomemf.randomEMF.FeatureRule <em>Feature Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hub.randomemf.randomEMF.FeatureRule
-   * @generated
-   */
-  public Adapter createFeatureRuleAdapter()
   {
     return null;
   }

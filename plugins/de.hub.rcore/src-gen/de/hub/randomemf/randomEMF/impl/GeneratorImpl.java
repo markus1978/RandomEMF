@@ -2,7 +2,7 @@
  */
 package de.hub.randomemf.randomEMF.impl;
 
-import de.hub.randomemf.randomEMF.ClassRule;
+import de.hub.randomemf.randomEMF.AbstractRule;
 import de.hub.randomemf.randomEMF.Generator;
 import de.hub.randomemf.randomEMF.RandomEMFPackage;
 
@@ -133,7 +133,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
    * @generated
    * @ordered
    */
-  protected EList<ClassRule> rules;
+  protected EList<AbstractRule> rules;
 
   /**
    * <!-- begin-user-doc -->
@@ -321,11 +321,11 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ClassRule> getRules()
+  public EList<AbstractRule> getRules()
   {
     if (rules == null)
     {
-      rules = new EObjectContainmentEList<ClassRule>(ClassRule.class, this, RandomEMFPackage.GENERATOR__RULES);
+      rules = new EObjectContainmentEList<AbstractRule>(AbstractRule.class, this, RandomEMFPackage.GENERATOR__RULES);
     }
     return rules;
   }
@@ -403,7 +403,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
         return;
       case RandomEMFPackage.GENERATOR__RULES:
         getRules().clear();
-        getRules().addAll((Collection<? extends ClassRule>)newValue);
+        getRules().addAll((Collection<? extends AbstractRule>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

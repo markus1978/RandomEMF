@@ -19,8 +19,6 @@ import de.hub.rcore.example.el.ELOp;
 import de.hub.rcore.example.el.ELOpCall;
 import de.hub.rcore.example.el.ELOpKind;
 import de.hub.rcore.example.el.ELPackage;
-import de.hub.rcore.example.el.ELPredefined;
-import de.hub.rcore.example.el.ELPredefinedPackage;
 import de.hub.rcore.example.el.ELStatement;
 import de.hub.rcore.example.el.ELTypedElement;
 import de.hub.rcore.example.el.ELVariable;
@@ -146,20 +144,6 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 	 * @generated
 	 */
 	private EClass elDataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass elPredefinedEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass elPredefinedPackageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -424,8 +408,26 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getELLiteral_Value() {
+		return (EAttribute)elLiteralEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getELOpCall() {
 		return elOpCallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getELOpCall_Kind() {
+		return (EReference)elOpCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -550,8 +552,17 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getELOp_Operators() {
+	public EAttribute getELOp_Operands() {
 		return (EAttribute)elOpEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getELOp_Precedence() {
+		return (EAttribute)elOpEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -561,24 +572,6 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 	 */
 	public EClass getELDataType() {
 		return elDataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getELPredefined() {
-		return elPredefinedEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getELPredefinedPackage() {
-		return elPredefinedPackageEClass;
 	}
 
 	/**
@@ -685,6 +678,24 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getELModel_Ops() {
+		return (EReference)elModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getELModel_Blocks() {
+		return (EReference)elModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getELOpKind() {
 		return elOpKindEEnum;
 	}
@@ -743,8 +754,10 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		elExpressionEClass = createEClass(EL_EXPRESSION);
 
 		elLiteralEClass = createEClass(EL_LITERAL);
+		createEAttribute(elLiteralEClass, EL_LITERAL__VALUE);
 
 		elOpCallEClass = createEClass(EL_OP_CALL);
+		createEReference(elOpCallEClass, EL_OP_CALL__KIND);
 
 		elCallEClass = createEClass(EL_CALL);
 		createEReference(elCallEClass, EL_CALL__ARGUMENTS);
@@ -762,13 +775,10 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		elOpEClass = createEClass(EL_OP);
 		createEAttribute(elOpEClass, EL_OP__KIND);
 		createEAttribute(elOpEClass, EL_OP__SYNTAX);
-		createEAttribute(elOpEClass, EL_OP__OPERATORS);
+		createEAttribute(elOpEClass, EL_OP__OPERANDS);
+		createEAttribute(elOpEClass, EL_OP__PRECEDENCE);
 
 		elDataTypeEClass = createEClass(EL_DATA_TYPE);
-
-		elPredefinedEClass = createEClass(EL_PREDEFINED);
-
-		elPredefinedPackageEClass = createEClass(EL_PREDEFINED_PACKAGE);
 
 		elNamedElementEClass = createEClass(EL_NAMED_ELEMENT);
 		createEAttribute(elNamedElementEClass, EL_NAMED_ELEMENT__NAME);
@@ -784,6 +794,8 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 
 		elModelEClass = createEClass(EL_MODEL);
 		createEReference(elModelEClass, EL_MODEL__PACKAGES);
+		createEReference(elModelEClass, EL_MODEL__OPS);
+		createEReference(elModelEClass, EL_MODEL__BLOCKS);
 
 		// Create enums
 		elOpKindEEnum = createEEnum(EL_OP_KIND);
@@ -828,14 +840,9 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		elCallEClass.getESuperTypes().add(this.getELExpression());
 		elAccessEClass.getESuperTypes().add(this.getELExpression());
 		elBlockStatementEClass.getESuperTypes().add(this.getELStatement());
-		elOpEClass.getESuperTypes().add(this.getELPredefined());
-		elOpEClass.getESuperTypes().add(this.getELMethod());
-		elDataTypeEClass.getESuperTypes().add(this.getELPredefined());
 		elDataTypeEClass.getESuperTypes().add(this.getELClass());
-		elPredefinedPackageEClass.getESuperTypes().add(this.getELPredefined());
-		elPredefinedPackageEClass.getESuperTypes().add(this.getELPackage());
 		elTypedElementEClass.getESuperTypes().add(this.getELNamedElement());
-		elBlockStarementKindEClass.getESuperTypes().add(this.getELPredefined());
+		elModelEClass.getESuperTypes().add(this.getELNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elPackageEClass, ELPackage.class, "ELPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -864,8 +871,10 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		initEClass(elExpressionEClass, ELExpression.class, "ELExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(elLiteralEClass, ELLiteral.class, "ELLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getELLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, ELLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elOpCallEClass, ELOpCall.class, "ELOpCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getELOpCall_Kind(), this.getELOp(), null, "kind", null, 0, 1, ELOpCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elCallEClass, ELCall.class, "ELCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getELCall_Arguments(), this.getELExpression(), null, "arguments", null, 0, -1, ELCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -878,18 +887,15 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		initEClass(elBlockStatementEClass, ELBlockStatement.class, "ELBlockStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getELBlockStatement_Block(), this.getELBlock(), null, "block", null, 0, -1, ELBlockStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getELBlockStatement_Kind(), this.getELBlockStarementKind(), null, "kind", null, 0, 1, ELBlockStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getELBlockStatement_Expressions(), this.getELExpression(), null, "expressions", null, 0, 1, ELBlockStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getELBlockStatement_Expressions(), this.getELExpression(), null, "expressions", null, 0, -1, ELBlockStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elOpEClass, ELOp.class, "ELOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getELOp_Kind(), this.getELOpKind(), "kind", null, 0, 1, ELOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getELOp_Syntax(), ecorePackage.getEString(), "syntax", null, 0, 1, ELOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getELOp_Operators(), ecorePackage.getEInt(), "operators", null, 0, 1, ELOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getELOp_Operands(), ecorePackage.getEInt(), "operands", null, 0, 1, ELOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getELOp_Precedence(), ecorePackage.getEInt(), "precedence", null, 0, 1, ELOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elDataTypeEClass, ELDataType.class, "ELDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(elPredefinedEClass, ELPredefined.class, "ELPredefined", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(elPredefinedPackageEClass, ELPredefinedPackage.class, "ELPredefinedPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(elNamedElementEClass, ELNamedElement.class, "ELNamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getELNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ELNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -905,6 +911,8 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 
 		initEClass(elModelEClass, ELModel.class, "ELModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getELModel_Packages(), this.getELPackage(), null, "packages", null, 0, -1, ELModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getELModel_Ops(), this.getELOp(), null, "ops", null, 0, -1, ELModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getELModel_Blocks(), this.getELBlockStarementKind(), null, "blocks", null, 0, -1, ELModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(elOpKindEEnum, ELOpKind.class, "ELOpKind");

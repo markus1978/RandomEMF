@@ -3,31 +3,13 @@
 package de.hub.rcore.example.el.util;
 
 import de.hub.rcore.example.el.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import de.hub.rcore.example.el.ELAccess;
-import de.hub.rcore.example.el.ELBlock;
-import de.hub.rcore.example.el.ELBlockStarementKind;
-import de.hub.rcore.example.el.ELBlockStatement;
-import de.hub.rcore.example.el.ELCall;
-import de.hub.rcore.example.el.ELClass;
-import de.hub.rcore.example.el.ELDataType;
-import de.hub.rcore.example.el.ELExpression;
-import de.hub.rcore.example.el.ELField;
-import de.hub.rcore.example.el.ELLiteral;
-import de.hub.rcore.example.el.ELMethod;
-import de.hub.rcore.example.el.ELNamedElement;
-import de.hub.rcore.example.el.ELOp;
-import de.hub.rcore.example.el.ELOpCall;
-import de.hub.rcore.example.el.ELPackage;
-import de.hub.rcore.example.el.ELPredefined;
-import de.hub.rcore.example.el.ELPredefinedPackage;
-import de.hub.rcore.example.el.ELStatement;
-import de.hub.rcore.example.el.ELTypedElement;
-import de.hub.rcore.example.el.ELVariable;
-import de.hub.rcore.example.el.ExampleLanguagePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -144,14 +126,6 @@ public class ExampleLanguageAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseELDataType(ELDataType object) {
 				return createELDataTypeAdapter();
-			}
-			@Override
-			public Adapter caseELPredefined(ELPredefined object) {
-				return createELPredefinedAdapter();
-			}
-			@Override
-			public Adapter caseELPredefinedPackage(ELPredefinedPackage object) {
-				return createELPredefinedPackageAdapter();
 			}
 			@Override
 			public Adapter caseELNamedElement(ELNamedElement object) {
@@ -396,34 +370,6 @@ public class ExampleLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createELDataTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.rcore.example.el.ELPredefined <em>EL Predefined</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.hub.rcore.example.el.ELPredefined
-	 * @generated
-	 */
-	public Adapter createELPredefinedAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.hub.rcore.example.el.ELPredefinedPackage <em>EL Predefined Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.hub.rcore.example.el.ELPredefinedPackage
-	 * @generated
-	 */
-	public Adapter createELPredefinedPackageAdapter() {
 		return null;
 	}
 

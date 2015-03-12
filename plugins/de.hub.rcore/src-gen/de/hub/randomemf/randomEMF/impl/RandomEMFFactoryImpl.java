@@ -65,8 +65,10 @@ public class RandomEMFFactoryImpl extends EFactoryImpl implements RandomEMFFacto
     switch (eClass.getClassifierID())
     {
       case RandomEMFPackage.GENERATOR: return createGenerator();
+      case RandomEMFPackage.ABSTRACT_RULE: return createAbstractRule();
+      case RandomEMFPackage.ALTERNATIVE_RULE: return createAlternativeRule();
+      case RandomEMFPackage.INNER_RULE: return createInnerRule();
       case RandomEMFPackage.CLASS_RULE: return createClassRule();
-      case RandomEMFPackage.FEATURE_RULE: return createFeatureRule();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,10 +90,10 @@ public class RandomEMFFactoryImpl extends EFactoryImpl implements RandomEMFFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassRule createClassRule()
+  public AbstractRule createAbstractRule()
   {
-    ClassRuleImpl classRule = new ClassRuleImpl();
-    return classRule;
+    AbstractRuleImpl abstractRule = new AbstractRuleImpl();
+    return abstractRule;
   }
 
   /**
@@ -99,10 +101,32 @@ public class RandomEMFFactoryImpl extends EFactoryImpl implements RandomEMFFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureRule createFeatureRule()
+  public AlternativeRule createAlternativeRule()
   {
-    FeatureRuleImpl featureRule = new FeatureRuleImpl();
-    return featureRule;
+    AlternativeRuleImpl alternativeRule = new AlternativeRuleImpl();
+    return alternativeRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InnerRule createInnerRule()
+  {
+    InnerRuleImpl innerRule = new InnerRuleImpl();
+    return innerRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassRule createClassRule()
+  {
+    ClassRuleImpl classRule = new ClassRuleImpl();
+    return classRule;
   }
 
   /**

@@ -2,9 +2,10 @@ package de.hub.randomemf.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import de.hub.randomemf.randomEMF.AlternativeRule;
 import de.hub.randomemf.randomEMF.ClassRule;
-import de.hub.randomemf.randomEMF.FeatureRule;
 import de.hub.randomemf.randomEMF.Generator;
+import de.hub.randomemf.randomEMF.InnerRule;
 import de.hub.randomemf.randomEMF.RandomEMFPackage;
 import de.hub.randomemf.services.RandomEMFGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -69,21 +70,33 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == RandomEMFPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case RandomEMFPackage.CLASS_RULE:
-				if(context == grammarAccess.getClassRuleRule()) {
-					sequence_ClassRule(context, (ClassRule) semanticObject); 
+			case RandomEMFPackage.ALTERNATIVE_RULE:
+				if(context == grammarAccess.getAbstractRuleRule() ||
+				   context == grammarAccess.getAlternativeRuleRule()) {
+					sequence_AlternativeRule(context, (AlternativeRule) semanticObject); 
 					return; 
 				}
 				else break;
-			case RandomEMFPackage.FEATURE_RULE:
-				if(context == grammarAccess.getFeatureRuleRule()) {
-					sequence_FeatureRule(context, (FeatureRule) semanticObject); 
+			case RandomEMFPackage.CLASS_RULE:
+				if(context == grammarAccess.getAbstractRuleRule() ||
+				   context == grammarAccess.getClassRuleRule()) {
+					sequence_ClassRule(context, (ClassRule) semanticObject); 
 					return; 
 				}
 				else break;
 			case RandomEMFPackage.GENERATOR:
 				if(context == grammarAccess.getGeneratorRule()) {
 					sequence_Generator(context, (Generator) semanticObject); 
+					return; 
+				}
+				else break;
+			case RandomEMFPackage.INNER_RULE:
+				if(context == grammarAccess.getAlternativeRule()) {
+					sequence_Alternative(context, (InnerRule) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getFeatureRule()) {
+					sequence_Feature(context, (InnerRule) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1200,7 +1213,25 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID (params+=JvmFormalParameter params+=JvmFormalParameter*)? eClass=[EClass|ID] rules+=FeatureRule*)
+	 *     (name=ValidID (params+=JvmFormalParameter params+=JvmFormalParameter*)? eClass=[EClass|ID] inners+=Alternative inners+=Alternative*)
+	 */
+	protected void sequence_AlternativeRule(EObject context, AlternativeRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (expr=XExpression number=XExpression?)
+	 */
+	protected void sequence_Alternative(EObject context, InnerRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ValidID (params+=JvmFormalParameter params+=JvmFormalParameter*)? eClass=[EClass|ID] inners+=Feature*)
 	 */
 	protected void sequence_ClassRule(EObject context, ClassRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1209,9 +1240,9 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (eFeature=[EStructuralFeature|ID] concreteValueType=[EClass|ID]? isAddRule?='+='? expr=XExpression multiplicityExpr=XExpression?)
+	 *     (eFeature=[EStructuralFeature|ID] concreteValueType=[EClass|ID]? isAddRule?='+='? expr=XExpression number=XExpression?)
 	 */
-	protected void sequence_FeatureRule(EObject context, FeatureRule semanticObject) {
+	protected void sequence_Feature(EObject context, InnerRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1224,7 +1255,7 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	 *         name=ValidID 
 	 *         ecorePackage=[EPackage|ID] 
 	 *         importURI=STRING 
-	 *         rules+=ClassRule*
+	 *         rules+=AbstractRule*
 	 *     )
 	 */
 	protected void sequence_Generator(EObject context, Generator semanticObject) {

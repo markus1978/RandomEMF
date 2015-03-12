@@ -7,17 +7,33 @@ Generator:
 	('package' package=QualifiedName)?
 	importSection=XImportSection?
  	'generator' name=ValidID 'for' ecorePackage=[Ecore::EPackage|ID] 'in' importURI=STRING '{'
- 		(rules += ClassRule)*
+ 		(rules += AbstractRule)*
  	'}'
+;
+
+AbstractRule:
+	AlternativeRule | ClassRule
+;
+
+AlternativeRule:
+	'alter' name=ValidID ('(' params+=JvmFormalParameter (',' params+=JvmFormalParameter)* ')')? ':' eClass=[Ecore::EClass|ID] '->'
+		inners += Alternative ( '|' inners += Alternative)*
+	';'
+;
+
+Alternative returns InnerRule:
+	{InnerRule}
+	expr = XExpression ('#' number=XExpression)?
 ;
 
 ClassRule:
 	name=ValidID ('(' params+=JvmFormalParameter (',' params+=JvmFormalParameter)* ')')? ':' eClass=[Ecore::EClass|ID] '->'
-		(rules+=FeatureRule)*
+		(inners+=Feature)*
 	';'
 ;
 
-FeatureRule:
+Feature returns InnerRule:
+	{InnerRule}
 	eFeature=[Ecore::EStructuralFeature|ID] (':'concreteValueType=[Ecore::EClass|ID])?(isAddRule ?= '+=' | ':=')
-	expr=XExpression ('#' multiplicityExpr=XExpression)?
+	expr=XExpression ('#' number=XExpression)?
 ;

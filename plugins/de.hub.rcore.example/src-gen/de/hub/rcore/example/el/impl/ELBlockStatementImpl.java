@@ -7,13 +7,19 @@ import de.hub.rcore.example.el.ELBlockStarementKind;
 import de.hub.rcore.example.el.ELBlockStatement;
 import de.hub.rcore.example.el.ELExpression;
 import de.hub.rcore.example.el.ExampleLanguagePackage;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -54,14 +60,14 @@ public class ELBlockStatementImpl extends ELStatementImpl implements ELBlockStat
 	protected ELBlockStarementKind kind;
 
 	/**
-	 * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference.
+	 * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getExpressions()
 	 * @generated
 	 * @ordered
 	 */
-	protected ELExpression expressions;
+	protected EList<ELExpression> expressions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,42 +143,11 @@ public class ELBlockStatementImpl extends ELStatementImpl implements ELBlockStat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ELExpression getExpressions() {
+	public EList<ELExpression> getExpressions() {
+		if (expressions == null) {
+			expressions = new EObjectContainmentEList<ELExpression>(ELExpression.class, this, ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS);
+		}
 		return expressions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetExpressions(ELExpression newExpressions, NotificationChain msgs) {
-		ELExpression oldExpressions = expressions;
-		expressions = newExpressions;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS, oldExpressions, newExpressions);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExpressions(ELExpression newExpressions) {
-		if (newExpressions != expressions) {
-			NotificationChain msgs = null;
-			if (expressions != null)
-				msgs = ((InternalEObject)expressions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS, null, msgs);
-			if (newExpressions != null)
-				msgs = ((InternalEObject)newExpressions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS, null, msgs);
-			msgs = basicSetExpressions(newExpressions, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS, newExpressions, newExpressions));
 	}
 
 	/**
@@ -186,7 +161,7 @@ public class ELBlockStatementImpl extends ELStatementImpl implements ELBlockStat
 			case ExampleLanguagePackage.EL_BLOCK_STATEMENT__BLOCK:
 				return ((InternalEList<?>)getBlock()).basicRemove(otherEnd, msgs);
 			case ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS:
-				return basicSetExpressions(null, msgs);
+				return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -227,7 +202,8 @@ public class ELBlockStatementImpl extends ELStatementImpl implements ELBlockStat
 				setKind((ELBlockStarementKind)newValue);
 				return;
 			case ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS:
-				setExpressions((ELExpression)newValue);
+				getExpressions().clear();
+				getExpressions().addAll((Collection<? extends ELExpression>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,7 +224,7 @@ public class ELBlockStatementImpl extends ELStatementImpl implements ELBlockStat
 				setKind((ELBlockStarementKind)null);
 				return;
 			case ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS:
-				setExpressions((ELExpression)null);
+				getExpressions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -267,7 +243,7 @@ public class ELBlockStatementImpl extends ELStatementImpl implements ELBlockStat
 			case ExampleLanguagePackage.EL_BLOCK_STATEMENT__KIND:
 				return kind != null;
 			case ExampleLanguagePackage.EL_BLOCK_STATEMENT__EXPRESSIONS:
-				return expressions != null;
+				return expressions != null && !expressions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
