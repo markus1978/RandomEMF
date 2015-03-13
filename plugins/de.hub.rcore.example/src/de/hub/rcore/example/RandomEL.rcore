@@ -3,7 +3,6 @@ package de.hub.rcore.example
 import de.hub.randomemf.runtime.Ocl
 
 import static de.hub.randomemf.runtime.Random.*
-import java.util.Random
 
 generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/example-language.ecore" {	
 	
@@ -53,7 +52,7 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	alter Statement:ELStatement ->
-		BlockStatement
+		BlockStatement#6 | Expression#depth
 	;
 	
 	BlockStatement: ELBlockStatement ->
@@ -63,7 +62,7 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	alter Expression: ELExpression ->
-		Literal
+		OpCall#4 | Literal#depth
 	;
 	
 	alter Literal: ELLiteral -> 
@@ -76,6 +75,6 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	
 	OpCall: ELOpCall ->
 		kind := Uniform(model.ops)
-		arguments := Expression#self.kind.operands
+		arguments += Expression#self.kind.operands
 	;
 }

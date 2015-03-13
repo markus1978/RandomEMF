@@ -27,6 +27,8 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 public class RandomEL implements IGenerator {
   private ELModel model;
   
+  private java.lang.Integer depth = 0;
+  
   public ELModel generate() {
     root();
     de.hub.randomemf.runtime.References.resolveReferences(this, model);
@@ -34,7 +36,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELModel root() {
-    return new Root().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELModel result = new Root().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Root {
@@ -92,7 +97,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELPackage Package() {
-    return new Package().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELPackage result = new Package().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Package {
@@ -145,7 +153,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELClass Class() {
-    return new Class().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELClass result = new Class().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Class {
@@ -242,7 +253,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELMethod Constructor() {
-    return new Constructor().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELMethod result = new Constructor().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Constructor {
@@ -294,7 +308,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELField Field() {
-    return new Field().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELField result = new Field().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Field {
@@ -361,7 +378,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELVariable Variable() {
-    return new Variable().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELVariable result = new Variable().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Variable {
@@ -428,7 +448,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELMethod Method() {
-    return new Method().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELMethod result = new Method().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Method {
@@ -523,7 +546,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELBlock Block() {
-    return new Block().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELBlock result = new Block().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Block {
@@ -562,7 +588,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELStatement Statement() {
-    return new Statement().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELStatement result = new Statement().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Statement {
@@ -578,24 +607,41 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_0() {
-      return 1;
+      return java.lang.Integer.valueOf(6);
+    }
+    
+    public ELStatement call_1() {
+      ELExpression _Expression = RandomEL.this.Expression();
+      return _Expression;
+    }
+    
+    public java.lang.Integer number_1() {
+      return RandomEL.this.depth;
     }
     
     public ELStatement generate() {
       int sum = 0;
       sum += number_0();
+      sum += number_1();
       int draw = Random.RandomInt(sum);
       int current = 0;
       current += number_0();
-      if (current >= sum) {
+      if (current >= draw) {
       	return call_0();
+      }
+      current += number_1();
+      if (current >= draw) {
+      	return call_1();
       }
       throw new IllegalStateException("Unreachable!");
     }
   }
   
   public ELBlockStatement BlockStatement() {
-    return new BlockStatement().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELBlockStatement result = new BlockStatement().generate();
+    depth -= 1;
+    return result;
   }
   
   private class BlockStatement {
@@ -671,7 +717,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELExpression Expression() {
-    return new Expression().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELExpression result = new Expression().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Expression {
@@ -682,29 +731,46 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression call_0() {
+      ELOpCall _OpCall = RandomEL.this.OpCall();
+      return _OpCall;
+    }
+    
+    public java.lang.Integer number_0() {
+      return java.lang.Integer.valueOf(4);
+    }
+    
+    public ELExpression call_1() {
       ELLiteral _Literal = RandomEL.this.Literal();
       return _Literal;
     }
     
-    public java.lang.Integer number_0() {
-      return 1;
+    public java.lang.Integer number_1() {
+      return RandomEL.this.depth;
     }
     
     public ELExpression generate() {
       int sum = 0;
       sum += number_0();
+      sum += number_1();
       int draw = Random.RandomInt(sum);
       int current = 0;
       current += number_0();
-      if (current >= sum) {
+      if (current >= draw) {
       	return call_0();
+      }
+      current += number_1();
+      if (current >= draw) {
+      	return call_1();
       }
       throw new IllegalStateException("Unreachable!");
     }
   }
   
   public ELLiteral Literal() {
-    return new Literal().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELLiteral result = new Literal().generate();
+    depth -= 1;
+    return result;
   }
   
   private class Literal {
@@ -749,15 +815,15 @@ public class RandomEL implements IGenerator {
       int draw = Random.RandomInt(sum);
       int current = 0;
       current += number_0();
-      if (current >= sum) {
+      if (current >= draw) {
       	return call_0();
       }
       current += number_1();
-      if (current >= sum) {
+      if (current >= draw) {
       	return call_1();
       }
       current += number_2();
-      if (current >= sum) {
+      if (current >= draw) {
       	return call_2();
       }
       throw new IllegalStateException("Unreachable!");
@@ -765,7 +831,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELLiteral StringLiteral() {
-    return new StringLiteral().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELLiteral result = new StringLiteral().generate();
+    depth -= 1;
+    return result;
   }
   
   private class StringLiteral {
@@ -797,7 +866,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELLiteral IntLiteral() {
-    return new IntLiteral().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELLiteral result = new IntLiteral().generate();
+    depth -= 1;
+    return result;
   }
   
   private class IntLiteral {
@@ -829,7 +901,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELLiteral BoolLiteral() {
-    return new BoolLiteral().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELLiteral result = new BoolLiteral().generate();
+    depth -= 1;
+    return result;
   }
   
   private class BoolLiteral {
@@ -861,7 +936,10 @@ public class RandomEL implements IGenerator {
   }
   
   public ELOpCall OpCall() {
-    return new OpCall().generate();
+    depth += 1;
+    de.hub.rcore.example.el.ELOpCall result = new OpCall().generate();
+    depth -= 1;
+    return result;
   }
   
   private class OpCall {
@@ -903,7 +981,16 @@ public class RandomEL implements IGenerator {
     public ELOpCall generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELOpCall();
       self.eSet(self.eClass().getEStructuralFeature(3), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(0), call_1());		
+      {
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(0));	
+      	int iterations = number_1();
+      	for (int i = 0; i < iterations; i++) {
+      		values.add(call_1());
+      	}
+      }
+      if (self.getKind().getOperands() != self.getArguments().size()) {
+    	  System.out.println("HUHUHUHUHU");
+      }
       return self;
     }
   }

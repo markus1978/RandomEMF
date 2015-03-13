@@ -80,11 +80,26 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
         JvmField _field = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toField(element, "model", _jvmType);
         ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members, _field);
         EList<JvmMember> _members_1 = it.getMembers();
+        JvmTypeReference _typeRef_1 = ClassBasedRandomEMFJvmModelInferrer.this._typeReferenceBuilder.typeRef(Integer.class);
+        final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
+          public void apply(final JvmField it) {
+            StringConcatenationClient _client = new StringConcatenationClient() {
+              @Override
+              protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
+                _builder.append("0");
+              }
+            };
+            ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.setInitializer(it, _client);
+          }
+        };
+        JvmField _field_1 = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toField(element, "depth", _typeRef_1, _function);
+        ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_1, _field_1);
+        EList<JvmMember> _members_2 = it.getMembers();
         EList<AbstractRule> _rules_1 = element.getRules();
         AbstractRule _get_1 = _rules_1.get(0);
         EClass _eClass_1 = _get_1.getEClass();
         JvmTypeReference _jvmType_1 = ClassBasedRandomEMFJvmModelInferrer.this.jvmType(_eClass_1);
-        final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
+        final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             StringConcatenationClient _client = new StringConcatenationClient() {
               @Override
@@ -104,16 +119,16 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
             ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
           }
         };
-        JvmOperation _method = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "generate", _jvmType_1, _function);
-        ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _method);
+        JvmOperation _method = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "generate", _jvmType_1, _function_1);
+        ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _method);
         EList<AbstractRule> _rules_2 = element.getRules();
         for (final AbstractRule rule : _rules_2) {
           {
-            EList<JvmMember> _members_2 = it.getMembers();
+            EList<JvmMember> _members_3 = it.getMembers();
             String _name = rule.getName();
             EClass _eClass_2 = rule.getEClass();
             JvmTypeReference _jvmType_2 = ClassBasedRandomEMFJvmModelInferrer.this.jvmType(_eClass_2);
-            final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+            final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
               public void apply(final JvmOperation it) {
                 EList<JvmFormalParameter> _params = rule.getParams();
                 for (final JvmFormalParameter param : _params) {
@@ -126,7 +141,13 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                 StringConcatenationClient _client = new StringConcatenationClient() {
                   @Override
                   protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
-                    _builder.append("return new ");
+                    _builder.append("depth += 1;");
+                    _builder.newLine();
+                    EClass _eClass = rule.getEClass();
+                    JvmTypeReference _jvmType = ClassBasedRandomEMFJvmModelInferrer.this.jvmType(_eClass);
+                    String _identifier = _jvmType.getIdentifier();
+                    _builder.append(_identifier, "");
+                    _builder.append(" result = new ");
                     String _name = rule.getName();
                     String _firstUpper = StringExtensions.toFirstUpper(_name);
                     _builder.append(_firstUpper, "");
@@ -146,17 +167,21 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                     }
                     _builder.append(").generate();");
                     _builder.newLineIfNotEmpty();
+                    _builder.append("depth -= 1;");
+                    _builder.newLine();
+                    _builder.append("return result;");
+                    _builder.newLine();
                   }
                 };
                 ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
               }
             };
-            JvmOperation _method_1 = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toMethod(rule, _name, _jvmType_2, _function_1);
-            ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _method_1);
-            EList<JvmMember> _members_3 = it.getMembers();
+            JvmOperation _method_1 = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toMethod(rule, _name, _jvmType_2, _function_2);
+            ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _method_1);
+            EList<JvmMember> _members_4 = it.getMembers();
             String _name_1 = rule.getName();
             String _firstUpper = StringExtensions.toFirstUpper(_name_1);
-            final Procedure1<JvmGenericType> _function_2 = new Procedure1<JvmGenericType>() {
+            final Procedure1<JvmGenericType> _function_3 = new Procedure1<JvmGenericType>() {
               public void apply(final JvmGenericType it) {
                 it.setVisibility(JvmVisibility.PRIVATE);
                 EList<JvmMember> _members = it.getMembers();
@@ -456,7 +481,7 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                                 _builder.append(index_2, "");
                                 _builder.append("();");
                                 _builder.newLineIfNotEmpty();
-                                _builder.append("if (current >= sum) {");
+                                _builder.append("if (current >= draw) {");
                                 _builder.newLine();
                                 _builder.append("\t");
                                 _builder.append("return call_");
@@ -480,13 +505,13 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                 ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_4, _method);
               }
             };
-            JvmGenericType _class = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toClass(rule, _firstUpper, _function_2);
-            ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmGenericType>operator_add(_members_3, _class);
+            JvmGenericType _class = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toClass(rule, _firstUpper, _function_3);
+            ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmGenericType>operator_add(_members_4, _class);
           }
         }
-        EList<JvmMember> _members_2 = it.getMembers();
-        JvmTypeReference _typeRef_1 = ClassBasedRandomEMFJvmModelInferrer.this._typeReferenceBuilder.typeRef(EObject.class);
-        final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
+        EList<JvmMember> _members_3 = it.getMembers();
+        JvmTypeReference _typeRef_2 = ClassBasedRandomEMFJvmModelInferrer.this._typeReferenceBuilder.typeRef(EObject.class);
+        final Procedure1<JvmOperation> _function_2 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
             EList<JvmFormalParameter> _parameters = it.getParameters();
             JvmTypeReference _typeRef = ClassBasedRandomEMFJvmModelInferrer.this._typeReferenceBuilder.typeRef(EObject.class);
@@ -570,8 +595,8 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
             ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _client);
           }
         };
-        JvmOperation _method_1 = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "resolve", _typeRef_1, _function_1);
-        ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_2, _method_1);
+        JvmOperation _method_1 = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toMethod(element, "resolve", _typeRef_2, _function_2);
+        ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_3, _method_1);
       }
     };
     acceptor.<JvmGenericType>accept(_class, _function);

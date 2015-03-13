@@ -15,6 +15,8 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 public class RandomEcore implements IGenerator {
   private org.eclipse.emf.ecore.EPackage model;
   
+  private Integer depth = 0;
+  
   public org.eclipse.emf.ecore.EPackage generate() {
     ePackage();
     de.hub.randomemf.runtime.References.resolveReferences(this, model);
@@ -22,7 +24,10 @@ public class RandomEcore implements IGenerator {
   }
   
   public org.eclipse.emf.ecore.EPackage ePackage() {
-    return new EPackage().generate();
+    depth += 1;
+    org.eclipse.emf.ecore.EPackage result = new EPackage().generate();
+    depth -= 1;
+    return result;
   }
   
   private class EPackage {
@@ -107,7 +112,10 @@ public class RandomEcore implements IGenerator {
   }
   
   public org.eclipse.emf.ecore.EClass eClass() {
-    return new EClass().generate();
+    depth += 1;
+    org.eclipse.emf.ecore.EClass result = new EClass().generate();
+    depth -= 1;
+    return result;
   }
   
   private class EClass {
@@ -196,7 +204,10 @@ public class RandomEcore implements IGenerator {
   }
   
   public org.eclipse.emf.ecore.EReference eReference(final boolean composite) {
-    return new EReference(composite).generate();
+    depth += 1;
+    org.eclipse.emf.ecore.EReference result = new EReference(composite).generate();
+    depth -= 1;
+    return result;
   }
   
   private class EReference {
@@ -302,7 +313,10 @@ public class RandomEcore implements IGenerator {
   }
   
   public org.eclipse.emf.ecore.EAttribute eAttribute() {
-    return new EAttribute().generate();
+    depth += 1;
+    org.eclipse.emf.ecore.EAttribute result = new EAttribute().generate();
+    depth -= 1;
+    return result;
   }
   
   private class EAttribute {

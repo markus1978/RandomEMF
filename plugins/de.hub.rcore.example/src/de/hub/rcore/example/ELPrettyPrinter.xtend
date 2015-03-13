@@ -70,8 +70,11 @@ class ELPrettyPrinter {
 		} else if (statement.kind.kind == ELOpKind.INFIX) {
 			return '''«statement.arguments.get(0).genStatement»«statement.kind.syntax»«statement.arguments.get(1).genStatement»'''
 		} else {
+			//if (statement.arguments.size != statement.kind.operands) {
+				System.out.println("HUHU: " + statement.kind.syntax + ", " + statement.eClass.name + ", " + statement.arguments.size);
+			//}
 			var syntax = statement.kind.syntax
-			for (i:1..statement.kind.operands) {
+			for (var i = 1; i <= statement.kind.operands; i++) {				
 				syntax = syntax.replace("#"+i, statement.arguments.get(i-1).genStatement.toString())
 			}
 			return syntax;

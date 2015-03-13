@@ -32,6 +32,7 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 			
 			// field for the model
 			members += element.toField("model", jvmType(element.rules.get(0).EClass));
+			members += element.toField("depth", typeRef(Integer)) [ initializer = '''0'''];
 			
 			members += element.toMethod("generate", element.rules.get(0).EClass.jvmType) [
 				body = '''
@@ -47,7 +48,10 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 						parameters += param.toParameter(param.name, param.parameterType)	
 					}
 					body = '''
-						return new «rule.name.toFirstUpper»(«FOR p:rule.params SEPARATOR ", "»«p.name»«ENDFOR»).generate();
+						depth += 1;
+						«rule.EClass.jvmType.identifier» result = new «rule.name.toFirstUpper»(«FOR p:rule.params SEPARATOR ", "»«p.name»«ENDFOR»).generate();
+						depth -= 1;
+						return result;
 					'''
 				]
 				members += rule.toClass(rule.name.toFirstUpper) [
@@ -133,7 +137,7 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 								int current = 0;
 								«FOR index: 0..rule.inners.size-1»
 									current += number_«index»();
-									if (current >= sum) {
+									if (current >= draw) {
 										return call_«index»();
 									}
 								«ENDFOR»
