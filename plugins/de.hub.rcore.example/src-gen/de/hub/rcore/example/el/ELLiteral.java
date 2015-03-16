@@ -20,7 +20,6 @@ package de.hub.rcore.example.el;
  * @generated
  */
 public interface ELLiteral extends ELExpression {
-
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -46,4 +45,5 @@ public interface ELLiteral extends ELExpression {
 	 * @generated
 	 */
 	void setValue(String value);
+
 } // ELLiteral

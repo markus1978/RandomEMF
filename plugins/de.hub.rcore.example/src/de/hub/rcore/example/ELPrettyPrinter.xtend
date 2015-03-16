@@ -14,6 +14,8 @@ import de.hub.rcore.example.el.ELOpCall
 import de.hub.rcore.example.el.ELCall
 import de.hub.rcore.example.el.ELAccess
 import de.hub.rcore.example.el.ELOpKind
+import org.eclipse.emf.ecore.EObject
+import de.hub.rcore.example.el.ELAssignment
 
 class ELPrettyPrinter {
 	def gen(ELClass elClass) '''
@@ -82,11 +84,11 @@ class ELPrettyPrinter {
 		}
 	}	
 	
-	def dispatch genStatement(ELCall statement) '''
-	'''
+	def dispatch CharSequence genStatement(ELCall statement) '''«IF statement.thisArgument != null»«statement.thisArgument.genStatement».«ENDIF»«statement.callee.name»(«FOR a:statement.arguments SEPARATOR ", "»«a.genStatement»«ENDFOR»)'''
 	
-	def dispatch genStatement(ELAccess statement) '''
-	'''
+	def dispatch CharSequence genStatement(ELAccess statement) '''«statement.variable.name»'''
+	
+	def dispatch CharSequence genStatement(ELAssignment assignment) '''«assignment.assignee.name» := «assignment.expr.genStatement»'''
 	
 	def genType(ELTypedElement te) {
 		val container = if (te.eContainer instanceof ELClass) te.eContainer.eContainer else te.eContainer.eContainer.eContainer;

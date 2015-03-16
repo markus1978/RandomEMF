@@ -1058,6 +1058,52 @@ public interface ExampleLanguagePackage extends EPackage {
 	int EL_MODEL_OPERATION_COUNT = EL_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.hub.rcore.example.el.impl.ELAssignmentImpl <em>EL Assignment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.hub.rcore.example.el.impl.ELAssignmentImpl
+	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELAssignment()
+	 * @generated
+	 */
+	int EL_ASSIGNMENT = 19;
+
+	/**
+	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_ASSIGNMENT__EXPR = EL_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Assignee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_ASSIGNMENT__ASSIGNEE = EL_STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>EL Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_ASSIGNMENT_FEATURE_COUNT = EL_STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>EL Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EL_ASSIGNMENT_OPERATION_COUNT = EL_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.hub.rcore.example.el.ELOpKind <em>EL Op Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1065,7 +1111,7 @@ public interface ExampleLanguagePackage extends EPackage {
 	 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELOpKind()
 	 * @generated
 	 */
-	int EL_OP_KIND = 19;
+	int EL_OP_KIND = 20;
 
 
 	/**
@@ -1600,6 +1646,38 @@ public interface ExampleLanguagePackage extends EPackage {
 	EReference getELModel_Blocks();
 
 	/**
+	 * Returns the meta object for class '{@link de.hub.rcore.example.el.ELAssignment <em>EL Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EL Assignment</em>'.
+	 * @see de.hub.rcore.example.el.ELAssignment
+	 * @generated
+	 */
+	EClass getELAssignment();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.hub.rcore.example.el.ELAssignment#getExpr <em>Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expr</em>'.
+	 * @see de.hub.rcore.example.el.ELAssignment#getExpr()
+	 * @see #getELAssignment()
+	 * @generated
+	 */
+	EReference getELAssignment_Expr();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.hub.rcore.example.el.ELAssignment#getAssignee <em>Assignee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Assignee</em>'.
+	 * @see de.hub.rcore.example.el.ELAssignment#getAssignee()
+	 * @see #getELAssignment()
+	 * @generated
+	 */
+	EReference getELAssignment_Assignee();
+
+	/**
 	 * Returns the meta object for enum '{@link de.hub.rcore.example.el.ELOpKind <em>EL Op Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2069,6 +2147,32 @@ public interface ExampleLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference EL_MODEL__BLOCKS = eINSTANCE.getELModel_Blocks();
+
+		/**
+		 * The meta object literal for the '{@link de.hub.rcore.example.el.impl.ELAssignmentImpl <em>EL Assignment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.hub.rcore.example.el.impl.ELAssignmentImpl
+		 * @see de.hub.rcore.example.el.impl.ExampleLanguagePackageImpl#getELAssignment()
+		 * @generated
+		 */
+		EClass EL_ASSIGNMENT = eINSTANCE.getELAssignment();
+
+		/**
+		 * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EL_ASSIGNMENT__EXPR = eINSTANCE.getELAssignment_Expr();
+
+		/**
+		 * The meta object literal for the '<em><b>Assignee</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EL_ASSIGNMENT__ASSIGNEE = eINSTANCE.getELAssignment_Assignee();
 
 		/**
 		 * The meta object literal for the '{@link de.hub.rcore.example.el.ELOpKind <em>EL Op Kind</em>}' enum.

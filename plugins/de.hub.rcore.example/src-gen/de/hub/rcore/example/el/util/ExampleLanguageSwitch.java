@@ -204,6 +204,13 @@ public class ExampleLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ExampleLanguagePackage.EL_ASSIGNMENT: {
+				ELAssignment elAssignment = (ELAssignment)theEObject;
+				T result = caseELAssignment(elAssignment);
+				if (result == null) result = caseELStatement(elAssignment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -490,6 +497,21 @@ public class ExampleLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseELModel(ELModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EL Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EL Assignment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseELAssignment(ELAssignment object) {
 		return null;
 	}
 

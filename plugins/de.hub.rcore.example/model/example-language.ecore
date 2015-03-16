@@ -86,4 +86,9 @@
     <eLiterals name="prefix"/>
     <eLiterals name="syntax" literal="syntax"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ELAssignment" eSuperTypes="#//ELStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//ELExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignee" eType="#//ELVariable"/>
+  </eClassifiers>
 </ecore:EPackage>

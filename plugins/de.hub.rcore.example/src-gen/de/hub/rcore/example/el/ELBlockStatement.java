@@ -70,7 +70,7 @@ public interface ELBlockStatement extends ELStatement {
 	 * The list contents are of type {@link de.hub.rcore.example.el.ELExpression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Expressions</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

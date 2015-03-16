@@ -15,5 +15,4 @@ public interface ELLiteralValidator {
 	boolean validate();
 
 	boolean validateValue(String value);
-
 }

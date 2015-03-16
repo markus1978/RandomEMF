@@ -43,7 +43,7 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	Method:ELMethod ->
 		name := MethodName(Normal(5,3))
 		type := if (UniformBool(0.3)) null else Uniform(Ocl.collectAll(model.packages)[it.classes])	
-		parameters += Variable#(Content()*0.6) as int
+		parameters += Variable#(Content()*0.3) as int
 		block := Block
 	;
 	
@@ -52,7 +52,7 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	alter Statement:ELStatement ->
-		BlockStatement#6 | Expression#depth*4
+		BlockStatement#6 | MethodCall#depth*4 | Assignment#depth*4
 	;
 	
 	BlockStatement: ELBlockStatement ->
@@ -62,19 +62,33 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	alter Expression: ELExpression ->
-		OpCall#4 | Literal#depth*2
+		MethodCall#6 | OpCall#4 | Literal#(depth*1.2) as int
 	;
 	
-	alter Literal: ELLiteral -> 
+	alter Literal: ELLiteral ->
 		StringLiteral | IntLiteral | BoolLiteral
 	;
 	
-	StringLiteral: ELLiteral -> value := RandomString(Normal(10, 6));
+	StringLiteral: ELLiteral -> value := LoremIpsum(Content());
 	IntLiteral: ELLiteral -> value := "" + Normal(10,5);
 	BoolLiteral: ELLiteral -> value := "" + UniformBool(0.5);
 	
 	OpCall: ELOpCall ->
 		kind := Uniform(model.ops)
 		arguments += Expression#self.kind.operands
+	;
+	
+	MethodCall: ELCall ->
+		callee := @(Uniform(Ocl.collectAll(model.packages)[Ocl.collectAll(it.classes)[it.methods]]))
+		arguments += Expression#(Content()*0.3) as int
+	;
+	
+	Access: ELAccess ->
+		variable := @(Uniform(Ocl.collectAll(model.packages)[Ocl.collectAll(it.classes)[it.fields]]))
+	;
+	
+	Assignment: ELAssignment ->
+		assignee := @(Uniform(Ocl.collectAll(model.packages)[Ocl.collectAll(it.classes)[it.fields]]))
+		expr := Expression()#1
 	;
 }

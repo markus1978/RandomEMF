@@ -10,6 +10,7 @@ public class Random {
 
 	private static RandomEngine rand = new DRand(0);
 	private static RandomNames names = new RandomNames(rand);
+	private static LoremIpsum lorem = new LoremIpsum();
 	
 	public static RandomEngine Rand() {
 		return rand;
@@ -45,6 +46,10 @@ public class Random {
 	
 	public static String RandomString(int length) {
 		return "\"" + RandomStringUtils.randomAscii(length <= 0 ? 1 : length).replace('"', ' ') + "\"";
+	}
+	
+	public static String LoremIpsum(int length) {
+		return "\"" + lorem.getWords(length, (int)Math.floor(rand.nextFloat()*50)) + "\"";
 	}
 	
 	public static <T> T Uniform(Iterable<T> list) {

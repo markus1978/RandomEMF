@@ -6,7 +6,9 @@ import de.hub.rcore.example.el.ELLiteral;
 import de.hub.rcore.example.el.ExampleLanguagePackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -32,6 +34,7 @@ public class ELLiteralImpl extends ELExpressionImpl implements ELLiteral {
 	 * @ordered
 	 */
 	protected static final String VALUE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->

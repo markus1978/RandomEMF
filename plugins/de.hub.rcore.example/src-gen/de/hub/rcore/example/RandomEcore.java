@@ -1,7 +1,5 @@
 package de.hub.rcore.example;
 
-import de.hub.randomemf.runtime.IGenerator;
-import de.hub.randomemf.runtime.Random;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -10,6 +8,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+
+import de.hub.randomemf.runtime.IGenerator;
+import de.hub.randomemf.runtime.Random;
 
 @SuppressWarnings("all")
 public class RandomEcore implements IGenerator {
@@ -97,11 +98,11 @@ public class RandomEcore implements IGenerator {
     public org.eclipse.emf.ecore.EPackage generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEPackage();
       model = self;
-      self.eSet(self.eClass().getEStructuralFeature(1), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(3), call_1());		
-      self.eSet(self.eClass().getEStructuralFeature(2), call_2());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("nsPrefix"), call_1());		
+      self.eSet(self.eClass().getEStructuralFeature("nsURI"), call_2());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(5));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("eClassifiers"));	
       	int iterations = number_3();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_3());
@@ -183,17 +184,17 @@ public class RandomEcore implements IGenerator {
     
     public org.eclipse.emf.ecore.EClass generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEClass();
-      self.eSet(self.eClass().getEStructuralFeature(1), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(8), call_1());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("abstract"), call_1());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(21));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("eStructuralFeatures"));	
       	int iterations = number_2();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_2());
       	}
       }
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(21));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("eStructuralFeatures"));	
       	int iterations = number_3();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_3());
@@ -282,7 +283,7 @@ public class RandomEcore implements IGenerator {
     }
     
     public EClassifier call_4() {
-      return de.hub.randomemf.runtime.References.createProxy(org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEClass(), "eReference_4");	
+      return callExpr_4();
     }
     
     public EClassifier callExpr_4() {
@@ -303,11 +304,11 @@ public class RandomEcore implements IGenerator {
     
     public org.eclipse.emf.ecore.EReference generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEReference();
-      self.eSet(self.eClass().getEStructuralFeature(1), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(5), call_1());		
-      self.eSet(self.eClass().getEStructuralFeature(2), call_2());		
-      self.eSet(self.eClass().getEStructuralFeature(18), call_3());		
-      self.eSet(self.eClass().getEStructuralFeature(8), call_4());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("upperBound"), call_1());		
+      self.eSet(self.eClass().getEStructuralFeature("ordered"), call_2());		
+      self.eSet(self.eClass().getEStructuralFeature("containment"), call_3());		
+      self.eSet(self.eClass().getEStructuralFeature("eType"), call_4());		
       return self;
     }
   }
@@ -360,7 +361,7 @@ public class RandomEcore implements IGenerator {
     }
     
     public EClassifier call_2() {
-      return de.hub.randomemf.runtime.References.createProxy(org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEDataType(), "eAttribute_2");	
+      return callExpr_2();
     }
     
     public EClassifier callExpr_2() {
@@ -388,9 +389,9 @@ public class RandomEcore implements IGenerator {
     
     public org.eclipse.emf.ecore.EAttribute generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEAttribute();
-      self.eSet(self.eClass().getEStructuralFeature(1), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(5), call_1());		
-      self.eSet(self.eClass().getEStructuralFeature(8), call_2());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("upperBound"), call_1());		
+      self.eSet(self.eClass().getEStructuralFeature("eType"), call_2());		
       return self;
     }
   }

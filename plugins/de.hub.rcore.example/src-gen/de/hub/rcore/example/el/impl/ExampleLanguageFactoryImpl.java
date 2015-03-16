@@ -76,6 +76,7 @@ public class ExampleLanguageFactoryImpl extends EFactoryImpl implements ExampleL
 			case ExampleLanguagePackage.EL_TYPED_ELEMENT: return createELTypedElement();
 			case ExampleLanguagePackage.EL_BLOCK_STAREMENT_KIND: return createELBlockStarementKind();
 			case ExampleLanguagePackage.EL_MODEL: return createELModel();
+			case ExampleLanguagePackage.EL_ASSIGNMENT: return createELAssignment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -299,6 +300,16 @@ public class ExampleLanguageFactoryImpl extends EFactoryImpl implements ExampleL
 	public ELModel createELModel() {
 		ELModelImpl elModel = new ELModelImpl();
 		return elModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ELAssignment createELAssignment() {
+		ELAssignmentImpl elAssignment = new ELAssignmentImpl();
+		return elAssignment;
 	}
 
 	/**

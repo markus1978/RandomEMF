@@ -76,6 +76,10 @@ Package el <http://de.hub.el/EL/1.0>
     Reference ops : ELOp<<0..*>>
     Reference blocks : ELBlockStarementKind<<0..*>>
 
+  Class ELAssignment -> ELStatement
+    Reference expr : ELExpression
+    Reference assignee : ELVariable
+
   Enum ELOpKind
     Literal infix = 0
     Literal suffix = 0

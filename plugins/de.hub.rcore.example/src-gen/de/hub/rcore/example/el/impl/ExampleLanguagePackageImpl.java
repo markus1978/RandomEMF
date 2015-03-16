@@ -3,6 +3,7 @@
 package de.hub.rcore.example.el.impl;
 
 import de.hub.rcore.example.el.ELAccess;
+import de.hub.rcore.example.el.ELAssignment;
 import de.hub.rcore.example.el.ELBlock;
 import de.hub.rcore.example.el.ELBlockStarementKind;
 import de.hub.rcore.example.el.ELBlockStatement;
@@ -172,6 +173,13 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 	 * @generated
 	 */
 	private EClass elModelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass elAssignmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -696,6 +704,33 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getELAssignment() {
+		return elAssignmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getELAssignment_Expr() {
+		return (EReference)elAssignmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getELAssignment_Assignee() {
+		return (EReference)elAssignmentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getELOpKind() {
 		return elOpKindEEnum;
 	}
@@ -797,6 +832,10 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		createEReference(elModelEClass, EL_MODEL__OPS);
 		createEReference(elModelEClass, EL_MODEL__BLOCKS);
 
+		elAssignmentEClass = createEClass(EL_ASSIGNMENT);
+		createEReference(elAssignmentEClass, EL_ASSIGNMENT__EXPR);
+		createEReference(elAssignmentEClass, EL_ASSIGNMENT__ASSIGNEE);
+
 		// Create enums
 		elOpKindEEnum = createEEnum(EL_OP_KIND);
 	}
@@ -843,6 +882,7 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		elDataTypeEClass.getESuperTypes().add(this.getELClass());
 		elTypedElementEClass.getESuperTypes().add(this.getELNamedElement());
 		elModelEClass.getESuperTypes().add(this.getELNamedElement());
+		elAssignmentEClass.getESuperTypes().add(this.getELStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elPackageEClass, ELPackage.class, "ELPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -913,6 +953,10 @@ public class ExampleLanguagePackageImpl extends EPackageImpl implements ExampleL
 		initEReference(getELModel_Packages(), this.getELPackage(), null, "packages", null, 0, -1, ELModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getELModel_Ops(), this.getELOp(), null, "ops", null, 0, -1, ELModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getELModel_Blocks(), this.getELBlockStarementKind(), null, "blocks", null, 0, -1, ELModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(elAssignmentEClass, ELAssignment.class, "ELAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getELAssignment_Expr(), this.getELExpression(), null, "expr", null, 0, 1, ELAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getELAssignment_Assignee(), this.getELVariable(), null, "assignee", null, 0, 1, ELAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(elOpKindEEnum, ELOpKind.class, "ELOpKind");
