@@ -1240,7 +1240,12 @@ public class RandomEMFSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (eFeature=[EStructuralFeature|ID] concreteValueType=[EClass|ID]? isAddRule?='+='? expr=XExpression number=XExpression?)
+	 *     (
+	 *         eFeature=[EStructuralFeature|ID] 
+	 *         concreteValueType=[EClass|ID]? 
+	 *         isAddRule?='+='? 
+	 *         ((isRef?='@' expr=XExpression number=XExpression?) | (expr=XExpression number=XExpression?))
+	 *     )
 	 */
 	protected void sequence_Feature(EObject context, InnerRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

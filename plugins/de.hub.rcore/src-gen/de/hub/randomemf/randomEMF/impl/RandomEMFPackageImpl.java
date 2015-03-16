@@ -330,6 +330,16 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getInnerRule_IsRef()
+  {
+    return (EAttribute)innerRuleEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getClassRule()
   {
     return classRuleEClass;
@@ -387,6 +397,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
     createEReference(innerRuleEClass, INNER_RULE__EFEATURE);
     createEReference(innerRuleEClass, INNER_RULE__CONCRETE_VALUE_TYPE);
     createEAttribute(innerRuleEClass, INNER_RULE__IS_ADD_RULE);
+    createEAttribute(innerRuleEClass, INNER_RULE__IS_REF);
 
     classRuleEClass = createEClass(CLASS_RULE);
   }
@@ -452,6 +463,7 @@ public class RandomEMFPackageImpl extends EPackageImpl implements RandomEMFPacka
     initEReference(getInnerRule_EFeature(), theEcorePackage.getEStructuralFeature(), null, "eFeature", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInnerRule_ConcreteValueType(), theEcorePackage.getEClass(), null, "concreteValueType", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInnerRule_IsAddRule(), theEcorePackage.getEBoolean(), "isAddRule", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInnerRule_IsRef(), theEcorePackage.getEBoolean(), "isRef", null, 0, 1, InnerRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classRuleEClass, ClassRule.class, "ClassRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

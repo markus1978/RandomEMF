@@ -295,13 +295,22 @@ public interface RandomEMFPackage extends EPackage
   int INNER_RULE__IS_ADD_RULE = 4;
 
   /**
+   * The feature id for the '<em><b>Is Ref</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_RULE__IS_REF = 5;
+
+  /**
    * The number of structural features of the '<em>Inner Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INNER_RULE_FEATURE_COUNT = 5;
+  int INNER_RULE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link de.hub.randomemf.randomEMF.impl.ClassRuleImpl <em>Class Rule</em>}' class.
@@ -565,6 +574,17 @@ public interface RandomEMFPackage extends EPackage
   EAttribute getInnerRule_IsAddRule();
 
   /**
+   * Returns the meta object for the attribute '{@link de.hub.randomemf.randomEMF.InnerRule#isIsRef <em>Is Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Ref</em>'.
+   * @see de.hub.randomemf.randomEMF.InnerRule#isIsRef()
+   * @see #getInnerRule()
+   * @generated
+   */
+  EAttribute getInnerRule_IsRef();
+
+  /**
    * Returns the meta object for class '{@link de.hub.randomemf.randomEMF.ClassRule <em>Class Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -756,6 +776,14 @@ public interface RandomEMFPackage extends EPackage
      * @generated
      */
     EAttribute INNER_RULE__IS_ADD_RULE = eINSTANCE.getInnerRule_IsAddRule();
+
+    /**
+     * The meta object literal for the '<em><b>Is Ref</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INNER_RULE__IS_REF = eINSTANCE.getInnerRule_IsRef();
 
     /**
      * The meta object literal for the '{@link de.hub.randomemf.randomEMF.impl.ClassRuleImpl <em>Class Rule</em>}' class.

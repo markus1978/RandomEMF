@@ -79,14 +79,14 @@ public class RandomEL implements IGenerator {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELModel();
       model = self;
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(1));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("packages"));	
       	int iterations = number_0();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_0());
       	}
       }
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(1));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("packages"));	
       	int iterations = number_1();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_1());
@@ -140,9 +140,9 @@ public class RandomEL implements IGenerator {
     
     public ELPackage generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELPackage();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(1));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("classes"));	
       	int iterations = number_1();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_1());
@@ -226,23 +226,23 @@ public class RandomEL implements IGenerator {
     
     public ELClass generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELClass();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(2));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("fields"));	
       	int iterations = number_1();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_1());
       	}
       }
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(1));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("methods"));	
       	int iterations = number_2();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_2());
       	}
       }
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(1));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("methods"));	
       	int iterations = number_3();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_3());
@@ -295,9 +295,9 @@ public class RandomEL implements IGenerator {
     
     public ELMethod generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELMethod();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(3));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("parameters"));	
       	int iterations = number_1();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_1());
@@ -349,7 +349,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELClass call_2() {
-      return de.hub.randomemf.runtime.References.createProxy(de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELClass(), "Field_2");	
+      return callExpr_2();
     }
     
     public ELClass callExpr_2() {
@@ -370,9 +370,9 @@ public class RandomEL implements IGenerator {
     
     public ELField generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELField();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(2), call_1());		
-      self.eSet(self.eClass().getEStructuralFeature(1), call_2());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("array"), call_1());		
+      self.eSet(self.eClass().getEStructuralFeature("type"), call_2());		
       return self;
     }
   }
@@ -419,7 +419,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELClass call_2() {
-      return de.hub.randomemf.runtime.References.createProxy(de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELClass(), "Variable_2");	
+      return callExpr_2();
     }
     
     public ELClass callExpr_2() {
@@ -440,9 +440,9 @@ public class RandomEL implements IGenerator {
     
     public ELVariable generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELVariable();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(2), call_1());		
-      self.eSet(self.eClass().getEStructuralFeature(1), call_2());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("array"), call_1());		
+      self.eSet(self.eClass().getEStructuralFeature("type"), call_2());		
       return self;
     }
   }
@@ -476,7 +476,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELClass call_1() {
-      return de.hub.randomemf.runtime.References.createProxy(de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELClass(), "Method_1");	
+      return callExpr_1();
     }
     
     public ELClass callExpr_1() {
@@ -531,16 +531,16 @@ public class RandomEL implements IGenerator {
     
     public ELMethod generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELMethod();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
-      self.eSet(self.eClass().getEStructuralFeature(1), call_1());		
+      self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("type"), call_1());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(3));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("parameters"));	
       	int iterations = number_2();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_2());
       	}
       }
-      self.eSet(self.eClass().getEStructuralFeature(5), call_3());		
+      self.eSet(self.eClass().getEStructuralFeature("block"), call_3());		
       return self;
     }
   }
@@ -577,7 +577,7 @@ public class RandomEL implements IGenerator {
     public ELBlock generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELBlock();
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(0));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("statements"));	
       	int iterations = number_0();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_0());
@@ -616,7 +616,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_1() {
-      return RandomEL.this.depth;
+      return java.lang.Integer.valueOf(((RandomEL.this.depth).intValue() * 4));
     }
     
     public ELStatement generate() {
@@ -652,7 +652,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELBlockStarementKind call_0() {
-      return de.hub.randomemf.runtime.References.createProxy(de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELBlockStarementKind(), "BlockStatement_0");	
+      return callExpr_0();
     }
     
     public ELBlockStarementKind callExpr_0() {
@@ -697,16 +697,16 @@ public class RandomEL implements IGenerator {
     
     public ELBlockStatement generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELBlockStatement();
-      self.eSet(self.eClass().getEStructuralFeature(1), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("kind"), call_0());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(0));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("block"));	
       	int iterations = number_1();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_1());
       	}
       }
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(2));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("expressions"));	
       	int iterations = number_2();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_2());
@@ -745,7 +745,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_1() {
-      return RandomEL.this.depth;
+      return java.lang.Integer.valueOf(((RandomEL.this.depth).intValue() * 2));
     }
     
     public ELExpression generate() {
@@ -860,7 +860,7 @@ public class RandomEL implements IGenerator {
     
     public ELLiteral generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELLiteral();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("value"), call_0());		
       return self;
     }
   }
@@ -895,7 +895,7 @@ public class RandomEL implements IGenerator {
     
     public ELLiteral generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELLiteral();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("value"), call_0());		
       return self;
     }
   }
@@ -930,7 +930,7 @@ public class RandomEL implements IGenerator {
     
     public ELLiteral generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELLiteral();
-      self.eSet(self.eClass().getEStructuralFeature(0), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("value"), call_0());		
       return self;
     }
   }
@@ -950,7 +950,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELOp call_0() {
-      return de.hub.randomemf.runtime.References.createProxy(de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELOp(), "OpCall_0");	
+      return callExpr_0();
     }
     
     public ELOp callExpr_0() {
@@ -980,16 +980,13 @@ public class RandomEL implements IGenerator {
     
     public ELOpCall generate() {
       self = de.hub.rcore.example.el.ExampleLanguageFactory.eINSTANCE.createELOpCall();
-      self.eSet(self.eClass().getEStructuralFeature(3), call_0());		
+      self.eSet(self.eClass().getEStructuralFeature("kind"), call_0());		
       {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(0));	
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("arguments"));	
       	int iterations = number_1();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_1());
       	}
-      }
-      if (self.getKind().getOperands() != self.getArguments().size()) {
-    	  System.out.println("HUHUHUHUHU");
       }
       return self;
     }

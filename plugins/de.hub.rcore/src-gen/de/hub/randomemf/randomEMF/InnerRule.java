@@ -21,6 +21,7 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link de.hub.randomemf.randomEMF.InnerRule#getEFeature <em>EFeature</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.InnerRule#getConcreteValueType <em>Concrete Value Type</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.InnerRule#isIsAddRule <em>Is Add Rule</em>}</li>
+ *   <li>{@link de.hub.randomemf.randomEMF.InnerRule#isIsRef <em>Is Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -159,5 +160,31 @@ public interface InnerRule extends EObject
    * @generated
    */
   void setIsAddRule(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Ref</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Is Ref</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Ref</em>' attribute.
+   * @see #setIsRef(boolean)
+   * @see de.hub.randomemf.randomEMF.RandomEMFPackage#getInnerRule_IsRef()
+   * @model
+   * @generated
+   */
+  boolean isIsRef();
+
+  /**
+   * Sets the value of the '{@link de.hub.randomemf.randomEMF.InnerRule#isIsRef <em>Is Ref</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Ref</em>' attribute.
+   * @see #isIsRef()
+   * @generated
+   */
+  void setIsRef(boolean value);
 
 } // InnerRule

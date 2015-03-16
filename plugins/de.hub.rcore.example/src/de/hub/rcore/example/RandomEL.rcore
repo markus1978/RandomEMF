@@ -52,7 +52,7 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	alter Statement:ELStatement ->
-		BlockStatement#6 | Expression#depth
+		BlockStatement#6 | Expression#depth*4
 	;
 	
 	BlockStatement: ELBlockStatement ->
@@ -62,7 +62,7 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	alter Expression: ELExpression ->
-		OpCall#4 | Literal#depth
+		OpCall#4 | Literal#depth*2
 	;
 	
 	alter Literal: ELLiteral -> 

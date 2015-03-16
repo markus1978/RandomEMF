@@ -29,6 +29,7 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link de.hub.randomemf.randomEMF.impl.InnerRuleImpl#getEFeature <em>EFeature</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.InnerRuleImpl#getConcreteValueType <em>Concrete Value Type</em>}</li>
  *   <li>{@link de.hub.randomemf.randomEMF.impl.InnerRuleImpl#isIsAddRule <em>Is Add Rule</em>}</li>
+ *   <li>{@link de.hub.randomemf.randomEMF.impl.InnerRuleImpl#isIsRef <em>Is Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -95,6 +96,26 @@ public class InnerRuleImpl extends MinimalEObjectImpl.Container implements Inner
    * @ordered
    */
   protected boolean isAddRule = IS_ADD_RULE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsRef() <em>Is Ref</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsRef()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_REF_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsRef() <em>Is Ref</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsRef()
+   * @generated
+   * @ordered
+   */
+  protected boolean isRef = IS_REF_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -327,6 +348,29 @@ public class InnerRuleImpl extends MinimalEObjectImpl.Container implements Inner
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isIsRef()
+  {
+    return isRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIsRef(boolean newIsRef)
+  {
+    boolean oldIsRef = isRef;
+    isRef = newIsRef;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RandomEMFPackage.INNER_RULE__IS_REF, oldIsRef, isRef));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -362,6 +406,8 @@ public class InnerRuleImpl extends MinimalEObjectImpl.Container implements Inner
         return basicGetConcreteValueType();
       case RandomEMFPackage.INNER_RULE__IS_ADD_RULE:
         return isIsAddRule();
+      case RandomEMFPackage.INNER_RULE__IS_REF:
+        return isIsRef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -390,6 +436,9 @@ public class InnerRuleImpl extends MinimalEObjectImpl.Container implements Inner
         return;
       case RandomEMFPackage.INNER_RULE__IS_ADD_RULE:
         setIsAddRule((Boolean)newValue);
+        return;
+      case RandomEMFPackage.INNER_RULE__IS_REF:
+        setIsRef((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -420,6 +469,9 @@ public class InnerRuleImpl extends MinimalEObjectImpl.Container implements Inner
       case RandomEMFPackage.INNER_RULE__IS_ADD_RULE:
         setIsAddRule(IS_ADD_RULE_EDEFAULT);
         return;
+      case RandomEMFPackage.INNER_RULE__IS_REF:
+        setIsRef(IS_REF_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -444,6 +496,8 @@ public class InnerRuleImpl extends MinimalEObjectImpl.Container implements Inner
         return concreteValueType != null;
       case RandomEMFPackage.INNER_RULE__IS_ADD_RULE:
         return isAddRule != IS_ADD_RULE_EDEFAULT;
+      case RandomEMFPackage.INNER_RULE__IS_REF:
+        return isRef != IS_REF_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -461,6 +515,8 @@ public class InnerRuleImpl extends MinimalEObjectImpl.Container implements Inner
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (isAddRule: ");
     result.append(isAddRule);
+    result.append(", isRef: ");
+    result.append(isRef);
     result.append(')');
     return result.toString();
   }

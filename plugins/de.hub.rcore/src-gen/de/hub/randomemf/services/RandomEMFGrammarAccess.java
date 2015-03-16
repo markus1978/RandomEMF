@@ -389,20 +389,33 @@ public class RandomEMFGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cIsAddRuleAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
 		private final Keyword cIsAddRulePlusSignEqualsSignKeyword_3_0_0 = (Keyword)cIsAddRuleAssignment_3_0.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
-		private final Assignment cExprAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cExprXExpressionParserRuleCall_4_0 = (RuleCall)cExprAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNumberSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cNumberAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cNumberXExpressionParserRuleCall_5_1_0 = (RuleCall)cNumberAssignment_5_1.eContents().get(0);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
+		private final Assignment cIsRefAssignment_4_0_0 = (Assignment)cGroup_4_0.eContents().get(0);
+		private final Keyword cIsRefCommercialAtKeyword_4_0_0_0 = (Keyword)cIsRefAssignment_4_0_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
+		private final Assignment cExprAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final RuleCall cExprXExpressionParserRuleCall_4_0_2_0 = (RuleCall)cExprAssignment_4_0_2.eContents().get(0);
+		private final Group cGroup_4_0_3 = (Group)cGroup_4_0.eContents().get(3);
+		private final Keyword cNumberSignKeyword_4_0_3_0 = (Keyword)cGroup_4_0_3.eContents().get(0);
+		private final Assignment cNumberAssignment_4_0_3_1 = (Assignment)cGroup_4_0_3.eContents().get(1);
+		private final RuleCall cNumberXExpressionParserRuleCall_4_0_3_1_0 = (RuleCall)cNumberAssignment_4_0_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4_0_4 = (Keyword)cGroup_4_0.eContents().get(4);
+		private final Group cGroup_4_1 = (Group)cAlternatives_4.eContents().get(1);
+		private final Assignment cExprAssignment_4_1_0 = (Assignment)cGroup_4_1.eContents().get(0);
+		private final RuleCall cExprXExpressionParserRuleCall_4_1_0_0 = (RuleCall)cExprAssignment_4_1_0.eContents().get(0);
+		private final Group cGroup_4_1_1 = (Group)cGroup_4_1.eContents().get(1);
+		private final Keyword cNumberSignKeyword_4_1_1_0 = (Keyword)cGroup_4_1_1.eContents().get(0);
+		private final Assignment cNumberAssignment_4_1_1_1 = (Assignment)cGroup_4_1_1.eContents().get(1);
+		private final RuleCall cNumberXExpressionParserRuleCall_4_1_1_1_0 = (RuleCall)cNumberAssignment_4_1_1_1.eContents().get(0);
 		
 		//Feature returns InnerRule:
 		//	{InnerRule} eFeature=[Ecore::EStructuralFeature] (":" concreteValueType=[Ecore::EClass])? (isAddRule?="+=" | ":=")
-		//	expr=XExpression ("#" number=XExpression)?;
+		//	(isRef?="@" "(" expr=XExpression ("#" number=XExpression)? ")" | expr=XExpression ("#" number=XExpression)?);
 		public ParserRule getRule() { return rule; }
 
 		//{InnerRule} eFeature=[Ecore::EStructuralFeature] (":" concreteValueType=[Ecore::EClass])? (isAddRule?="+=" | ":=")
-		//expr=XExpression ("#" number=XExpression)?
+		//(isRef?="@" "(" expr=XExpression ("#" number=XExpression)? ")" | expr=XExpression ("#" number=XExpression)?)
 		public Group getGroup() { return cGroup; }
 
 		//{InnerRule}
@@ -444,23 +457,62 @@ public class RandomEMFGrammarAccess extends AbstractGrammarElementFinder {
 		//":="
 		public Keyword getColonEqualsSignKeyword_3_1() { return cColonEqualsSignKeyword_3_1; }
 
+		//isRef?="@" "(" expr=XExpression ("#" number=XExpression)? ")" | expr=XExpression ("#" number=XExpression)?
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+
+		//isRef?="@" "(" expr=XExpression ("#" number=XExpression)? ")"
+		public Group getGroup_4_0() { return cGroup_4_0; }
+
+		//isRef?="@"
+		public Assignment getIsRefAssignment_4_0_0() { return cIsRefAssignment_4_0_0; }
+
+		//"@"
+		public Keyword getIsRefCommercialAtKeyword_4_0_0_0() { return cIsRefCommercialAtKeyword_4_0_0_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_4_0_1() { return cLeftParenthesisKeyword_4_0_1; }
+
 		//expr=XExpression
-		public Assignment getExprAssignment_4() { return cExprAssignment_4; }
+		public Assignment getExprAssignment_4_0_2() { return cExprAssignment_4_0_2; }
 
 		//XExpression
-		public RuleCall getExprXExpressionParserRuleCall_4_0() { return cExprXExpressionParserRuleCall_4_0; }
+		public RuleCall getExprXExpressionParserRuleCall_4_0_2_0() { return cExprXExpressionParserRuleCall_4_0_2_0; }
 
 		//("#" number=XExpression)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4_0_3() { return cGroup_4_0_3; }
 
 		//"#"
-		public Keyword getNumberSignKeyword_5_0() { return cNumberSignKeyword_5_0; }
+		public Keyword getNumberSignKeyword_4_0_3_0() { return cNumberSignKeyword_4_0_3_0; }
 
 		//number=XExpression
-		public Assignment getNumberAssignment_5_1() { return cNumberAssignment_5_1; }
+		public Assignment getNumberAssignment_4_0_3_1() { return cNumberAssignment_4_0_3_1; }
 
 		//XExpression
-		public RuleCall getNumberXExpressionParserRuleCall_5_1_0() { return cNumberXExpressionParserRuleCall_5_1_0; }
+		public RuleCall getNumberXExpressionParserRuleCall_4_0_3_1_0() { return cNumberXExpressionParserRuleCall_4_0_3_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_4_0_4() { return cRightParenthesisKeyword_4_0_4; }
+
+		//expr=XExpression ("#" number=XExpression)?
+		public Group getGroup_4_1() { return cGroup_4_1; }
+
+		//expr=XExpression
+		public Assignment getExprAssignment_4_1_0() { return cExprAssignment_4_1_0; }
+
+		//XExpression
+		public RuleCall getExprXExpressionParserRuleCall_4_1_0_0() { return cExprXExpressionParserRuleCall_4_1_0_0; }
+
+		//("#" number=XExpression)?
+		public Group getGroup_4_1_1() { return cGroup_4_1_1; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_4_1_1_0() { return cNumberSignKeyword_4_1_1_0; }
+
+		//number=XExpression
+		public Assignment getNumberAssignment_4_1_1_1() { return cNumberAssignment_4_1_1_1; }
+
+		//XExpression
+		public RuleCall getNumberXExpressionParserRuleCall_4_1_1_1_0() { return cNumberXExpressionParserRuleCall_4_1_1_1_0; }
 	}
 	
 	
@@ -570,7 +622,7 @@ public class RandomEMFGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Feature returns InnerRule:
 	//	{InnerRule} eFeature=[Ecore::EStructuralFeature] (":" concreteValueType=[Ecore::EClass])? (isAddRule?="+=" | ":=")
-	//	expr=XExpression ("#" number=XExpression)?;
+	//	(isRef?="@" "(" expr=XExpression ("#" number=XExpression)? ")" | expr=XExpression ("#" number=XExpression)?);
 	public FeatureElements getFeatureAccess() {
 		return pFeature;
 	}

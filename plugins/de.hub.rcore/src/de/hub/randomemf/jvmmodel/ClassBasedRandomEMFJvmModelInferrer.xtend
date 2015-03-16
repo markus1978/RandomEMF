@@ -3,12 +3,12 @@ package de.hub.randomemf.jvmmodel
 import com.google.inject.Inject
 import de.hub.randomemf.randomEMF.ClassRule
 import de.hub.randomemf.randomEMF.Generator
+import de.hub.randomemf.randomEMF.InnerRule
 import de.hub.randomemf.runtime.IGenerator
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EClassifier
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
-import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.common.types.util.TypeReferences
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
@@ -83,7 +83,7 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 						if (inner.EFeature != null) {
 							members += inner.toMethod("call_" + index, inner.EFeature.EType.jvmType) [ 
 								body = '''
-									«IF inner.EFeature.isRef»
+									«IF inner.isRef»
 										«val type = if (inner.concreteValueType == null) inner.EFeature.EType as EClass else inner.concreteValueType»
 										return de.hub.randomemf.runtime.References.createProxy(«type.EFactoryInterfaceName».eINSTANCE.create«type.name.toFirstUpper»(), "«rule.name»_«index»");	
 									«ELSE»
@@ -115,10 +115,10 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 									«FOR index:0..rule.inners.size-1»
 										«val feature = rule.inners.get(index)»
 										«IF (!feature.isAddRule)»
-											self.eSet(self.eClass().getEStructuralFeature(«feature.EFeature.featureID»), call_«index»());		
+											self.eSet(self.eClass().getEStructuralFeature("«feature.EFeature.name»"), call_«index»());		
 										«ELSE»	
 											{
-												org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(«feature.EFeature.featureID»));	
+												org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("«feature.EFeature.name»"));	
 												int iterations = number_«index»();
 												for (int i = 0; i < iterations; i++) {
 													values.add(call_«index»());
@@ -176,8 +176,8 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
    		return typeReferences.getTypeForName(classifier.javaInterfaceName, classifier, null)
    	}
    	
-   	def isRef(EStructuralFeature feature) {
-   		return feature instanceof EReference && !(feature as EReference).containment
+   	def isRef(InnerRule feature) {
+   		return feature.isIsRef;
    	}
 }
 

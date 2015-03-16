@@ -674,47 +674,111 @@ ruleFeature returns [EObject current=null]
     {
     	newLeafNode(otherlv_5, grammarAccess.getFeatureAccess().getColonEqualsSignKeyword_3_1());
     }
-)(
+)(((
+(
+		lv_isRef_6_0=	'@' 
+    {
+        newLeafNode(lv_isRef_6_0, grammarAccess.getFeatureAccess().getIsRefCommercialAtKeyword_4_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFeatureRule());
+	        }
+       		setWithLastConsumed($current, "isRef", true, "@");
+	    }
+
+)
+)	otherlv_7='(' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getFeatureAccess().getLeftParenthesisKeyword_4_0_1());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getExprXExpressionParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getExprXExpressionParserRuleCall_4_0_2_0()); 
 	    }
-		lv_expr_6_0=ruleXExpression		{
+		lv_expr_8_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
 	        }
        		set(
        			$current, 
        			"expr",
-        		lv_expr_6_0, 
+        		lv_expr_8_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_7='#' 
+)(	otherlv_9='#' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getFeatureAccess().getNumberSignKeyword_5_0());
+    	newLeafNode(otherlv_9, grammarAccess.getFeatureAccess().getNumberSignKeyword_4_0_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFeatureAccess().getNumberXExpressionParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getNumberXExpressionParserRuleCall_4_0_3_1_0()); 
 	    }
-		lv_number_8_0=ruleXExpression		{
+		lv_number_10_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
 	        }
        		set(
        			$current, 
        			"number",
-        		lv_number_8_0, 
+        		lv_number_10_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?)
+))?	otherlv_11=')' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getFeatureAccess().getRightParenthesisKeyword_4_0_4());
+    }
+)
+    |((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getExprXExpressionParserRuleCall_4_1_0_0()); 
+	    }
+		lv_expr_12_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
+	        }
+       		set(
+       			$current, 
+       			"expr",
+        		lv_expr_12_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_13='#' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getFeatureAccess().getNumberSignKeyword_4_1_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFeatureAccess().getNumberXExpressionParserRuleCall_4_1_1_1_0()); 
+	    }
+		lv_number_14_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFeatureRule());
+	        }
+       		set(
+       			$current, 
+       			"number",
+        		lv_number_14_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)))
 ;
 
 

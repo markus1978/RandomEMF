@@ -35,5 +35,5 @@ ClassRule:
 Feature returns InnerRule:
 	{InnerRule}
 	eFeature=[Ecore::EStructuralFeature|ID] (':'concreteValueType=[Ecore::EClass|ID])?(isAddRule ?= '+=' | ':=')
-	expr=XExpression ('#' number=XExpression)?
+	((isRef?='@' '(' expr=XExpression ('#' number=XExpression)? ')') | (expr=XExpression ('#' number=XExpression)?))
 ;

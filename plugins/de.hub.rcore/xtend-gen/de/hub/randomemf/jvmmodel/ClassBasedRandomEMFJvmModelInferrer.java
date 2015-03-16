@@ -267,15 +267,14 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                             @Override
                             protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
                               {
-                                EStructuralFeature _eFeature = inner.getEFeature();
-                                boolean _isRef = ClassBasedRandomEMFJvmModelInferrer.this.isRef(_eFeature);
-                                if (_isRef) {
+                                boolean _isIsRef = inner.isIsRef();
+                                if (_isIsRef) {
                                   EClass _xifexpression = null;
                                   EClass _concreteValueType = inner.getConcreteValueType();
                                   boolean _equals = Objects.equal(_concreteValueType, null);
                                   if (_equals) {
-                                    EStructuralFeature _eFeature_1 = inner.getEFeature();
-                                    EClassifier _eType = _eFeature_1.getEType();
+                                    EStructuralFeature _eFeature = inner.getEFeature();
+                                    EClassifier _eType = _eFeature.getEType();
                                     _xifexpression = ((EClass) _eType);
                                   } else {
                                     _xifexpression = inner.getConcreteValueType();
@@ -408,11 +407,11 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                                       boolean _isIsAddRule = feature.isIsAddRule();
                                       boolean _not_1 = (!_isIsAddRule);
                                       if (_not_1) {
-                                        _builder.append("self.eSet(self.eClass().getEStructuralFeature(");
+                                        _builder.append("self.eSet(self.eClass().getEStructuralFeature(\"");
                                         EStructuralFeature _eFeature = feature.getEFeature();
-                                        int _featureID = _eFeature.getFeatureID();
-                                        _builder.append(_featureID, "");
-                                        _builder.append("), call_");
+                                        String _name_1 = _eFeature.getName();
+                                        _builder.append(_name_1, "");
+                                        _builder.append("\"), call_");
                                         _builder.append(index, "");
                                         _builder.append("());\t\t");
                                         _builder.newLineIfNotEmpty();
@@ -420,11 +419,11 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                                         _builder.append("{");
                                         _builder.newLine();
                                         _builder.append("\t");
-                                        _builder.append("org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(");
+                                        _builder.append("org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature(\"");
                                         EStructuralFeature _eFeature_1 = feature.getEFeature();
-                                        int _featureID_1 = _eFeature_1.getFeatureID();
-                                        _builder.append(_featureID_1, "\t");
-                                        _builder.append("));\t");
+                                        String _name_2 = _eFeature_1.getName();
+                                        _builder.append(_name_2, "\t");
+                                        _builder.append("\"));\t");
                                         _builder.newLineIfNotEmpty();
                                         _builder.append("\t");
                                         _builder.append("int iterations = number_");
@@ -607,16 +606,8 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
     return this.typeReferences.getTypeForName(_javaInterfaceName, classifier, null);
   }
   
-  public boolean isRef(final EStructuralFeature feature) {
-    boolean _and = false;
-    if (!(feature instanceof EReference)) {
-      _and = false;
-    } else {
-      boolean _isContainment = ((EReference) feature).isContainment();
-      boolean _not = (!_isContainment);
-      _and = _not;
-    }
-    return _and;
+  public boolean isRef(final InnerRule feature) {
+    return feature.isIsRef();
   }
   
   public void infer(final EObject element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPreIndexingPhase) {

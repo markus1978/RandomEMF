@@ -28,6 +28,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//InnerRule/eFeature"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RandomEMF.ecore#//InnerRule/concreteValueType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//InnerRule/isAddRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RandomEMF.ecore#//InnerRule/isRef"/>
     </genClasses>
     <genClasses ecoreClass="RandomEMF.ecore#//ClassRule"/>
   </genPackages>
