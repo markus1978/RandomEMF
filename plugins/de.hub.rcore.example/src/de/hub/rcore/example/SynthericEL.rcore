@@ -20,42 +20,42 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	
 	Class: ELClass ->
 		name := ClassName(Normal(4,2))
-		fields += Field#Content()
-		methods += Constructor#(Content*0.5) as int
-		methods += Method#(Content()*2.5) as int
-		innerClasses += Class#(if (depth < 4 && UniformBool(0.3)) 1 else 0)  
+		fields += Field#3
+		methods += Constructor#1
+		methods += Method#8
+		innerClasses += Class#(if (depth < 4 && self.innerClasses.size % 3 == 0) 1 else 0)  
 	;
 	
 	Constructor: ELMethod ->
 		name := "new"	
-		parameters += Variable#(Content()*0.4) as int
+		parameters += Variable#1 as int
 	;
 	
 	Field: ELField ->
 		name := VarName(Normal(4,2))
-		array := UniformBool(0.1)		
+		array := false		
 		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
 	;
 	
 	Variable: ELVariable ->
 		name := VarName(Normal(2,1))
-		array := UniformBool(0.1)		
+		array := false		
 		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
 	;
 	
 	Method:ELMethod ->
 		name := MethodName(Normal(5,3))
 		type := if (UniformBool(0.3)) null else Uniform(Ocl.collectAll(model.packages)[it.classes])	
-		parameters += Variable#(Content()*0.3) as int
+		parameters += Variable#2
 		block := Block
 	;
 	
 	Block:ELBlock ->
-		statements += Statement#Content()+1
+		statements += Statement#4
 	;
 	
 	alter Statement:ELStatement ->
-		BlockStatement#6 | MethodCall#depth*4 | Assignment#depth*4
+		BlockStatement#if (depth < 8) 1 else 0 | MethodCall#3 | Assignment#depth*4 // continue here TDB TODO
 	;
 	
 	BlockStatement: ELBlockStatement ->

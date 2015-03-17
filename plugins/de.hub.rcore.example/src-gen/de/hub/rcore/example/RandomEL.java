@@ -193,8 +193,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_1() {
-      int _Content = Random.Content();
-      return java.lang.Integer.valueOf(_Content);
+      return java.lang.Integer.valueOf(3);
     }
     
     public ELMethod call_2() {
@@ -207,9 +206,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_2() {
-      int _Content = Random.Content();
-      double _multiply = (_Content * 0.5);
-      return java.lang.Integer.valueOf(((int) _multiply));
+      return java.lang.Integer.valueOf(1);
     }
     
     public ELMethod call_3() {
@@ -222,9 +219,36 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_3() {
-      int _Content = Random.Content();
-      double _multiply = (_Content * 1.5);
-      return java.lang.Integer.valueOf(((int) _multiply));
+      return java.lang.Integer.valueOf(8);
+    }
+    
+    public ELClass call_4() {
+      return callExpr_4();
+    }
+    
+    public ELClass callExpr_4() {
+      ELClass _Class = RandomEL.this.Class();
+      return _Class;
+    }
+    
+    public java.lang.Integer number_4() {
+      int _xifexpression = (int) 0;
+      boolean _and = false;
+      if (!((RandomEL.this.depth).intValue() < 4)) {
+        _and = false;
+      } else {
+        EList<ELClass> _innerClasses = this.self.getInnerClasses();
+        int _size = _innerClasses.size();
+        int _modulo = (_size % 3);
+        boolean _equals = (_modulo == 0);
+        _and = _equals;
+      }
+      if (_and) {
+        _xifexpression = 1;
+      } else {
+        _xifexpression = 0;
+      }
+      return java.lang.Integer.valueOf(_xifexpression);
     }
     
     public ELClass generate() {
@@ -249,6 +273,13 @@ public class RandomEL implements IGenerator {
       	int iterations = number_3();
       	for (int i = 0; i < iterations; i++) {
       		values.add(call_3());
+      	}
+      }
+      {
+      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("innerClasses"));	
+      	int iterations = number_4();
+      	for (int i = 0; i < iterations; i++) {
+      		values.add(call_4());
       	}
       }
       return self;
@@ -291,9 +322,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_1() {
-      int _Content = Random.Content();
-      double _multiply = (_Content * 0.4);
-      return java.lang.Integer.valueOf(((int) _multiply));
+      return java.lang.Integer.valueOf(((int) 1));
     }
     
     public ELMethod generate() {
@@ -343,8 +372,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Boolean callExpr_1() {
-      boolean _UniformBool = Random.UniformBool(0.1);
-      return java.lang.Boolean.valueOf(_UniformBool);
+      return java.lang.Boolean.valueOf(false);
     }
     
     public java.lang.Integer number_1() {
@@ -413,8 +441,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Boolean callExpr_1() {
-      boolean _UniformBool = Random.UniformBool(0.1);
-      return java.lang.Boolean.valueOf(_UniformBool);
+      return java.lang.Boolean.valueOf(false);
     }
     
     public java.lang.Integer number_1() {
@@ -514,9 +541,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_2() {
-      int _Content = Random.Content();
-      double _multiply = (_Content * 0.3);
-      return java.lang.Integer.valueOf(((int) _multiply));
+      return java.lang.Integer.valueOf(2);
     }
     
     public ELBlock call_3() {
@@ -572,9 +597,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_0() {
-      int _Content = Random.Content();
-      int _plus = (_Content + 1);
-      return java.lang.Integer.valueOf(_plus);
+      return java.lang.Integer.valueOf(4);
     }
     
     public ELBlock generate() {
@@ -610,7 +633,13 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_0() {
-      return java.lang.Integer.valueOf(6);
+      int _xifexpression = (int) 0;
+      if (((RandomEL.this.depth).intValue() < 8)) {
+        _xifexpression = 1;
+      } else {
+        _xifexpression = 0;
+      }
+      return java.lang.Integer.valueOf(_xifexpression);
     }
     
     public ELStatement call_1() {
@@ -619,7 +648,7 @@ public class RandomEL implements IGenerator {
     }
     
     public java.lang.Integer number_1() {
-      return java.lang.Integer.valueOf(((RandomEL.this.depth).intValue() * 4));
+      return java.lang.Integer.valueOf(3);
     }
     
     public ELStatement call_2() {

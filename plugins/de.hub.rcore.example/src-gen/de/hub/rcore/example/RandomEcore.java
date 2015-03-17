@@ -1,5 +1,7 @@
 package de.hub.rcore.example;
 
+import de.hub.randomemf.runtime.IGenerator;
+import de.hub.randomemf.runtime.Random;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -8,9 +10,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-
-import de.hub.randomemf.runtime.IGenerator;
-import de.hub.randomemf.runtime.Random;
 
 @SuppressWarnings("all")
 public class RandomEcore implements IGenerator {

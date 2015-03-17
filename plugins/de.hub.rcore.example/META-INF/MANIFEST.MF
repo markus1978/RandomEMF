@@ -10,7 +10,8 @@ Bundle-Activator: de.hub.rcore.example.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.hub.rcore;bundle-version="1.0.0"
+ de.hub.rcore;bundle-version="1.0.0",
+ org.eclipse.gmt.modisco.java;bundle-version="0.12.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.hub.rcore.example.el,
  de.hub.rcore.example.el.impl,
