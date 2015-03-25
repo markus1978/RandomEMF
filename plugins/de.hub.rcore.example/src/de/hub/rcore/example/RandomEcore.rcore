@@ -2,35 +2,43 @@ package de.hub.rcore.example
 
 import org.eclipse.emf.ecore.EDataType
 import org.eclipse.emf.ecore.EcorePackage
-
 import static de.hub.randomemf.runtime.Random.*
 
-generator RandomEcore for ecore in "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore" {	
-	ePackage: EPackage ->
-		name := RandomID(Normal(8,3))
-		nsPrefix := RandomID(Normal(2.5,1))
-		nsURI := "http://" + RandomID(Normal(12,5))
-		eClassifiers += eClass#NegBinomial(5,0.5)
-	;
-	
-	eClass: EClass ->
-		name := RandomID(Normal(10,3))
-		abstract := UniformBool(0.2)
-		eStructuralFeatures += eReference(UniformBool(0.3))#NegBinomial(2,0.5)
-		eStructuralFeatures += eAttribute#NegBinomial(3,0.4)
-	;
-	
-	eReference(boolean composite):EReference ->
-		name := RandomID(Normal(10,3))
-		upperBound := if (UniformBool(0.5)) -1 else 1
-		ordered := UniformBool(0.2)
-		containment := composite
-		eType:EClass := Uniform(model.EClassifiers.filter[it instanceof org.eclipse.emf.ecore.EClass])
-	; 
-	
-	eAttribute:EAttribute ->
-		name := RandomID(Normal(8,3))
-		upperBound := if (UniformBool(0.1)) -1 else 1
-		eType:EDataType := Uniform(EcorePackage.eINSTANCE.EClassifiers.filter[it instanceof EDataType && (it as EDataType).isSerializable])
-	;
+generator RandomEcore for ecore 
+    in "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore" { 
+  
+  Package: EPackage ->
+    name := LatinCamel(Normal(4,2)).toLowerCase
+    nsPrefix := RandomID(Normal(2.5,1))
+    nsURI := "http://hub.de/rcore/examples/" + self.name
+    eClassifiers += Class#NegBinomial(5,0.5)
+  ;
+  
+  Class: EClass ->
+    name := LatinCamel(Normal(10,3))
+    abstract := UniformBool(0.2)
+    eStructuralFeatures += Feature#NegBinomial(2,0.5)
+  ;
+  
+  alter Feature: EStructuralFeature ->
+    Reference(true) | Reference(false) | Attribute#2 
+  ;
+  
+  Reference(boolean composite):EReference ->
+    name := LatinCamel(Normal(10,3)).toFirstLower
+    upperBound := if (UniformBool(0.5)) -1 else 1
+    ordered := UniformBool(0.2)
+    containment := composite
+    eType:EClass := Uniform(model.EClassifiers.filter[
+      it instanceof org.eclipse.emf.ecore.EClass
+    ])
+  ; 
+  
+  Attribute:EAttribute ->
+    name := LatinCamel(Normal(8,3)).toFirstLower
+    upperBound := if (UniformBool(0.1)) -1 else 1
+    eType:EDataType := Uniform(EcorePackage.eINSTANCE.EClassifiers.filter[
+      it instanceof EDataType
+    ])
+  ;
 }

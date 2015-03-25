@@ -101,6 +101,9 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
         JvmTypeReference _jvmType_1 = ClassBasedRandomEMFJvmModelInferrer.this.jvmType(_eClass_1);
         final Procedure1<JvmOperation> _function_1 = new Procedure1<JvmOperation>() {
           public void apply(final JvmOperation it) {
+            EList<JvmAnnotationReference> _annotations = it.getAnnotations();
+            JvmAnnotationReference _annotation = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(element, Override.class);
+            ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
             StringConcatenationClient _client = new StringConcatenationClient() {
               @Override
               protected void appendTo(StringConcatenationClient.TargetStringConcatenation _builder) {
@@ -516,6 +519,10 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
             JvmTypeReference _typeRef = ClassBasedRandomEMFJvmModelInferrer.this._typeReferenceBuilder.typeRef(EObject.class);
             JvmFormalParameter _parameter = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toParameter(element, "proxy", _typeRef);
             ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters, _parameter);
+            EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+            JvmTypeReference _typeRef_1 = ClassBasedRandomEMFJvmModelInferrer.this._typeReferenceBuilder.typeRef(EObject.class);
+            JvmFormalParameter _parameter_1 = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toParameter(element, "source", _typeRef_1);
+            ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter_1);
             EList<JvmAnnotationReference> _annotations = it.getAnnotations();
             JvmAnnotationReference _annotation = ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.toAnnotation(element, Override.class);
             ClassBasedRandomEMFJvmModelInferrer.this._jvmTypesBuilder.<JvmAnnotationReference>operator_add(_annotations, _annotation);
@@ -569,11 +576,25 @@ public class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
                                 _builder.append("\")) {");
                                 _builder.newLineIfNotEmpty();
                                 _builder.append("\t");
-                                _builder.append("return new ");
                                 String _name_1 = rule.getName();
                                 String _firstUpper = StringExtensions.toFirstUpper(_name_1);
                                 _builder.append(_firstUpper, "\t");
-                                _builder.append("().callExpr_");
+                                _builder.append(" rule = new ");
+                                String _name_2 = rule.getName();
+                                String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
+                                _builder.append(_firstUpper_1, "\t");
+                                _builder.append("();");
+                                _builder.newLineIfNotEmpty();
+                                _builder.append("\t");
+                                _builder.append("rule.self = (");
+                                EClass _eClass = rule.getEClass();
+                                JvmTypeReference _jvmType = ClassBasedRandomEMFJvmModelInferrer.this.jvmType(_eClass);
+                                String _qualifiedName = _jvmType.getQualifiedName();
+                                _builder.append(_qualifiedName, "\t");
+                                _builder.append(")source;");
+                                _builder.newLineIfNotEmpty();
+                                _builder.append("\t");
+                                _builder.append("return rule.callExpr_");
                                 _builder.append(index, "\t");
                                 _builder.append("();");
                                 _builder.newLineIfNotEmpty();

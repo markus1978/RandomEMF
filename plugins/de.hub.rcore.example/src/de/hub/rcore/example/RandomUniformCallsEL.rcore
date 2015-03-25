@@ -3,14 +3,13 @@ package de.hub.rcore.example
 import de.hub.randomemf.runtime.Ocl
 
 import static de.hub.randomemf.runtime.Random.*
-import cern.jet.random.Uniform
-import de.hub.rcore.example.el.ELPackage
+import org.eclipse.emf.ecore.EClass
 
-generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/example-language.ecore" {	
+generator RandomUniformCallsEL for el in "platform:/resource/de.hub.rcore.example/model/example-language.ecore" {	
 	
 	root: ELModel ->
 		packages += ELPredefinitions.pkg(self)
-		packages += Package#3
+		packages += Package#1
 	;
 	
 	Package: ELPackage ->
@@ -20,42 +19,42 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	
 	Class: ELClass ->
 		name := ClassName(Normal(4,2))
-		fields += Field#3
-		methods += Constructor#1
-		methods += Method#8
-		innerClasses += Class#(if (depth < 4 && self.innerClasses.size % 3 == 0) 1 else 0)  
+		fields += Field#(Content()*0.4) as int
+		methods += Constructor(self.name)#(Content*0.5) as int
+		methods += Method#(Content()*3.5) as int
+		innerClasses += Class#(if (depth < 4 && UniformBool(0.3)) 1 else 0)  
 	;
 	
-	Constructor: ELMethod ->
-		name := "new"	
-		parameters += Variable#1 as int
+	Constructor(String name): ELMethod ->
+		name := name	
+		parameters += Variable#(Content()*0.2) as int
 	;
 	
 	Field: ELField ->
 		name := VarName(Normal(4,2))
-		array := false		
-		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
+		array := UniformBool(0.1)		
+		type:ELClass := @(Uniform(Ocl.collectAll(model.packages)[it.classes]))
 	;
 	
 	Variable: ELVariable ->
 		name := VarName(Normal(2,1))
-		array := false		
-		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
+		array := UniformBool(0.1)		
+		type:ELClass := @(Uniform(Ocl.collectAll(model.packages)[it.classes]))
 	;
 	
 	Method:ELMethod ->
 		name := MethodName(Normal(5,3))
-		type := if (UniformBool(0.3)) null else Uniform(Ocl.collectAll(model.packages)[it.classes])	
-		parameters += Variable#2
+		type := @(if (UniformBool(0.3)) null else Uniform(Ocl.collectAll(model.packages)[it.classes]))	
+		parameters += Variable#(Content()*0.3) as int
 		block := Block
 	;
 	
 	Block:ELBlock ->
-		statements += Statement#4
+		statements += Statement#(Math.round(Content()*0.7) as int)+1
 	;
 	
 	alter Statement:ELStatement ->
-		BlockStatement#if (depth < 8) 1 else 0 | MethodCall#3 | Assignment#depth*4 // continue here TDB TODO
+		BlockStatement#6 | MethodCall#depth*2 | Assignment#depth*4
 	;
 	
 	BlockStatement: ELBlockStatement ->
@@ -65,14 +64,14 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	alter Expression: ELExpression ->
-		MethodCall#6 | OpCall#4 | Literal#(depth*1.2) as int
+		MethodCall#2 | OpCall#4 | Literal#((depth*1.2) as int)
 	;
 	
 	alter Literal: ELLiteral ->
 		StringLiteral | IntLiteral | BoolLiteral
 	;
 	
-	StringLiteral: ELLiteral -> value := LoremIpsum(Content());
+	StringLiteral: ELLiteral -> value := LoremIpsum((Content()*0.2) as int);
 	IntLiteral: ELLiteral -> value := "" + Normal(10,5);
 	BoolLiteral: ELLiteral -> value := "" + UniformBool(0.5);
 	
@@ -82,7 +81,7 @@ generator RandomEL for el in "platform:/resource/de.hub.rcore.example/model/exam
 	;
 	
 	MethodCall: ELCall ->
-		callee := @(Uniform(Ocl.collectAll(model.packages)[Ocl.collectAll(it.classes)[it.methods]]))
+		callee := @(Uniform(RandomELUtil.uniformMethods(model, self)))
 		arguments += Expression#(Content()*0.3) as int
 	;
 	

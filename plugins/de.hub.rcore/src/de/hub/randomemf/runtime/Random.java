@@ -74,6 +74,10 @@ public class Random {
 		return null;
 	}
 	
+	public static String LatinCamel(int syls) {
+		return names.className(syls < 1 ? 1 : syls);
+	}
+	
 	public static String ClassName(int syls) {
 		return names.className(syls < 1 ? 1 : syls);
 	}

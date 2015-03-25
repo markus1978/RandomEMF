@@ -35,6 +35,7 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 			members += element.toField("depth", typeRef(Integer)) [ initializer = '''0'''];
 			
 			members += element.toMethod("generate", element.rules.get(0).EClass.jvmType) [
+				annotations += element.toAnnotation(Override)
 				body = '''
 					«element.rules.get(0).name»();
 					de.hub.randomemf.runtime.References.resolveReferences(this, model);
@@ -150,6 +151,7 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 			
 			members += element.toMethod("resolve", typeRef(EObject)) [
 				parameters += element.toParameter("proxy", typeRef(EObject))
+				parameters += element.toParameter("source", typeRef(EObject))
 				annotations += element.toAnnotation(Override)
 				body = '''
 					if (proxy == null) return null;
@@ -160,7 +162,9 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 								«val feature = rule.inners.get(index)»
 								«IF feature.EFeature instanceof EReference && !(feature.EFeature as EReference).containment»
 									if (uri.equals("«rule.name»_«index»")) {
-										return new «rule.name.toFirstUpper»().callExpr_«index»();
+										«rule.name.toFirstUpper» rule = new «rule.name.toFirstUpper»();
+										rule.self = («rule.EClass.jvmType.qualifiedName»)source;
+										return rule.callExpr_«index»();
 									}
 								«ENDIF»
 							«ENDFOR»

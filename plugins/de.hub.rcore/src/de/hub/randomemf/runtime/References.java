@@ -28,13 +28,13 @@ public class References {
 						for (int i = 0; i < values.size(); i++) {
 							EObject value = (EObject)values.get(i);
 							if (value != null && value.eIsProxy()) {
-								values.set(i, generator.resolve(value));
+								values.set(i, generator.resolve(value, eObject));
 							}
 						}
 					} else {
 						EObject value = (EObject)eObject.eGet(feature);
 						if (value != null && value.eIsProxy()) {
-							eObject.eSet(feature, generator.resolve(value));
+							eObject.eSet(feature, generator.resolve(value, eObject));
 						}
 					}
 				}

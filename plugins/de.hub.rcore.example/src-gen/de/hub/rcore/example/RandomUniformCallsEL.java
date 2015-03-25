@@ -23,13 +23,12 @@ import de.hub.rcore.example.el.ELPackage;
 import de.hub.rcore.example.el.ELStatement;
 import de.hub.rcore.example.el.ELVariable;
 import java.util.ArrayList;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 
 @SuppressWarnings("all")
-public class RandomEL implements IGenerator {
+public class RandomUniformCallsEL implements IGenerator {
   private ELModel model;
   
   private java.lang.Integer depth = 0;
@@ -73,7 +72,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELPackage callExpr_1() {
-      ELPackage _Package = RandomEL.this.Package();
+      ELPackage _Package = RandomUniformCallsEL.this.Package();
       return _Package;
     }
     
@@ -136,7 +135,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELClass callExpr_1() {
-      ELClass _Class = RandomEL.this.Class();
+      ELClass _Class = RandomUniformCallsEL.this.Class();
       return _Class;
     }
     
@@ -191,7 +190,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELField callExpr_1() {
-      ELField _Field = RandomEL.this.Field();
+      ELField _Field = RandomUniformCallsEL.this.Field();
       return _Field;
     }
     
@@ -207,7 +206,7 @@ public class RandomEL implements IGenerator {
     
     public ELMethod callExpr_2() {
       java.lang.String _name = this.self.getName();
-      ELMethod _Constructor = RandomEL.this.Constructor(_name);
+      ELMethod _Constructor = RandomUniformCallsEL.this.Constructor(_name);
       return _Constructor;
     }
     
@@ -222,7 +221,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELMethod callExpr_3() {
-      ELMethod _Method = RandomEL.this.Method();
+      ELMethod _Method = RandomUniformCallsEL.this.Method();
       return _Method;
     }
     
@@ -237,14 +236,14 @@ public class RandomEL implements IGenerator {
     }
     
     public ELClass callExpr_4() {
-      ELClass _Class = RandomEL.this.Class();
+      ELClass _Class = RandomUniformCallsEL.this.Class();
       return _Class;
     }
     
     public java.lang.Integer number_4() {
       int _xifexpression = (int) 0;
       boolean _and = false;
-      if (!((RandomEL.this.depth).intValue() < 4)) {
+      if (!((RandomUniformCallsEL.this.depth).intValue() < 4)) {
         _and = false;
       } else {
         boolean _UniformBool = Random.UniformBool(0.3);
@@ -330,7 +329,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELVariable callExpr_1() {
-      ELVariable _Variable = RandomEL.this.Variable();
+      ELVariable _Variable = RandomUniformCallsEL.this.Variable();
       return _Variable;
     }
     
@@ -400,7 +399,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELClass callExpr_2() {
-      EList<ELPackage> _packages = RandomEL.this.model.getPackages();
+      EList<ELPackage> _packages = RandomUniformCallsEL.this.model.getPackages();
       final Function1<ELPackage, EList<ELClass>> _function = new Function1<ELPackage, EList<ELClass>>() {
         public EList<ELClass> apply(final ELPackage it) {
           return it.getClasses();
@@ -470,7 +469,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELClass callExpr_2() {
-      EList<ELPackage> _packages = RandomEL.this.model.getPackages();
+      EList<ELPackage> _packages = RandomUniformCallsEL.this.model.getPackages();
       final Function1<ELPackage, EList<ELClass>> _function = new Function1<ELPackage, EList<ELClass>>() {
         public EList<ELClass> apply(final ELPackage it) {
           return it.getClasses();
@@ -532,7 +531,7 @@ public class RandomEL implements IGenerator {
       if (_UniformBool) {
         _xifexpression = null;
       } else {
-        EList<ELPackage> _packages = RandomEL.this.model.getPackages();
+        EList<ELPackage> _packages = RandomUniformCallsEL.this.model.getPackages();
         final Function1<ELPackage, EList<ELClass>> _function = new Function1<ELPackage, EList<ELClass>>() {
           public EList<ELClass> apply(final ELPackage it) {
             return it.getClasses();
@@ -553,7 +552,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELVariable callExpr_2() {
-      ELVariable _Variable = RandomEL.this.Variable();
+      ELVariable _Variable = RandomUniformCallsEL.this.Variable();
       return _Variable;
     }
     
@@ -568,7 +567,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELBlock callExpr_3() {
-      ELBlock _Block = RandomEL.this.Block();
+      ELBlock _Block = RandomUniformCallsEL.this.Block();
       return _Block;
     }
     
@@ -611,7 +610,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELStatement callExpr_0() {
-      ELStatement _Statement = RandomEL.this.Statement();
+      ELStatement _Statement = RandomUniformCallsEL.this.Statement();
       return _Statement;
     }
     
@@ -650,7 +649,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELStatement call_0() {
-      ELBlockStatement _BlockStatement = RandomEL.this.BlockStatement();
+      ELBlockStatement _BlockStatement = RandomUniformCallsEL.this.BlockStatement();
       return _BlockStatement;
     }
     
@@ -659,21 +658,21 @@ public class RandomEL implements IGenerator {
     }
     
     public ELStatement call_1() {
-      ELCall _MethodCall = RandomEL.this.MethodCall();
+      ELCall _MethodCall = RandomUniformCallsEL.this.MethodCall();
       return _MethodCall;
     }
     
     public java.lang.Integer number_1() {
-      return java.lang.Integer.valueOf(((RandomEL.this.depth).intValue() * 2));
+      return java.lang.Integer.valueOf(((RandomUniformCallsEL.this.depth).intValue() * 2));
     }
     
     public ELStatement call_2() {
-      ELAssignment _Assignment = RandomEL.this.Assignment();
+      ELAssignment _Assignment = RandomUniformCallsEL.this.Assignment();
       return _Assignment;
     }
     
     public java.lang.Integer number_2() {
-      return java.lang.Integer.valueOf(((RandomEL.this.depth).intValue() * 4));
+      return java.lang.Integer.valueOf(((RandomUniformCallsEL.this.depth).intValue() * 4));
     }
     
     public ELStatement generate() {
@@ -718,7 +717,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELBlockStarementKind callExpr_0() {
-      EList<ELBlockStarementKind> _blocks = RandomEL.this.model.getBlocks();
+      EList<ELBlockStarementKind> _blocks = RandomUniformCallsEL.this.model.getBlocks();
       ELBlockStarementKind _Uniform = Random.<ELBlockStarementKind>Uniform(_blocks);
       return _Uniform;
     }
@@ -732,7 +731,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELBlock callExpr_1() {
-      ELBlock _Block = RandomEL.this.Block();
+      ELBlock _Block = RandomUniformCallsEL.this.Block();
       return _Block;
     }
     
@@ -747,7 +746,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression callExpr_2() {
-      ELExpression _Expression = RandomEL.this.Expression();
+      ELExpression _Expression = RandomUniformCallsEL.this.Expression();
       return _Expression;
     }
     
@@ -793,7 +792,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression call_0() {
-      ELCall _MethodCall = RandomEL.this.MethodCall();
+      ELCall _MethodCall = RandomUniformCallsEL.this.MethodCall();
       return _MethodCall;
     }
     
@@ -802,7 +801,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression call_1() {
-      ELOpCall _OpCall = RandomEL.this.OpCall();
+      ELOpCall _OpCall = RandomUniformCallsEL.this.OpCall();
       return _OpCall;
     }
     
@@ -811,12 +810,12 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression call_2() {
-      ELLiteral _Literal = RandomEL.this.Literal();
+      ELLiteral _Literal = RandomUniformCallsEL.this.Literal();
       return _Literal;
     }
     
     public java.lang.Integer number_2() {
-      return java.lang.Integer.valueOf(((int) ((RandomEL.this.depth).intValue() * 1.2)));
+      return java.lang.Integer.valueOf(((int) ((RandomUniformCallsEL.this.depth).intValue() * 1.2)));
     }
     
     public ELExpression generate() {
@@ -857,7 +856,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELLiteral call_0() {
-      ELLiteral _StringLiteral = RandomEL.this.StringLiteral();
+      ELLiteral _StringLiteral = RandomUniformCallsEL.this.StringLiteral();
       return _StringLiteral;
     }
     
@@ -866,7 +865,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELLiteral call_1() {
-      ELLiteral _IntLiteral = RandomEL.this.IntLiteral();
+      ELLiteral _IntLiteral = RandomUniformCallsEL.this.IntLiteral();
       return _IntLiteral;
     }
     
@@ -875,7 +874,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELLiteral call_2() {
-      ELLiteral _BoolLiteral = RandomEL.this.BoolLiteral();
+      ELLiteral _BoolLiteral = RandomUniformCallsEL.this.BoolLiteral();
       return _BoolLiteral;
     }
     
@@ -1031,7 +1030,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELOp callExpr_0() {
-      EList<ELOp> _ops = RandomEL.this.model.getOps();
+      EList<ELOp> _ops = RandomUniformCallsEL.this.model.getOps();
       ELOp _Uniform = Random.<ELOp>Uniform(_ops);
       return _Uniform;
     }
@@ -1045,7 +1044,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression callExpr_1() {
-      ELExpression _Expression = RandomEL.this.Expression();
+      ELExpression _Expression = RandomUniformCallsEL.this.Expression();
       return _Expression;
     }
     
@@ -1088,8 +1087,8 @@ public class RandomEL implements IGenerator {
     }
     
     public ELMethod callExpr_0() {
-      List<ELMethod> _dependencyMethods = RandomELUtil.dependencyMethods(RandomEL.this.model, this.self);
-      ELMethod _Uniform = Random.<ELMethod>Uniform(_dependencyMethods);
+      ArrayList<ELMethod> _uniformMethods = RandomELUtil.uniformMethods(RandomUniformCallsEL.this.model, this.self);
+      ELMethod _Uniform = Random.<ELMethod>Uniform(_uniformMethods);
       return _Uniform;
     }
     
@@ -1102,7 +1101,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression callExpr_1() {
-      ELExpression _Expression = RandomEL.this.Expression();
+      ELExpression _Expression = RandomUniformCallsEL.this.Expression();
       return _Expression;
     }
     
@@ -1145,7 +1144,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELVariable callExpr_0() {
-      EList<ELPackage> _packages = RandomEL.this.model.getPackages();
+      EList<ELPackage> _packages = RandomUniformCallsEL.this.model.getPackages();
       final Function1<ELPackage, ArrayList<ELField>> _function = new Function1<ELPackage, ArrayList<ELField>>() {
         public ArrayList<ELField> apply(final ELPackage it) {
           EList<ELClass> _classes = it.getClasses();
@@ -1192,7 +1191,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELVariable callExpr_0() {
-      EList<ELPackage> _packages = RandomEL.this.model.getPackages();
+      EList<ELPackage> _packages = RandomUniformCallsEL.this.model.getPackages();
       final Function1<ELPackage, ArrayList<ELField>> _function = new Function1<ELPackage, ArrayList<ELField>>() {
         public ArrayList<ELField> apply(final ELPackage it) {
           EList<ELClass> _classes = it.getClasses();
@@ -1218,7 +1217,7 @@ public class RandomEL implements IGenerator {
     }
     
     public ELExpression callExpr_1() {
-      ELExpression _Expression = RandomEL.this.Expression();
+      ELExpression _Expression = RandomUniformCallsEL.this.Expression();
       return _Expression;
     }
     

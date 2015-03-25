@@ -2,81 +2,88 @@ package de.hub.rcore.example;
 
 import de.hub.randomemf.runtime.IGenerator;
 import de.hub.randomemf.runtime.Random;
+import java.lang.Iterable;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class RandomEcore implements IGenerator {
-  private org.eclipse.emf.ecore.EPackage model;
+  private EPackage model;
   
-  private Integer depth = 0;
+  private java.lang.Integer depth = 0;
   
-  public org.eclipse.emf.ecore.EPackage generate() {
-    ePackage();
+  @java.lang.Override
+  public EPackage generate() {
+    Package();
     de.hub.randomemf.runtime.References.resolveReferences(this, model);
     return model;
   }
   
-  public org.eclipse.emf.ecore.EPackage ePackage() {
+  public EPackage Package() {
     depth += 1;
-    org.eclipse.emf.ecore.EPackage result = new EPackage().generate();
+    org.eclipse.emf.ecore.EPackage result = new Package().generate();
     depth -= 1;
     return result;
   }
   
-  private class EPackage {
-    private org.eclipse.emf.ecore.EPackage self;
+  private class Package {
+    private EPackage self;
     
-    public EPackage() {
+    public Package() {
       
     }
     
-    public String call_0() {
+    public java.lang.String call_0() {
       return callExpr_0();
     }
     
-    public String callExpr_0() {
-      int _Normal = Random.Normal(8, 3);
-      String _RandomID = Random.RandomID(_Normal);
-      return _RandomID;
+    public java.lang.String callExpr_0() {
+      int _Normal = Random.Normal(4, 2);
+      java.lang.String _LatinCamel = Random.LatinCamel(_Normal);
+      java.lang.String _lowerCase = _LatinCamel.toLowerCase();
+      return _lowerCase;
     }
     
-    public Integer number_0() {
+    public java.lang.Integer number_0() {
       return 1;
     }
     
-    public String call_1() {
+    public java.lang.String call_1() {
       return callExpr_1();
     }
     
-    public String callExpr_1() {
+    public java.lang.String callExpr_1() {
       int _Normal = Random.Normal(2.5, 1);
-      String _RandomID = Random.RandomID(_Normal);
+      java.lang.String _RandomID = Random.RandomID(_Normal);
       return _RandomID;
     }
     
-    public Integer number_1() {
+    public java.lang.Integer number_1() {
       return 1;
     }
     
-    public String call_2() {
+    public java.lang.String call_2() {
       return callExpr_2();
     }
     
-    public String callExpr_2() {
-      int _Normal = Random.Normal(12, 5);
-      String _RandomID = Random.RandomID(_Normal);
-      String _plus = ("http://" + _RandomID);
+    public java.lang.String callExpr_2() {
+      java.lang.String _name = this.self.getName();
+      java.lang.String _plus = ("http://hub.de/rcore/examples/" + _name);
       return _plus;
     }
     
-    public Integer number_2() {
+    public java.lang.Integer number_2() {
       return 1;
     }
     
@@ -85,16 +92,16 @@ public class RandomEcore implements IGenerator {
     }
     
     public EClassifier callExpr_3() {
-      org.eclipse.emf.ecore.EClass _eClass = RandomEcore.this.eClass();
-      return _eClass;
+      EClass _Class = RandomEcore.this.Class();
+      return _Class;
     }
     
-    public Integer number_3() {
+    public java.lang.Integer number_3() {
       int _NegBinomial = Random.NegBinomial(5, 0.5);
-      return Integer.valueOf(_NegBinomial);
+      return java.lang.Integer.valueOf(_NegBinomial);
     }
     
-    public org.eclipse.emf.ecore.EPackage generate() {
+    public EPackage generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEPackage();
       model = self;
       self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
@@ -111,44 +118,44 @@ public class RandomEcore implements IGenerator {
     }
   }
   
-  public org.eclipse.emf.ecore.EClass eClass() {
+  public EClass Class() {
     depth += 1;
-    org.eclipse.emf.ecore.EClass result = new EClass().generate();
+    org.eclipse.emf.ecore.EClass result = new Class().generate();
     depth -= 1;
     return result;
   }
   
-  private class EClass {
-    private org.eclipse.emf.ecore.EClass self;
+  private class Class {
+    private EClass self;
     
-    public EClass() {
+    public Class() {
       
     }
     
-    public String call_0() {
+    public java.lang.String call_0() {
       return callExpr_0();
     }
     
-    public String callExpr_0() {
+    public java.lang.String callExpr_0() {
       int _Normal = Random.Normal(10, 3);
-      String _RandomID = Random.RandomID(_Normal);
-      return _RandomID;
+      java.lang.String _LatinCamel = Random.LatinCamel(_Normal);
+      return _LatinCamel;
     }
     
-    public Integer number_0() {
+    public java.lang.Integer number_0() {
       return 1;
     }
     
-    public Boolean call_1() {
+    public java.lang.Boolean call_1() {
       return callExpr_1();
     }
     
-    public Boolean callExpr_1() {
+    public java.lang.Boolean callExpr_1() {
       boolean _UniformBool = Random.UniformBool(0.2);
-      return Boolean.valueOf(_UniformBool);
+      return java.lang.Boolean.valueOf(_UniformBool);
     }
     
-    public Integer number_1() {
+    public java.lang.Integer number_1() {
       return 1;
     }
     
@@ -157,31 +164,16 @@ public class RandomEcore implements IGenerator {
     }
     
     public EStructuralFeature callExpr_2() {
-      boolean _UniformBool = Random.UniformBool(0.3);
-      org.eclipse.emf.ecore.EReference _eReference = RandomEcore.this.eReference(_UniformBool);
-      return _eReference;
+      EStructuralFeature _Feature = RandomEcore.this.Feature();
+      return _Feature;
     }
     
-    public Integer number_2() {
+    public java.lang.Integer number_2() {
       int _NegBinomial = Random.NegBinomial(2, 0.5);
-      return Integer.valueOf(_NegBinomial);
+      return java.lang.Integer.valueOf(_NegBinomial);
     }
     
-    public EStructuralFeature call_3() {
-      return callExpr_3();
-    }
-    
-    public EStructuralFeature callExpr_3() {
-      org.eclipse.emf.ecore.EAttribute _eAttribute = RandomEcore.this.eAttribute();
-      return _eAttribute;
-    }
-    
-    public Integer number_3() {
-      int _NegBinomial = Random.NegBinomial(3, 0.4);
-      return Integer.valueOf(_NegBinomial);
-    }
-    
-    public org.eclipse.emf.ecore.EClass generate() {
+    public EClass generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEClass();
       self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
       self.eSet(self.eClass().getEStructuralFeature("abstract"), call_1());		
@@ -192,56 +184,114 @@ public class RandomEcore implements IGenerator {
       		values.add(call_2());
       	}
       }
-      {
-      	org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("eStructuralFeatures"));	
-      	int iterations = number_3();
-      	for (int i = 0; i < iterations; i++) {
-      		values.add(call_3());
-      	}
-      }
       return self;
     }
   }
   
-  public org.eclipse.emf.ecore.EReference eReference(final boolean composite) {
+  public EStructuralFeature Feature() {
     depth += 1;
-    org.eclipse.emf.ecore.EReference result = new EReference(composite).generate();
+    org.eclipse.emf.ecore.EStructuralFeature result = new Feature().generate();
     depth -= 1;
     return result;
   }
   
-  private class EReference {
-    private org.eclipse.emf.ecore.EReference self;
+  private class Feature {
+    private EStructuralFeature self;
     
-    private boolean composite;
-    
-    public EReference(final boolean composite) {
-      this.composite = composite;
-    }
-    
-    public EReference() {
+    public Feature() {
       
     }
     
-    public String call_0() {
-      return callExpr_0();
+    public EStructuralFeature call_0() {
+      EReference _Reference = RandomEcore.this.Reference(true);
+      return _Reference;
     }
     
-    public String callExpr_0() {
-      int _Normal = Random.Normal(10, 3);
-      String _RandomID = Random.RandomID(_Normal);
-      return _RandomID;
-    }
-    
-    public Integer number_0() {
+    public java.lang.Integer number_0() {
       return 1;
     }
     
-    public Integer call_1() {
+    public EStructuralFeature call_1() {
+      EReference _Reference = RandomEcore.this.Reference(false);
+      return _Reference;
+    }
+    
+    public java.lang.Integer number_1() {
+      return 1;
+    }
+    
+    public EStructuralFeature call_2() {
+      EAttribute _Attribute = RandomEcore.this.Attribute();
+      return _Attribute;
+    }
+    
+    public java.lang.Integer number_2() {
+      return java.lang.Integer.valueOf(2);
+    }
+    
+    public EStructuralFeature generate() {
+      int sum = 0;
+      sum += number_0();
+      sum += number_1();
+      sum += number_2();
+      int draw = Random.RandomInt(sum);
+      int current = 0;
+      current += number_0();
+      if (current >= draw) {
+      	return call_0();
+      }
+      current += number_1();
+      if (current >= draw) {
+      	return call_1();
+      }
+      current += number_2();
+      if (current >= draw) {
+      	return call_2();
+      }
+      throw new IllegalStateException("Unreachable!");
+    }
+  }
+  
+  public EReference Reference(final boolean composite) {
+    depth += 1;
+    org.eclipse.emf.ecore.EReference result = new Reference(composite).generate();
+    depth -= 1;
+    return result;
+  }
+  
+  private class Reference {
+    private EReference self;
+    
+    private boolean composite;
+    
+    public Reference(final boolean composite) {
+      this.composite = composite;
+    }
+    
+    public Reference() {
+      
+    }
+    
+    public java.lang.String call_0() {
+      return callExpr_0();
+    }
+    
+    public java.lang.String callExpr_0() {
+      int _Normal = Random.Normal(10, 3);
+      java.lang.String _LatinCamel = Random.LatinCamel(_Normal);
+      java.lang.String _firstLower = StringExtensions.toFirstLower(_LatinCamel);
+      return _firstLower;
+    }
+    
+    public java.lang.Integer number_0() {
+      return 1;
+    }
+    
+    public java.lang.Integer call_1() {
       return callExpr_1();
     }
     
-    public Integer callExpr_1() {
+    public java.lang.Integer callExpr_1() {
       int _xifexpression = (int) 0;
       boolean _UniformBool = Random.UniformBool(0.5);
       if (_UniformBool) {
@@ -249,35 +299,35 @@ public class RandomEcore implements IGenerator {
       } else {
         _xifexpression = 1;
       }
-      return Integer.valueOf(_xifexpression);
+      return java.lang.Integer.valueOf(_xifexpression);
     }
     
-    public Integer number_1() {
+    public java.lang.Integer number_1() {
       return 1;
     }
     
-    public Boolean call_2() {
+    public java.lang.Boolean call_2() {
       return callExpr_2();
     }
     
-    public Boolean callExpr_2() {
+    public java.lang.Boolean callExpr_2() {
       boolean _UniformBool = Random.UniformBool(0.2);
-      return Boolean.valueOf(_UniformBool);
+      return java.lang.Boolean.valueOf(_UniformBool);
     }
     
-    public Integer number_2() {
+    public java.lang.Integer number_2() {
       return 1;
     }
     
-    public Boolean call_3() {
+    public java.lang.Boolean call_3() {
       return callExpr_3();
     }
     
-    public Boolean callExpr_3() {
-      return Boolean.valueOf(this.composite);
+    public java.lang.Boolean callExpr_3() {
+      return java.lang.Boolean.valueOf(this.composite);
     }
     
-    public Integer number_3() {
+    public java.lang.Integer number_3() {
       return 1;
     }
     
@@ -287,9 +337,9 @@ public class RandomEcore implements IGenerator {
     
     public EClassifier callExpr_4() {
       EList<EClassifier> _eClassifiers = RandomEcore.this.model.getEClassifiers();
-      final Function1<EClassifier, Boolean> _function = new Function1<EClassifier, Boolean>() {
-        public Boolean apply(final EClassifier it) {
-          return Boolean.valueOf((it instanceof org.eclipse.emf.ecore.EClass));
+      final Function1<EClassifier, java.lang.Boolean> _function = new Function1<EClassifier, java.lang.Boolean>() {
+        public java.lang.Boolean apply(final EClassifier it) {
+          return java.lang.Boolean.valueOf((it instanceof EClass));
         }
       };
       Iterable<EClassifier> _filter = IterableExtensions.<EClassifier>filter(_eClassifiers, _function);
@@ -297,11 +347,11 @@ public class RandomEcore implements IGenerator {
       return _Uniform;
     }
     
-    public Integer number_4() {
+    public java.lang.Integer number_4() {
       return 1;
     }
     
-    public org.eclipse.emf.ecore.EReference generate() {
+    public EReference generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEReference();
       self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
       self.eSet(self.eClass().getEStructuralFeature("upperBound"), call_1());		
@@ -312,39 +362,40 @@ public class RandomEcore implements IGenerator {
     }
   }
   
-  public org.eclipse.emf.ecore.EAttribute eAttribute() {
+  public EAttribute Attribute() {
     depth += 1;
-    org.eclipse.emf.ecore.EAttribute result = new EAttribute().generate();
+    org.eclipse.emf.ecore.EAttribute result = new Attribute().generate();
     depth -= 1;
     return result;
   }
   
-  private class EAttribute {
-    private org.eclipse.emf.ecore.EAttribute self;
+  private class Attribute {
+    private EAttribute self;
     
-    public EAttribute() {
+    public Attribute() {
       
     }
     
-    public String call_0() {
+    public java.lang.String call_0() {
       return callExpr_0();
     }
     
-    public String callExpr_0() {
+    public java.lang.String callExpr_0() {
       int _Normal = Random.Normal(8, 3);
-      String _RandomID = Random.RandomID(_Normal);
-      return _RandomID;
+      java.lang.String _LatinCamel = Random.LatinCamel(_Normal);
+      java.lang.String _firstLower = StringExtensions.toFirstLower(_LatinCamel);
+      return _firstLower;
     }
     
-    public Integer number_0() {
+    public java.lang.Integer number_0() {
       return 1;
     }
     
-    public Integer call_1() {
+    public java.lang.Integer call_1() {
       return callExpr_1();
     }
     
-    public Integer callExpr_1() {
+    public java.lang.Integer callExpr_1() {
       int _xifexpression = (int) 0;
       boolean _UniformBool = Random.UniformBool(0.1);
       if (_UniformBool) {
@@ -352,10 +403,10 @@ public class RandomEcore implements IGenerator {
       } else {
         _xifexpression = 1;
       }
-      return Integer.valueOf(_xifexpression);
+      return java.lang.Integer.valueOf(_xifexpression);
     }
     
-    public Integer number_1() {
+    public java.lang.Integer number_1() {
       return 1;
     }
     
@@ -365,16 +416,9 @@ public class RandomEcore implements IGenerator {
     
     public EClassifier callExpr_2() {
       EList<EClassifier> _eClassifiers = EcorePackage.eINSTANCE.getEClassifiers();
-      final Function1<EClassifier, Boolean> _function = new Function1<EClassifier, Boolean>() {
-        public Boolean apply(final EClassifier it) {
-          boolean _and = false;
-          if (!(it instanceof EDataType)) {
-            _and = false;
-          } else {
-            boolean _isSerializable = ((EDataType) it).isSerializable();
-            _and = _isSerializable;
-          }
-          return Boolean.valueOf(_and);
+      final Function1<EClassifier, java.lang.Boolean> _function = new Function1<EClassifier, java.lang.Boolean>() {
+        public java.lang.Boolean apply(final EClassifier it) {
+          return java.lang.Boolean.valueOf((it instanceof EDataType));
         }
       };
       Iterable<EClassifier> _filter = IterableExtensions.<EClassifier>filter(_eClassifiers, _function);
@@ -382,11 +426,11 @@ public class RandomEcore implements IGenerator {
       return _Uniform;
     }
     
-    public Integer number_2() {
+    public java.lang.Integer number_2() {
       return 1;
     }
     
-    public org.eclipse.emf.ecore.EAttribute generate() {
+    public EAttribute generate() {
       self = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEAttribute();
       self.eSet(self.eClass().getEStructuralFeature("name"), call_0());		
       self.eSet(self.eClass().getEStructuralFeature("upperBound"), call_1());		
@@ -395,15 +439,19 @@ public class RandomEcore implements IGenerator {
     }
   }
   
-  @Override
-  public EObject resolve(final EObject proxy) {
+  @java.lang.Override
+  public EObject resolve(final EObject proxy, final EObject source) {
     if (proxy == null) return null;
     String uri = ((org.eclipse.emf.ecore.InternalEObject)proxy).eProxyURI().toString();
-    if (uri.equals("eReference_4")) {
-    	return new EReference().callExpr_4();
+    if (uri.equals("Reference_4")) {
+    	Reference rule = new Reference();
+    	rule.self = (org.eclipse.emf.ecore.EReference)source;
+    	return rule.callExpr_4();
     }
-    if (uri.equals("eAttribute_2")) {
-    	return new EAttribute().callExpr_2();
+    if (uri.equals("Attribute_2")) {
+    	Attribute rule = new Attribute();
+    	rule.self = (org.eclipse.emf.ecore.EAttribute)source;
+    	return rule.callExpr_2();
     }
     return null;
   }

@@ -1,0 +1,62 @@
+package de.hub.rcore.example
+
+import de.hub.randomemf.runtime.Ocl
+
+import static de.hub.randomemf.runtime.Random.*
+
+generator SyntheticEL for el in "platform:/resource/de.hub.rcore.example/model/example-language.ecore" {	
+	
+	root: ELModel ->
+		packages += ELPredefinitions.pkg(self)
+		packages += Package#1
+	;
+	
+	Package: ELPackage ->
+		name := ClassName(Normal(3,2)).toLowerCase	
+		classes += Class#8
+	;
+	
+	Class: ELClass ->
+		name := ClassName(Normal(4,2))
+		fields += Field#3
+		methods += Method#6
+		innerClasses += Class#(if (depth < 4 && self.innerClasses.size % 3 == 0) 1 else 0)  
+	;
+	
+	Field: ELField ->
+		name := VarName(Normal(4,2))
+		array := false		
+		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
+	;
+	
+	Variable: ELVariable ->
+		name := VarName(Normal(2,1))
+		array := false		
+		type:ELClass := Uniform(Ocl.collectAll(model.packages)[it.classes])
+	;
+	
+	Method:ELMethod ->
+		name := MethodName(Normal(5,3))
+		type := if (UniformBool(0.3)) null else Uniform(Ocl.collectAll(model.packages)[it.classes])	
+		parameters += Variable#2
+		block := Block
+	;
+	
+	Block:ELBlock ->
+		statements += if(depth < 7)BlockStatement else Literal#2
+	;
+	
+	BlockStatement: ELBlockStatement ->
+		kind := model.blocks.get(depth % 3)
+		block += Block#self.kind.blocks
+		expressions += if (depth < 9) MethodCall else Literal#self.kind.expressions
+	;
+
+	Literal: ELLiteral -> value := "" + UniformBool(0.5);
+	
+	MethodCall: ELCall ->
+		callee := @(Uniform(Ocl.collectAll(model.packages)[Ocl.collectAll(it.classes)[it.methods]]))
+		arguments += if (depth < 9) MethodCall else Literal#2
+	;
+
+}

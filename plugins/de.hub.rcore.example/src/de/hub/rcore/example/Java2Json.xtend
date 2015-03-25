@@ -1,7 +1,6 @@
 package de.hub.rcore.example
 
-import de.hub.rcore.example.el.ELExpression
-import de.hub.rcore.example.el.ELStatement
+import de.hub.rcore.example.metrics.JavaMetrics
 import java.io.File
 import java.io.PrintWriter
 import org.eclipse.emf.common.util.URI
@@ -11,16 +10,18 @@ import org.eclipse.emf.ecore.EcorePackage
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
-import org.eclipse.gmt.modisco.java.Model
-import org.eclipse.gmt.modisco.java.Package
-import org.eclipse.gmt.modisco.java.emf.JavaPackage
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration
+import org.eclipse.gmt.modisco.java.AbstractMethodInvocation
+import org.eclipse.gmt.modisco.java.BodyDeclaration
 import org.eclipse.gmt.modisco.java.Expression
+import org.eclipse.gmt.modisco.java.Model
+import org.eclipse.gmt.modisco.java.NamedElement
 import org.eclipse.gmt.modisco.java.Statement
 import org.eclipse.gmt.modisco.java.TypeDeclaration
-import org.eclipse.gmt.modisco.java.BodyDeclaration
+import org.eclipse.gmt.modisco.java.emf.JavaPackage
 
 class Java2Json {
-	def static main(String[] args) {
+	def generate() {
 		EPackage.Registry.INSTANCE.put(EcorePackage.eINSTANCE.nsURI, EcorePackage.eINSTANCE);
 		EPackage.Registry.INSTANCE.put("http://www.eclipse.org/MoDisco/Java/0.2.incubation/java", JavaPackage.eINSTANCE);
 		
@@ -39,23 +40,76 @@ class Java2Json {
 			.ownedPackages.findFirst[it.name.equals("emffrag")]
 			.ownedPackages.findFirst[it.name.equals("fragmentation")]
 		
-		val out = new PrintWriter(new File("model/java.json"))
-		out.print(new Java2Json().gen(pkg))
-		out.close
+		val java2json = new Java2Json();
+		{
+			val out = new PrintWriter(new File("model/hierarchy/java.json"))
+			out.print(java2json.genHierarchy(pkg))
+			out.close
+		}
+		
+		{
+			val out = new PrintWriter(new File("model/dependencies/java.json"))
+			java2json.genMethodCalls(pkg, out)
+			out.close
+		}
+		
+		return new JavaMetrics().metrics(pkg);
 	}
 	
-	def CharSequence gen(EObject eObject) '''
+	def CharSequence genHierarchy(EObject eObject) '''
 	{
 		"name" : "«eObject.className»"«IF !eObject.eContents.empty»,«ENDIF»
 		«IF !eObject.eContents.empty»
 			"children": [
 				«FOR eChild:eObject.eContents SEPARATOR ","»
-					«eChild.gen»
+					«eChild.genHierarchy»
 				«ENDFOR»
 			]
 		«ENDIF»
 	}
 	'''
+	
+	def genMethodCalls(EObject eObject, PrintWriter out) {
+		out.print("[")
+		val iterator = eObject.eAllContents
+		var first = true;
+		while (iterator.hasNext) {
+			val content = iterator.next
+			if (content instanceof AbstractMethodDeclaration) {
+				val declaration = content as AbstractMethodDeclaration
+				if (first) {
+					first = false
+				} else {
+					out.print(",")
+				}
+				out.print('''{ "name":"«declaration.methodName»", "size":1, "imports":[''')
+				
+				if (declaration.body != null) {
+					val bodyIterator =  declaration.body.eAllContents
+					var bodyFirst = true;
+					while (bodyIterator.hasNext) {
+						val bodyContent = bodyIterator.next
+						if (bodyContent instanceof AbstractMethodInvocation) {
+							val invocation = bodyContent as AbstractMethodInvocation
+							val called = invocation.method
+							val calledName = called.methodName
+							if (calledName.startsWith("de.hub.emffrag.fragmentation")) {
+								if (bodyFirst) {					
+									bodyFirst = false
+								} else {
+									out.print(",")
+								}
+								out.print('''"«calledName»"''')
+							}
+						}
+					}
+				}
+				out.print(''']}''')
+			}
+		}	
+		out.print("]")
+	}
+	
 	
 	def className(EObject eObject) {
 		if (eObject instanceof TypeDeclaration) {
@@ -69,5 +123,15 @@ class Java2Json {
 		} else {
 			return "5"
 		}
+	}
+	
+	def methodName(AbstractMethodDeclaration declaration) {
+		var result = ""
+		var obj = declaration as EObject
+		while (obj != null && obj instanceof NamedElement) {
+			result = (obj as NamedElement).name + (if (result.equals("")) result else "." + result) 
+			obj = obj.eContainer
+		}
+		return result;
 	}
 }

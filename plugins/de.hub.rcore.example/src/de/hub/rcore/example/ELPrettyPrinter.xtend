@@ -20,7 +20,7 @@ import de.hub.rcore.example.el.ELAssignment
 class ELPrettyPrinter {
 	def gen(ELClass elClass) '''
 		«IF elClass.eContainer instanceof ELPackage»
-			package «(elClass.eContainer as ELPackage).name»
+			package «(elClass.eContainer as ELPackage).name»;
 		«ENDIF»
 		
 		class «elClass.name» «elClass.superClassClause» {
@@ -84,11 +84,11 @@ class ELPrettyPrinter {
 		}
 	}	
 	
-	def dispatch CharSequence genStatement(ELCall statement) '''«IF statement.thisArgument != null»«statement.thisArgument.genStatement».«ENDIF»«statement.callee.name»(«FOR a:statement.arguments SEPARATOR ", "»«a.genStatement»«ENDFOR»)'''
+	def dispatch CharSequence genStatement(ELCall statement) '''«IF statement.thisArgument != null»«statement.thisArgument.genStatement».«ENDIF»«IF statement.callee != null»«statement.callee.name»«ENDIF»(«FOR a:statement.arguments SEPARATOR ", "»«a.genStatement»«ENDFOR»)«IF statement.eContainer instanceof ELBlock»;«ENDIF»'''
 	
 	def dispatch CharSequence genStatement(ELAccess statement) '''«statement.variable.name»'''
 	
-	def dispatch CharSequence genStatement(ELAssignment assignment) '''«assignment.assignee.name» := «assignment.expr.genStatement»'''
+	def dispatch CharSequence genStatement(ELAssignment assignment) '''«assignment.assignee.name» = «assignment.expr.genStatement»;'''
 	
 	def genType(ELTypedElement te) {
 		val container = if (te.eContainer instanceof ELClass) te.eContainer.eContainer else te.eContainer.eContainer.eContainer;
@@ -112,7 +112,7 @@ class ELPrettyPrinter {
 			return el.name;
 		} else {
 			val prefix = (el.eContainer as ELNamedElement).ref(context)
-			return (if (prefix.equals("void")) "" else prefix + ".") + el.name;
+			return (if (prefix.equals("void") || prefix.equals("predefined")) "" else prefix + ".") + el.name;
 		}		
 	}
 }
