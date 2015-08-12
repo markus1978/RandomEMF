@@ -6,7 +6,7 @@ generate randomEMF "http://www.hub.de/randomemf/RandomEMF"
 Generator:
 	('package' package=QualifiedName)?
 	importSection=XImportSection?
- 	'generator' name=ValidID 'for' ecorePackage=[Ecore::EPackage|ID] 'in' importURI=STRING '{'
+ 	'generator' name=ValidID ('(' params+=JvmFormalParameter (',' params+=JvmFormalParameter)* ')')? 'for' ecorePackage=[Ecore::EPackage|ID] 'in' importURI=STRING '{'
  		(rules += AbstractRule)*
  	'}'
 ;

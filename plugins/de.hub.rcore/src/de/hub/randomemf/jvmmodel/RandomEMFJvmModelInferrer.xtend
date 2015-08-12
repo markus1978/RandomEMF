@@ -15,9 +15,18 @@ import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 
-class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
+/**
+ * <p>Infers a JVM model from the source model.</p> 
+ *
+ * <p>The JVM model should contain all elements that would appear in the Java code 
+ * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
+ */
+class RandomEMFJvmModelInferrer extends AbstractModelInferrer {
 
     /**
+     * convenience API to build and initialize JVM types and their members.
+     */
+	 /**
      * convenience API to build and initialize JVM types and their members.
      */
 	@Inject extension JvmTypesBuilder
@@ -33,6 +42,21 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
 			// field for the model
 			members += element.toField("model", jvmType(element.rules.get(0).EClass));
 			members += element.toField("depth", typeRef(Integer)) [ initializer = '''0'''];
+			
+			for (param: element.params) {
+				members += param.toField(param.name, param.parameterType)	
+			}
+			
+			members += element.toConstructor[
+				for (param: element.params) {
+					parameters += param.toParameter(param.name, param.parameterType)	
+				}
+				body = '''
+					«FOR param: element.params» 
+						this.«param.name» = «param.name»;
+					«ENDFOR»
+				'''
+			]
 			
 			members += element.toMethod("generate", element.rules.get(0).EClass.jvmType) [
 				annotations += element.toAnnotation(Override)
@@ -184,6 +208,4 @@ class ClassBasedRandomEMFJvmModelInferrer extends AbstractModelInferrer {
    		return feature.isIsRef;
    	}
 }
-
-
 

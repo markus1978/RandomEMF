@@ -28,6 +28,12 @@ public class Random {
 		return new NegativeBinomial(4, 0.5, rand).nextInt();
 	}
 	
+	public static int Content(double m) {
+		int r = (int)Math.rint(m*0.5/(1-0.5));
+		double p = r / m + r;
+		return new NegativeBinomial(r, p, rand).nextInt();
+	}
+	
 	public static int Uniform(double min , double max) {
 		return new cern.jet.random.Uniform(min, max, rand).nextInt();
 	}

@@ -280,6 +280,27 @@
 	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
         </page>
     </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
+			<command
+				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
+				id="de.hub.randomemf.RandomEMF.OpenGeneratedCode"
+				style="push">
+					<visibleWhen checkEnabled="false">
+						<reference definitionId="de.hub.randomemf.RandomEMF.Editor.opened" />
+					</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="de.hub.randomemf.ui.RandomEMFExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
+				<activeWhen>
+					<reference definitionId="de.hub.randomemf.RandomEMF.Editor.opened" />
+				</activeWhen>
+		</handler>
+	</extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -478,7 +499,7 @@
    </extension>
    <extension point="org.eclipse.ui.editorActions">
       <editorContribution targetID="de.hub.randomemf.RandomEMF" 
-                          id="de.hub.randomemf.RandomEMF.ide.rulerActions">
+                          id="de.hub.randomemf.RandomEMF.rulerActions">
 	     <action
 	             label="Not Used"
 	             class="de.hub.randomemf.ui.RandomEMFExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
@@ -489,26 +510,26 @@
    </extension>
    <extension point="org.eclipse.ui.popupMenus">
       <viewerContribution
-         targetID="de.hub.randomemf.RandomEMF.ide.rulerContextMenu"
-         id="de.hub.randomemf.RandomEMF.ide.RulerPopupActions">
+         targetID="de.hub.randomemf.RandomEMF.RulerContext"
+         id="de.hub.randomemf.RandomEMF.RulerPopupActions">
          <action
             label="Toggle Breakpoint"
             class="de.hub.randomemf.ui.RandomEMFExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
             menubarPath="debug"
-            id="de.hub.randomemf.RandomEMF.ide.rulerContextMenu.toggleBreakpointAction">
+            id="de.hub.randomemf.RandomEMF.rulerContextMenu.toggleBreakpointAction">
          </action>
          <action
             label="Not used"
             class="de.hub.randomemf.ui.RandomEMFExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerEnableDisableBreakpointActionDelegate"
             menubarPath="debug"
-            id="de.hub.randomemf.RandomEMF.ide.rulerContextMenu.enableDisableBreakpointAction">
+            id="de.hub.randomemf.RandomEMF.rulerContextMenu.enableDisableBreakpointAction">
          </action>
          <action
            label="Breakpoint Properties"
            helpContextId="breakpoint_properties_action_context"
            class="de.hub.randomemf.ui.RandomEMFExecutableExtensionFactory:org.eclipse.jdt.debug.ui.actions.JavaBreakpointPropertiesRulerActionDelegate"
            menubarPath="group.properties"
-           id="de.hub.randomemf.RandomEMF.ide.rulerContextMenu.openBreapointPropertiesAction">
+           id="de.hub.randomemf.RandomEMF.rulerContextMenu.openBreapointPropertiesAction">
          </action>
       </viewerContribution>
    </extension>
@@ -579,6 +600,12 @@
             class="de.hub.randomemf.ui.RandomEMFExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="rcore">
     </provider>
+  </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="rcore"
+            type="text">
+    </fileTypes>
   </extension>
 
 </plugin>
