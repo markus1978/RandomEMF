@@ -2,6 +2,8 @@
 *.swp
 target/
 bin/
+xtend-gen/
+src-gen/
 *.out
 out.*
 out-*.*
