@@ -41,7 +41,9 @@ class RandomEMFJvmModelInferrer extends AbstractModelInferrer {
 			
 			// field for the model
 			members += element.toField("model", jvmType(element.rules.get(0).EClass));
-			members += element.toField("depth", typeRef(Integer)) [ initializer = '''0'''];
+			members += element.toField("depth", typeRef(int)) [ initializer = '''0'''];
+			members += element.toField("count", typeRef(int)) [ initializer = '''0'''];
+			members += element.toField("maxCount", typeRef(int)) [ initializer = '''-1'''];
 			
 			for (param: element.params) {
 				members += param.toField(param.name, param.parameterType)	
@@ -64,6 +66,15 @@ class RandomEMFJvmModelInferrer extends AbstractModelInferrer {
 					«element.rules.get(0).name»();
 					de.hub.randomemf.runtime.References.resolveReferences(this, model);
 					return model;
+				'''
+			]
+			
+			members += element.toMethod("generate", element.rules.get(0).EClass.jvmType) [
+				annotations += element.toAnnotation(Override)
+				parameters += element.toParameter("maxCount", typeRef(int))
+				body = '''
+					this.maxCount = maxCount;
+					return generate();
 				'''
 			]
 			
@@ -132,27 +143,35 @@ class RandomEMFJvmModelInferrer extends AbstractModelInferrer {
 					members += rule.toMethod("generate", rule.EClass.jvmType) [
 						body = '''
 							«IF rule instanceof ClassRule»
-								self = «rule.EClass.EFactoryInterfaceName».eINSTANCE.create«rule.EClass.name.toFirstUpper»();
-								«IF ((rule.eContainer as Generator).rules.get(0) == rule)»
-									model = self;
-								«ENDIF»
-								«IF !rule.inners.empty»
-									«FOR index:0..rule.inners.size-1»
-										«val feature = rule.inners.get(index)»
-										«IF (!feature.isAddRule)»
-											self.eSet(self.eClass().getEStructuralFeature("«feature.EFeature.name»"), call_«index»());		
-										«ELSE»	
-											{
-												org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("«feature.EFeature.name»"));	
-												int iterations = number_«index»();
-												for (int i = 0; i < iterations; i++) {
-													values.add(call_«index»());
+								if (maxCount >= 0 && count >= maxCount) {
+									return null;
+								} else {
+									self = «rule.EClass.EFactoryInterfaceName».eINSTANCE.create«rule.EClass.name.toFirstUpper»();
+									«IF ((rule.eContainer as Generator).rules.get(0) == rule)»
+										model = self;
+									«ENDIF»
+									«IF !rule.inners.empty»
+										«FOR index:0..rule.inners.size-1»
+											«val feature = rule.inners.get(index)»
+											«IF (!feature.isAddRule)»
+												self.eSet(self.eClass().getEStructuralFeature("«feature.EFeature.name»"), call_«index»());		
+											«ELSE»	
+												{
+													org.eclipse.emf.common.util.EList values = (org.eclipse.emf.common.util.EList)self.eGet(self.eClass().getEStructuralFeature("«feature.EFeature.name»"));	
+													int iterations = number_«index»();
+													for (int i = 0; i < iterations; i++) {
+														Object value = call_«index»();
+														if (value != null) {
+															values.add(value);
+														}
+													}
 												}
-											}
-										«ENDIF»							
-									«ENDFOR»
-								«ENDIF»
-								return self;
+											«ENDIF»							
+										«ENDFOR»
+									«ENDIF»
+									count++;
+									return self;
+								}
 							«ELSE»
 								int sum = 0;
 								«FOR index: 0..rule.inners.size-1»
