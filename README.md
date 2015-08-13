@@ -55,6 +55,7 @@ generator RandomEcore for ecore
 }
 ```
 
+## Basic rcore constructs
 As you can see, rcore uses rules (similar to those in grammars, e.g. xText) to describe how instance of meta-classes are created and what they consist of. 
 * Class rules have a name and reference a meta-class
   * Rules can have parameters
@@ -67,6 +68,7 @@ As you can see, rcore uses rules (similar to those in grammars, e.g. xText) to d
 * Alternative rules reference the most abstract meta-class of the alternatives
   * each alternative is an expression
   * after the **#** one can give a priority for the alternative the default priority is 1. Alternatives are chosen by priority, e.g. an alternative with priority 2 is twice as likely chosen as an alternative with priority 1.
+* The class **de.hub.randomemf.runtim.Random** provides a series of functions to create random numbers after certain distributions and other function to generate random value such as identifiers or chosing a value from a list, etc. The randomness is generate by the [Colt](https://dst.lbl.gov/ACSSoftware/colt/) library developed by the CERN institute. During generation, we always use the same seed to gurantee repeatabilty.
 
 ## How to Use the Described Generators
 RandomEMF will automatically generate a Java class for each generator. The class will have the same name and package as the generator description. The class has a default constructor or constructor with the same parameters as the generator. The class features a *generate()* and *generator(int maxCount)* method. These methods can be used to generate instances of your meta-model as described. 
