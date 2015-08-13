@@ -1,10 +1,11 @@
-# Synopsis
+# RandomEMF
+## Synopsis
 RandomEMF is a generator framework for test and benchmark input models. It is based on the eclipse modeling framework (EMF) and allows you to create model generators based on an external domain specific language (DSL). The RandomEMF language rcore can be used to describe generation rules for instances of ecore meta-model clases. RandomEMF is developed based on [xText](https://eclipse.org/Xtext/), [xTend](https://eclipse.org/xtend/), and [xBase](https://eclipse.org/Xtext/).
 
-# Get Started
+## Get Started
 There is no formal release of RandomEMF yet. You can simply clone the repository and import all plugins (except the example plugin) to your eclipse workspace as exsiting eclipse projects. RandomEMF used Ivy to add some external dependencies. The use the eclipse Ivy plugins [IvyDE](http://ant.apache.org/ivy/ivyde/) is recommended. You need to run the *src/de.hub.randomemf/GenerateRcore.mwe2* workflow to generate everything. Than you can run the framework as a new eclipse instance. In the new eclipse instance you can import the example project or simply start creating *.rcore* files in your own projects.
 
-# Simple Example
+## Simple Example
 The following is an example *.rcore* file that describes a generator for EMF's ecore language.
 
 ```
@@ -67,5 +68,8 @@ As you can see, rcore uses rules (similar to those in grammars, e.g. xText) to d
   * each alternative is an expression
   * after the **#** one can give a priority for the alternative the default priority is 1. Alternatives are chosen by priority, e.g. an alternative with priority 2 is twice as likely chosen as an alternative with priority 1.
 
-# How to Use the Described Generators
+## How to Use the Described Generators
 RandomEMF will automatically generate a Java class for each generator. The class will have the same name and package as the generator description. The class has a default constructor or constructor with the same parameters as the generator. The class features a *generate()* and *generator(int maxCount)* method. These methods can be used to generate instances of your meta-model as described. 
+
+## Publications
+
