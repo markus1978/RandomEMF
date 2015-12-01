@@ -16,7 +16,7 @@ import de.hub.rcore.example.el.ELTypedElement
 import de.hub.rcore.example.el.ELVariable
 
 class ELPrettyPrinter {
-	def gen(ELClass elClass) '''
+	def CharSequence gen(ELClass elClass) '''
 		«IF elClass.eContainer instanceof ELPackage»
 			package «(elClass.eContainer as ELPackage).name»;
 		«ENDIF»

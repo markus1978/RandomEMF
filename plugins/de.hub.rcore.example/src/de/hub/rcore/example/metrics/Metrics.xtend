@@ -1,7 +1,6 @@
 package de.hub.rcore.example.metrics
 
 import org.eclipse.emf.ecore.EObject
-import java.util.ArrayList
 
 abstract class Metrics {
 	var leafs = 0;

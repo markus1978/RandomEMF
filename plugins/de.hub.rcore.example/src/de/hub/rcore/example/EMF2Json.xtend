@@ -1,20 +1,19 @@
 package de.hub.rcore.example
 
-import org.eclipse.emf.ecore.EObject
-import de.hub.rcore.example.el.ELStatement
-import de.hub.rcore.example.el.ELExpression
 import de.hub.rcore.example.el.ELBlock
-import de.hub.rcore.example.el.ELClass
-import de.hub.rcore.example.el.ELMethod
-import de.hub.rcore.example.el.ELField
 import de.hub.rcore.example.el.ELCall
+import de.hub.rcore.example.el.ELClass
+import de.hub.rcore.example.el.ELExpression
+import de.hub.rcore.example.el.ELField
+import de.hub.rcore.example.el.ELMethod
 import de.hub.rcore.example.el.ELNamedElement
-import java.io.PrintWriter
-import java.util.List
 import de.hub.rcore.example.el.ELOpCall
+import de.hub.rcore.example.el.ELStatement
+import java.io.PrintWriter
+import org.eclipse.emf.ecore.EObject
 
 class EMF2Json {
-	def genHierarchy(EObject eObject) '''
+	def CharSequence genHierarchy(EObject eObject) '''
 	{
 		"name" : "«eObject.className»"«IF !eObject.eContents.empty»,«ENDIF»
 		«IF !eObject.eContents.empty»

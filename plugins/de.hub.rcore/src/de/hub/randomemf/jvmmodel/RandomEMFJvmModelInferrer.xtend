@@ -31,6 +31,7 @@ class RandomEMFJvmModelInferrer extends AbstractModelInferrer {
      */
 	@Inject extension JvmTypesBuilder
 	@Inject extension GenModelHelper
+	
 	@Inject TypeReferences typeReferences
 
    	def dispatch void infer(Generator element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
