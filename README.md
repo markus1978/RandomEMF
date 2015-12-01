@@ -74,4 +74,4 @@ As you can see, rcore uses rules (similar to those in grammars, e.g. xText) to d
 RandomEMF will automatically generate a Java class for each generator. The class will have the same name and package as the generator description. The class has a default constructor or constructor with the same parameters as the generator. The class features a *generate()* and *generator(int maxCount)* method. These methods can be used to generate instances of your meta-model as described. 
 
 ## Publications
-
+[Random Generation of Large Software Models for Benchmarking; BigMDE 2015](http://ceur-ws.org/Vol-1406/paper1.pdf)
